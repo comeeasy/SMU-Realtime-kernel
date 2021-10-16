@@ -1,0 +1,3755 @@
+
+mutual-critical.elf:     file format elf32-littlearm
+mutual-critical.elf
+architecture: armv7e-m, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x00000209
+
+Program Header:
+    LOAD off    0x00010000 vaddr 0x00000000 paddr 0x00000000 align 2**16
+         filesz 0x000022d8 memsz 0x000022d8 flags r-x
+    LOAD off    0x00020000 vaddr 0x20000000 paddr 0x20000000 align 2**16
+         filesz 0x00000000 memsz 0x00003f28 flags rw-
+private flags = 5000400: [Version5 EABI] [hard-float ABI]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000022d8  00000000  00000000  00010000  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00003f28  20000000  20000000  00020000  2**2
+                  ALLOC
+  2 .comment      00000079  00000000  00000000  000122d8  2**0
+                  CONTENTS, READONLY
+  3 .ARM.attributes 00000032  00000000  00000000  00012351  2**0
+                  CONTENTS, READONLY
+SYMBOL TABLE:
+00000000 l    d  .text	00000000 .text
+20000000 l    d  .bss	00000000 .bss
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .ARM.attributes	00000000 .ARM.attributes
+00000000 l    df *ABS*	00000000 startup.c
+00000200 l     F .text	00000002 NmiSR
+00000202 l     F .text	00000002 FaultISR
+00000204 l     F .text	00000002 IntDefaultHandler
+0000021c l     F .text	00000000 zero_loop
+20000000 l     O .bss	00001010 pui32Stack
+00000000 l    df *ABS*	00000000 mutual-critical.c
+00000000 l    df *ABS*	00000000 tm4c1294xl.c
+00000000 l    df *ABS*	00000000 pinout.c
+00000000 l    df *ABS*	00000000 uartstdio.c
+20001010 l     O .bss	00000004 g_ui32Base
+00001f1c l     O .text	0000000c g_ui32UARTBase
+00001f28 l     O .text	0000000c g_ui32UARTPeriph
+00000000 l    df *ABS*	00000000 os_core.c
+0000084c l     F .text	00000028 OS_SchedNew
+00000000 l    df *ABS*	00000000 os_flag.c
+00000000 l    df *ABS*	00000000 os_mem.c
+00000000 l    df *ABS*	00000000 os_q.c
+00000000 l    df *ABS*	00000000 os_sem.c
+00000000 l    df *ABS*	00000000 os_task.c
+00000000 l    df *ABS*	00000000 os_time.c
+00000000 l    df *ABS*	00000000 os_tmr.c
+00001634 l     F .text	00000054 OSTmr_Link
+00001688 l     F .text	00000044 OSTmr_Unlink
+000016cc l     F .text	00000070 OSTmr_Task
+00000000 l    df *ABS*	00000000 os_hooks.c
+00000000 l    df *ABS*	00000000 os_cpu_c.c
+20001014 l     O .bss	00000002 OSTmrCtr
+00000000 l    df *ABS*	00000000 /home/rk/uCOS-II-2.92.10-tm4c1294xl/Ports/os_cpu_a.o
+e000ed04 l       *ABS*	00000000 NVIC_INT_CTRL
+e000ed22 l       *ABS*	00000000 NVIC_SYSPRI14
+000000ff l       *ABS*	00000000 NVIC_PENDSV_PRI
+10000000 l       *ABS*	00000000 NVIC_PENDSVSET
+000019be l       .text	00000000 OSStartHang
+00001a04 l       .text	00000000 OS_CPU_PendSVHandler_nosave
+00000000 l    df *ABS*	00000000 os_dbg.c
+00000000 l    df *ABS*	00000000 gpio.c
+00000000 l    df *ABS*	00000000 sysctl.c
+00001bd4 l     F .text	00000064 _SysCtlMemTimingGet
+00002084 l     O .text	000001b0 g_pppui32XTALtoVCO
+00002234 l     O .text	00000008 g_pui32VCOFrequencies
+0000223c l     O .text	0000006c g_pui32Xtals
+000022a8 l     O .text	00000030 g_sXTALtoMEMTIM
+00000000 l    df *ABS*	00000000 utility.c
+20001018 l     O .bss	00000004 rand.5336
+20002820 g     O .bss	00000004 OSTmrFreeList
+0000104c g     F .text	00000048 OS_MemInit
+20002824 g     O .bss	00000040 OSTmrWheelTbl
+00001882 g     F .text	00000004 OSTaskCreateHook
+00001892 g     F .text	00000004 OSTaskStatHook
+000003a8 g     F .text	0000000c UARTputclear
+20002864 g     O .bss	00000001 OSLockNesting
+20002868 g     O .bss	00000004 OSTmrSemSignal
+2000286c g     O .bss	00000001 OSTaskRegNextAvailID
+00001934 g     F .text	00000024 SysTick_Handler
+2000286d g     O .bss	00000001 OSRunning
+00001850 g     F .text	00000030 OSInitHookBegin
+00000658 g     F .text	000001d8 UARTvprintf
+000019f0 g     F .text	00000042 PendSV_Handler
+00001958 g     F .text	00000030 OS_CPU_SysTickInit
+20002870 g     O .bss	00000004 OSIdleCtr
+00000ee4 g     F .text	000000f4 OS_TCBInit
+000014fc g     F .text	00000018 OS_TaskReturn
+20002874 g     O .bss	00000002 OSTmrUsed
+00000324 g     F .text	00000084 tm4c1294xl_init
+20002876 g     O .bss	00000001 OSPrioHighRdy
+00001886 g     F .text	00000004 OSTaskDelHook
+000022d8 g       .text	00000000 _etext
+00001998 g     F .text	00000028 OSStartHighRdy
+0000152c g     F .text	000000a8 OSTaskCreateExt
+0000120c g     F .text	0000008c OSTaskCreate
+0000184a g     F .text	00000002 App_TaskSwHook
+00001a48 g     F .text	00000002 OSDebugInit
+00001298 g     F .text	00000120 OSTaskDel
+20002878 g     O .bss	00000050 OSFlagTbl
+00000b00 g     F .text	00000028 OS_EventTaskRemove
+0000184e g     F .text	00000002 App_TimeTickHook
+200028c8 g     O .bss	00000280 OSTmrTbl
+00001e74 g     F .text	00000020 OS_GetRandom
+000008c4 g     F .text	00000080 OSIntExit
+20002b48 g     O .bss	00000001 OSPrioCur
+000019d0 g     F .text	0000000a OSCtxSw
+20002b4c g     O .bss	00000004 OSTCBList
+0000173c g     F .text	0000000c OSTmrSignal
+20002b50 g     O .bss	00000078 OSMemTbl
+20002bc8 g     O .bss	00000001 OSTickStepState
+00001842 g     F .text	00000002 App_TaskDelHook
+20002bcc g     O .bss	00000200 OSTaskStatStk
+00001030 g     F .text	0000001a OS_FlagUnlink
+00000d74 g     F .text	00000068 OS_Sched
+000013b8 g     F .text	00000050 OSTaskNameSet
+20002dcc g     O .bss	00000004 OSCtxSwCtr
+0000190c g     F .text	00000028 OSTimeTickHook
+00001114 g     F .text	000000a8 OSSemPend
+00001908 g     F .text	00000004 OSTCBInitHook
+20002dd0 g     O .bss	00000002 OSTmrFree
+00000fd8 g     F .text	00000058 OS_FlagInit
+20002dd4 g     O .bss	00000004 OSIdleCtrMax
+20003f28 g       .bss	00000000 _ebss
+0000188e g     F .text	00000004 OSTaskReturnHook
+000019e0 g     F .text	0000000a OSIntCtxSw
+20002dd8 g     O .bss	00000004 OSTCBFreeList
+00001840 g     F .text	00000002 App_TaskCreateHook
+00001848 g     F .text	00000002 App_TaskStatHook
+00001bd0 g     F .text	00000004 GPIOPinTypeEthernetLED
+000002b0 g     F .text	00000028 Task1
+20003d24 g     O .bss	00000004 OS_CPU_ExceptStkBase
+00000e58 g     F .text	0000008c OS_TaskStat
+00001748 g     F .text	000000f8 OSTmr_Init
+00000b9c g     F .text	00000010 OS_MemClr
+00001898 g     F .text	0000006c OSTaskStkInit
+00000b28 g     F .text	00000068 OS_EventTaskRdy
+20002ddc g     O .bss	00000001 OSCPUUsage
+20000000 g       .bss	00000000 _bss
+000015d4 g     F .text	00000060 OSTimeDly
+2000101c g     O .bss	00000800 Task2Stk
+00000608 g     F .text	00000050 UARTwrite
+20002ddd g     O .bss	00000001 OSTaskCtr
+000011bc g     F .text	00000050 OSSemPost
+00000ddc g     F .text	00000044 OSSchedUnlock
+00001846 g     F .text	00000002 App_TaskReturnHook
+20002de0 g     O .bss	00000004 OSMemFreeList
+000009c0 g     F .text	00000040 OSStatInit
+00000ab4 g     F .text	00000002 OS_Dummy
+20002de4 g     O .bss	000001e0 OSQTbl
+20002fc4 g     O .bss	00000004 OSTCBHighRdy
+00000000 g       .text	00000000 _text
+20002fc8 g     O .bss	00000004 OSQFreeList
+00001844 g     F .text	00000002 App_TaskIdleHook
+00000890 g     F .text	00000034 OSEventNameSet
+20002fcc g     O .bss	00000001 OSRdyGrp
+00001990 g     F .text	00000006 OS_CPU_SR_Restore
+0000184c g     F .text	00000002 App_TCBInitHook
+00000300 g     F .text	00000024 main
+000003b4 g     F .text	000001e8 PinoutSet
+00001f52 g     O .text	00000100 OSUnMapTbl
+00000ab8 g     F .text	00000048 OS_EventTaskWait
+2000181c g     O .bss	00000800 Task1Stk
+00000e20 g     F .text	00000038 OS_TaskStatStkChk
+0000097c g     F .text	00000044 OSStart
+20002fcd g     O .bss	00000008 OSRdyTbl
+00001bb8 g     F .text	00000018 GPIOPinTypeCAN
+0000059c g     F .text	0000006c UARTStdioConfig
+00000a00 g     F .text	000000b4 OSTimeTick
+000010cc g     F .text	00000048 OSSemCreate
+00000944 g     F .text	00000038 OSSchedLock
+20002fd8 g     O .bss	00000200 OSTmrTaskStk
+200031d8 g     O .bss	00000004 OSEventFreeList
+20000000 g       .text	00000000 _data
+000002d8 g     F .text	00000028 Task2
+00001988 g     F .text	00000008 OS_CPU_SR_Save
+00001880 g     F .text	00000002 OSInitHookEnd
+00000830 g     F .text	0000001a UARTprintf
+20003d28 g     O .bss	00000200 OS_CPU_ExceptStk
+20000000 g       .text	00000000 _edata
+200031dc g     O .bss	00000001 OSIntNesting
+2000201c g     O .bss	00000800 TaskStartStk
+00001408 g     F .text	00000064 OSTaskStkChk
+200031e0 g     O .bss	00000004 OSTCBCur
+00000000 g     O .text	00000200 g_pfnVectors
+00000208 g     F .text	00000050 ResetISR
+00000bac g     F .text	000001c8 OSInit
+200031e4 g     O .bss	00000004 OSTmrTime
+2000281c g     O .bss	00000004 g_ui32SysClock
+00001094 g     F .text	00000038 OS_QInit
+00000260 g     F .text	00000050 TaskStart
+200031e8 g     O .bss	00000004 OSTime
+200031ec g     O .bss	00000004 OSTmrSem
+200031f0 g     O .bss	00000200 OSTaskIdleStk
+00001a4a g     F .text	00000026 GPIODirModeSet
+00001904 g     F .text	00000004 OSTaskSwHook
+200033f0 g     O .bss	000000f0 OSEventTbl
+200034e0 g     O .bss	00000738 OSTCBTbl
+20003c18 g     O .bss	00000004 OSFlagFreeList
+20003c1c g     O .bss	00000001 OSStatRdy
+20003c20 g     O .bss	00000100 OSTCBPrioTbl
+00001c38 g     F .text	0000023c SysCtlClockFreqSet
+000022d8 g       *ABS*	00000000 _ldata
+00001a70 g     F .text	00000148 GPIOPadConfigSet
+20003d20 g     O .bss	00000004 OSIdleCtrRun
+00001514 g     F .text	00000016 OS_TaskStkClr
+00000b90 g     F .text	0000000c OS_EventWaitListInit
+0000188a g     F .text	00000004 OSTaskIdleHook
+0000146c g     F .text	00000090 OSTaskSuspend
+00000874 g     F .text	0000001c OS_TaskIdle
+
+
+
+Disassembly of section .text:
+
+00000000 <g_pfnVectors>:
+       0:	20001010 	andcs	r1, r0, r0, lsl r0
+       4:	00000209 	andeq	r0, r0, r9, lsl #4
+       8:	00000201 	andeq	r0, r0, r1, lsl #4
+       c:	00000203 	andeq	r0, r0, r3, lsl #4
+      10:	00000205 	andeq	r0, r0, r5, lsl #4
+      14:	00000205 	andeq	r0, r0, r5, lsl #4
+      18:	00000205 	andeq	r0, r0, r5, lsl #4
+	...
+      2c:	00000205 	andeq	r0, r0, r5, lsl #4
+      30:	00000205 	andeq	r0, r0, r5, lsl #4
+      34:	00000000 	andeq	r0, r0, r0
+      38:	000019f1 	strdeq	r1, [r0], -r1	; <UNPREDICTABLE>
+      3c:	00001935 	andeq	r1, r0, r5, lsr r9
+      40:	00000205 	andeq	r0, r0, r5, lsl #4
+      44:	00000205 	andeq	r0, r0, r5, lsl #4
+      48:	00000205 	andeq	r0, r0, r5, lsl #4
+      4c:	00000205 	andeq	r0, r0, r5, lsl #4
+      50:	00000205 	andeq	r0, r0, r5, lsl #4
+      54:	00000205 	andeq	r0, r0, r5, lsl #4
+      58:	00000205 	andeq	r0, r0, r5, lsl #4
+      5c:	00000205 	andeq	r0, r0, r5, lsl #4
+      60:	00000205 	andeq	r0, r0, r5, lsl #4
+      64:	00000205 	andeq	r0, r0, r5, lsl #4
+      68:	00000205 	andeq	r0, r0, r5, lsl #4
+      6c:	00000205 	andeq	r0, r0, r5, lsl #4
+      70:	00000205 	andeq	r0, r0, r5, lsl #4
+      74:	00000205 	andeq	r0, r0, r5, lsl #4
+      78:	00000205 	andeq	r0, r0, r5, lsl #4
+      7c:	00000205 	andeq	r0, r0, r5, lsl #4
+      80:	00000205 	andeq	r0, r0, r5, lsl #4
+      84:	00000205 	andeq	r0, r0, r5, lsl #4
+      88:	00000205 	andeq	r0, r0, r5, lsl #4
+      8c:	00000205 	andeq	r0, r0, r5, lsl #4
+      90:	00000205 	andeq	r0, r0, r5, lsl #4
+      94:	00000205 	andeq	r0, r0, r5, lsl #4
+      98:	00000205 	andeq	r0, r0, r5, lsl #4
+      9c:	00000205 	andeq	r0, r0, r5, lsl #4
+      a0:	00000205 	andeq	r0, r0, r5, lsl #4
+      a4:	00000205 	andeq	r0, r0, r5, lsl #4
+      a8:	00000205 	andeq	r0, r0, r5, lsl #4
+      ac:	00000205 	andeq	r0, r0, r5, lsl #4
+      b0:	00000205 	andeq	r0, r0, r5, lsl #4
+      b4:	00000205 	andeq	r0, r0, r5, lsl #4
+      b8:	00000205 	andeq	r0, r0, r5, lsl #4
+      bc:	00000205 	andeq	r0, r0, r5, lsl #4
+      c0:	00000205 	andeq	r0, r0, r5, lsl #4
+      c4:	00000205 	andeq	r0, r0, r5, lsl #4
+      c8:	00000205 	andeq	r0, r0, r5, lsl #4
+      cc:	00000205 	andeq	r0, r0, r5, lsl #4
+      d0:	00000205 	andeq	r0, r0, r5, lsl #4
+      d4:	00000205 	andeq	r0, r0, r5, lsl #4
+      d8:	00000205 	andeq	r0, r0, r5, lsl #4
+      dc:	00000205 	andeq	r0, r0, r5, lsl #4
+      e0:	00000205 	andeq	r0, r0, r5, lsl #4
+      e4:	00000205 	andeq	r0, r0, r5, lsl #4
+      e8:	00000205 	andeq	r0, r0, r5, lsl #4
+      ec:	00000205 	andeq	r0, r0, r5, lsl #4
+      f0:	00000205 	andeq	r0, r0, r5, lsl #4
+      f4:	00000205 	andeq	r0, r0, r5, lsl #4
+      f8:	00000205 	andeq	r0, r0, r5, lsl #4
+      fc:	00000205 	andeq	r0, r0, r5, lsl #4
+     100:	00000205 	andeq	r0, r0, r5, lsl #4
+     104:	00000205 	andeq	r0, r0, r5, lsl #4
+     108:	00000205 	andeq	r0, r0, r5, lsl #4
+     10c:	00000205 	andeq	r0, r0, r5, lsl #4
+     110:	00000205 	andeq	r0, r0, r5, lsl #4
+     114:	00000205 	andeq	r0, r0, r5, lsl #4
+     118:	00000205 	andeq	r0, r0, r5, lsl #4
+     11c:	00000205 	andeq	r0, r0, r5, lsl #4
+     120:	00000205 	andeq	r0, r0, r5, lsl #4
+     124:	00000205 	andeq	r0, r0, r5, lsl #4
+     128:	00000205 	andeq	r0, r0, r5, lsl #4
+     12c:	00000205 	andeq	r0, r0, r5, lsl #4
+     130:	00000205 	andeq	r0, r0, r5, lsl #4
+     134:	00000205 	andeq	r0, r0, r5, lsl #4
+     138:	00000205 	andeq	r0, r0, r5, lsl #4
+     13c:	00000205 	andeq	r0, r0, r5, lsl #4
+     140:	00000205 	andeq	r0, r0, r5, lsl #4
+     144:	00000205 	andeq	r0, r0, r5, lsl #4
+     148:	00000205 	andeq	r0, r0, r5, lsl #4
+     14c:	00000205 	andeq	r0, r0, r5, lsl #4
+	...
+     158:	00000205 	andeq	r0, r0, r5, lsl #4
+     15c:	00000205 	andeq	r0, r0, r5, lsl #4
+     160:	00000205 	andeq	r0, r0, r5, lsl #4
+     164:	00000205 	andeq	r0, r0, r5, lsl #4
+     168:	00000000 	andeq	r0, r0, r0
+     16c:	00000205 	andeq	r0, r0, r5, lsl #4
+     170:	00000205 	andeq	r0, r0, r5, lsl #4
+     174:	00000205 	andeq	r0, r0, r5, lsl #4
+     178:	00000205 	andeq	r0, r0, r5, lsl #4
+     17c:	00000205 	andeq	r0, r0, r5, lsl #4
+     180:	00000205 	andeq	r0, r0, r5, lsl #4
+     184:	00000205 	andeq	r0, r0, r5, lsl #4
+     188:	00000205 	andeq	r0, r0, r5, lsl #4
+     18c:	00000205 	andeq	r0, r0, r5, lsl #4
+     190:	00000205 	andeq	r0, r0, r5, lsl #4
+     194:	00000205 	andeq	r0, r0, r5, lsl #4
+     198:	00000205 	andeq	r0, r0, r5, lsl #4
+     19c:	00000205 	andeq	r0, r0, r5, lsl #4
+     1a0:	00000205 	andeq	r0, r0, r5, lsl #4
+     1a4:	00000205 	andeq	r0, r0, r5, lsl #4
+     1a8:	00000205 	andeq	r0, r0, r5, lsl #4
+     1ac:	00000205 	andeq	r0, r0, r5, lsl #4
+     1b0:	00000205 	andeq	r0, r0, r5, lsl #4
+     1b4:	00000205 	andeq	r0, r0, r5, lsl #4
+     1b8:	00000205 	andeq	r0, r0, r5, lsl #4
+     1bc:	00000205 	andeq	r0, r0, r5, lsl #4
+     1c0:	00000205 	andeq	r0, r0, r5, lsl #4
+     1c4:	00000205 	andeq	r0, r0, r5, lsl #4
+     1c8:	00000205 	andeq	r0, r0, r5, lsl #4
+     1cc:	00000205 	andeq	r0, r0, r5, lsl #4
+     1d0:	00000205 	andeq	r0, r0, r5, lsl #4
+     1d4:	00000205 	andeq	r0, r0, r5, lsl #4
+     1d8:	00000205 	andeq	r0, r0, r5, lsl #4
+     1dc:	00000205 	andeq	r0, r0, r5, lsl #4
+     1e0:	00000205 	andeq	r0, r0, r5, lsl #4
+     1e4:	00000205 	andeq	r0, r0, r5, lsl #4
+     1e8:	00000205 	andeq	r0, r0, r5, lsl #4
+     1ec:	00000205 	andeq	r0, r0, r5, lsl #4
+     1f0:	00000205 	andeq	r0, r0, r5, lsl #4
+     1f4:	00000205 	andeq	r0, r0, r5, lsl #4
+     1f8:	00000205 	andeq	r0, r0, r5, lsl #4
+     1fc:	00000205 	andeq	r0, r0, r5, lsl #4
+
+00000200 <NmiSR>:
+     200:	e7fe      	b.n	200 <NmiSR>
+
+00000202 <FaultISR>:
+     202:	e7fe      	b.n	202 <FaultISR>
+
+00000204 <IntDefaultHandler>:
+     204:	e7fe      	b.n	204 <IntDefaultHandler>
+	...
+
+00000208 <ResetISR>:
+     208:	b508      	push	{r3, lr}
+     20a:	4a0f      	ldr	r2, [pc, #60]	; (248 <zero_loop+0x2c>)
+     20c:	4b0f      	ldr	r3, [pc, #60]	; (24c <zero_loop+0x30>)
+     20e:	4910      	ldr	r1, [pc, #64]	; (250 <zero_loop+0x34>)
+     210:	428b      	cmp	r3, r1
+     212:	d313      	bcc.n	23c <zero_loop+0x20>
+     214:	4810      	ldr	r0, [pc, #64]	; (258 <zero_loop+0x3c>)
+     216:	4911      	ldr	r1, [pc, #68]	; (25c <zero_loop+0x40>)
+     218:	f04f 0200 	mov.w	r2, #0
+
+0000021c <zero_loop>:
+     21c:	4288      	cmp	r0, r1
+     21e:	bfb8      	it	lt
+     220:	f840 2b04 	strlt.w	r2, [r0], #4
+     224:	dbfa      	blt.n	21c <zero_loop>
+     226:	4a0b      	ldr	r2, [pc, #44]	; (254 <zero_loop+0x38>)
+     228:	6813      	ldr	r3, [r2, #0]
+     22a:	f443 0370 	orr.w	r3, r3, #15728640	; 0xf00000
+     22e:	6013      	str	r3, [r2, #0]
+     230:	f000 f878 	bl	324 <tm4c1294xl_init>
+     234:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+     238:	f000 b862 	b.w	300 <main>
+     23c:	f852 0b04 	ldr.w	r0, [r2], #4
+     240:	f843 0b04 	str.w	r0, [r3], #4
+     244:	e7e4      	b.n	210 <ResetISR+0x8>
+     246:	bf00      	nop
+     248:	000022d8 	ldrdeq	r2, [r0], -r8
+     24c:	20000000 	andcs	r0, r0, r0
+     250:	20000000 	andcs	r0, r0, r0
+     254:	e000ed88 	and	lr, r0, r8, lsl #27
+     258:	20000000 	andcs	r0, r0, r0
+     25c:	20003f28 	andcs	r3, r0, r8, lsr #30
+
+00000260 <TaskStart>:
+     260:	b508      	push	{r3, lr}
+     262:	4b0e      	ldr	r3, [pc, #56]	; (29c <TaskStart+0x3c>)
+     264:	6818      	ldr	r0, [r3, #0]
+     266:	2364      	movs	r3, #100	; 0x64
+     268:	fbb0 f0f3 	udiv	r0, r0, r3
+     26c:	f001 fb74 	bl	1958 <OS_CPU_SysTickInit>
+     270:	f000 fba6 	bl	9c0 <OSStatInit>
+     274:	4a0a      	ldr	r2, [pc, #40]	; (2a0 <TaskStart+0x40>)
+     276:	480b      	ldr	r0, [pc, #44]	; (2a4 <TaskStart+0x44>)
+     278:	2314      	movs	r3, #20
+     27a:	2100      	movs	r1, #0
+     27c:	f000 ffc6 	bl	120c <OSTaskCreate>
+     280:	2315      	movs	r3, #21
+     282:	4a09      	ldr	r2, [pc, #36]	; (2a8 <TaskStart+0x48>)
+     284:	4809      	ldr	r0, [pc, #36]	; (2ac <TaskStart+0x4c>)
+     286:	2100      	movs	r1, #0
+     288:	f000 ffc0 	bl	120c <OSTaskCreate>
+     28c:	f000 f88c 	bl	3a8 <UARTputclear>
+     290:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+     294:	20ff      	movs	r0, #255	; 0xff
+     296:	f000 bfff 	b.w	1298 <OSTaskDel>
+     29a:	bf00      	nop
+     29c:	2000281c 	andcs	r2, r0, ip, lsl r8
+     2a0:	20002018 	andcs	r2, r0, r8, lsl r0
+     2a4:	000002b1 			; <UNDEFINED> instruction: 0x000002b1
+     2a8:	20001818 	andcs	r1, r0, r8, lsl r8
+     2ac:	000002d9 	ldrdeq	r0, [r0], -r9
+
+000002b0 <Task1>:
+     2b0:	b538      	push	{r3, r4, r5, lr}
+     2b2:	4d08      	ldr	r5, [pc, #32]	; (2d4 <Task1+0x24>)
+     2b4:	f001 fb68 	bl	1988 <OS_CPU_SR_Save>
+     2b8:	4604      	mov	r4, r0
+     2ba:	4628      	mov	r0, r5
+     2bc:	f000 fab8 	bl	830 <UARTprintf>
+     2c0:	4620      	mov	r0, r4
+     2c2:	f001 fb65 	bl	1990 <OS_CPU_SR_Restore>
+     2c6:	2005      	movs	r0, #5
+     2c8:	f001 fdd4 	bl	1e74 <OS_GetRandom>
+     2cc:	f001 f982 	bl	15d4 <OSTimeDly>
+     2d0:	e7f0      	b.n	2b4 <Task1+0x4>
+     2d2:	bf00      	nop
+     2d4:	00001e94 	muleq	r0, r4, lr
+
+000002d8 <Task2>:
+     2d8:	b538      	push	{r3, r4, r5, lr}
+     2da:	4d08      	ldr	r5, [pc, #32]	; (2fc <Task2+0x24>)
+     2dc:	f001 fb54 	bl	1988 <OS_CPU_SR_Save>
+     2e0:	4604      	mov	r4, r0
+     2e2:	4628      	mov	r0, r5
+     2e4:	f000 faa4 	bl	830 <UARTprintf>
+     2e8:	4620      	mov	r0, r4
+     2ea:	f001 fb51 	bl	1990 <OS_CPU_SR_Restore>
+     2ee:	2005      	movs	r0, #5
+     2f0:	f001 fdc0 	bl	1e74 <OS_GetRandom>
+     2f4:	f001 f96e 	bl	15d4 <OSTimeDly>
+     2f8:	e7f0      	b.n	2dc <Task2+0x4>
+     2fa:	bf00      	nop
+     2fc:	00001ec8 	andeq	r1, r0, r8, asr #29
+
+00000300 <main>:
+     300:	b508      	push	{r3, lr}
+     302:	f000 fc53 	bl	bac <OSInit>
+     306:	4a05      	ldr	r2, [pc, #20]	; (31c <main+0x1c>)
+     308:	4805      	ldr	r0, [pc, #20]	; (320 <main+0x20>)
+     30a:	230a      	movs	r3, #10
+     30c:	2100      	movs	r1, #0
+     30e:	f000 ff7d 	bl	120c <OSTaskCreate>
+     312:	f000 fb33 	bl	97c <OSStart>
+     316:	2000      	movs	r0, #0
+     318:	bd08      	pop	{r3, pc}
+     31a:	bf00      	nop
+     31c:	20002818 	andcs	r2, r0, r8, lsl r8
+     320:	00000261 	andeq	r0, r0, r1, ror #4
+
+00000324 <tm4c1294xl_init>:
+     324:	b570      	push	{r4, r5, r6, lr}
+     326:	4918      	ldr	r1, [pc, #96]	; (388 <tm4c1294xl_init+0x64>)
+     328:	4818      	ldr	r0, [pc, #96]	; (38c <tm4c1294xl_init+0x68>)
+     32a:	4d19      	ldr	r5, [pc, #100]	; (390 <tm4c1294xl_init+0x6c>)
+     32c:	4c19      	ldr	r4, [pc, #100]	; (394 <tm4c1294xl_init+0x70>)
+     32e:	4e1a      	ldr	r6, [pc, #104]	; (398 <tm4c1294xl_init+0x74>)
+     330:	f001 fc82 	bl	1c38 <SysCtlClockFreqSet>
+     334:	2100      	movs	r1, #0
+     336:	6028      	str	r0, [r5, #0]
+     338:	4608      	mov	r0, r1
+     33a:	f000 f83b 	bl	3b4 <PinoutSet>
+     33e:	6823      	ldr	r3, [r4, #0]
+     340:	4816      	ldr	r0, [pc, #88]	; (39c <tm4c1294xl_init+0x78>)
+     342:	6bdb      	ldr	r3, [r3, #60]	; 0x3c
+     344:	2102      	movs	r1, #2
+     346:	4798      	blx	r3
+     348:	6833      	ldr	r3, [r6, #0]
+     34a:	4815      	ldr	r0, [pc, #84]	; (3a0 <tm4c1294xl_init+0x7c>)
+     34c:	699b      	ldr	r3, [r3, #24]
+     34e:	4798      	blx	r3
+     350:	6833      	ldr	r3, [r6, #0]
+     352:	4814      	ldr	r0, [pc, #80]	; (3a4 <tm4c1294xl_init+0x80>)
+     354:	699b      	ldr	r3, [r3, #24]
+     356:	4798      	blx	r3
+     358:	6823      	ldr	r3, [r4, #0]
+     35a:	2001      	movs	r0, #1
+     35c:	6e9b      	ldr	r3, [r3, #104]	; 0x68
+     35e:	4798      	blx	r3
+     360:	6823      	ldr	r3, [r4, #0]
+     362:	f240 4001 	movw	r0, #1025	; 0x401
+     366:	6e9b      	ldr	r3, [r3, #104]	; 0x68
+     368:	4798      	blx	r3
+     36a:	6823      	ldr	r3, [r4, #0]
+     36c:	2103      	movs	r1, #3
+     36e:	f04f 2040 	mov.w	r0, #1073758208	; 0x40004000
+     372:	6d5b      	ldr	r3, [r3, #84]	; 0x54
+     374:	4798      	blx	r3
+     376:	682a      	ldr	r2, [r5, #0]
+     378:	f44f 31e1 	mov.w	r1, #115200	; 0x1c200
+     37c:	e8bd 4070 	ldmia.w	sp!, {r4, r5, r6, lr}
+     380:	2000      	movs	r0, #0
+     382:	f000 b90b 	b.w	59c <UARTStdioConfig>
+     386:	bf00      	nop
+     388:	07270e00 	streq	r0, [r7, -r0, lsl #28]!
+     38c:	f1000680 			; <UNDEFINED> instruction: 0xf1000680
+     390:	2000281c 	andcs	r2, r0, ip, lsl r8
+     394:	01000020 	tsteq	r0, r0, lsr #32
+     398:	01000044 	tsteq	r0, r4, asr #32
+     39c:	40064000 	andmi	r4, r6, r0
+     3a0:	f0000800 			; <UNDEFINED> instruction: 0xf0000800
+     3a4:	f0001800 			; <UNDEFINED> instruction: 0xf0001800
+
+000003a8 <UARTputclear>:
+     3a8:	4801      	ldr	r0, [pc, #4]	; (3b0 <UARTputclear+0x8>)
+     3aa:	2106      	movs	r1, #6
+     3ac:	f000 b92c 	b.w	608 <UARTwrite>
+     3b0:	00001efc 	strdeq	r1, [r0], -ip
+
+000003b4 <PinoutSet>:
+     3b4:	b570      	push	{r4, r5, r6, lr}
+     3b6:	4c5d      	ldr	r4, [pc, #372]	; (52c <PinoutSet+0x178>)
+     3b8:	6823      	ldr	r3, [r4, #0]
+     3ba:	4605      	mov	r5, r0
+     3bc:	699b      	ldr	r3, [r3, #24]
+     3be:	485c      	ldr	r0, [pc, #368]	; (530 <PinoutSet+0x17c>)
+     3c0:	460e      	mov	r6, r1
+     3c2:	4798      	blx	r3
+     3c4:	6823      	ldr	r3, [r4, #0]
+     3c6:	485b      	ldr	r0, [pc, #364]	; (534 <PinoutSet+0x180>)
+     3c8:	699b      	ldr	r3, [r3, #24]
+     3ca:	4798      	blx	r3
+     3cc:	6823      	ldr	r3, [r4, #0]
+     3ce:	485a      	ldr	r0, [pc, #360]	; (538 <PinoutSet+0x184>)
+     3d0:	699b      	ldr	r3, [r3, #24]
+     3d2:	4798      	blx	r3
+     3d4:	6823      	ldr	r3, [r4, #0]
+     3d6:	4859      	ldr	r0, [pc, #356]	; (53c <PinoutSet+0x188>)
+     3d8:	699b      	ldr	r3, [r3, #24]
+     3da:	4798      	blx	r3
+     3dc:	6823      	ldr	r3, [r4, #0]
+     3de:	4858      	ldr	r0, [pc, #352]	; (540 <PinoutSet+0x18c>)
+     3e0:	699b      	ldr	r3, [r3, #24]
+     3e2:	4798      	blx	r3
+     3e4:	6823      	ldr	r3, [r4, #0]
+     3e6:	4857      	ldr	r0, [pc, #348]	; (544 <PinoutSet+0x190>)
+     3e8:	699b      	ldr	r3, [r3, #24]
+     3ea:	4798      	blx	r3
+     3ec:	6823      	ldr	r3, [r4, #0]
+     3ee:	4856      	ldr	r0, [pc, #344]	; (548 <PinoutSet+0x194>)
+     3f0:	699b      	ldr	r3, [r3, #24]
+     3f2:	4798      	blx	r3
+     3f4:	6823      	ldr	r3, [r4, #0]
+     3f6:	4855      	ldr	r0, [pc, #340]	; (54c <PinoutSet+0x198>)
+     3f8:	699b      	ldr	r3, [r3, #24]
+     3fa:	4798      	blx	r3
+     3fc:	6823      	ldr	r3, [r4, #0]
+     3fe:	4854      	ldr	r0, [pc, #336]	; (550 <PinoutSet+0x19c>)
+     400:	699b      	ldr	r3, [r3, #24]
+     402:	4798      	blx	r3
+     404:	6823      	ldr	r3, [r4, #0]
+     406:	4853      	ldr	r0, [pc, #332]	; (554 <PinoutSet+0x1a0>)
+     408:	699b      	ldr	r3, [r3, #24]
+     40a:	4798      	blx	r3
+     40c:	6823      	ldr	r3, [r4, #0]
+     40e:	4852      	ldr	r0, [pc, #328]	; (558 <PinoutSet+0x1a4>)
+     410:	699b      	ldr	r3, [r3, #24]
+     412:	4798      	blx	r3
+     414:	6823      	ldr	r3, [r4, #0]
+     416:	4851      	ldr	r0, [pc, #324]	; (55c <PinoutSet+0x1a8>)
+     418:	699b      	ldr	r3, [r3, #24]
+     41a:	4798      	blx	r3
+     41c:	6823      	ldr	r3, [r4, #0]
+     41e:	4850      	ldr	r0, [pc, #320]	; (560 <PinoutSet+0x1ac>)
+     420:	699b      	ldr	r3, [r3, #24]
+     422:	4798      	blx	r3
+     424:	6823      	ldr	r3, [r4, #0]
+     426:	484f      	ldr	r0, [pc, #316]	; (564 <PinoutSet+0x1b0>)
+     428:	699b      	ldr	r3, [r3, #24]
+     42a:	4798      	blx	r3
+     42c:	6823      	ldr	r3, [r4, #0]
+     42e:	484e      	ldr	r0, [pc, #312]	; (568 <PinoutSet+0x1b4>)
+     430:	699b      	ldr	r3, [r3, #24]
+     432:	3c24      	subs	r4, #36	; 0x24
+     434:	4798      	blx	r3
+     436:	6823      	ldr	r3, [r4, #0]
+     438:	2001      	movs	r0, #1
+     43a:	6e9b      	ldr	r3, [r3, #104]	; 0x68
+     43c:	4798      	blx	r3
+     43e:	6823      	ldr	r3, [r4, #0]
+     440:	f240 4001 	movw	r0, #1025	; 0x401
+     444:	6e9b      	ldr	r3, [r3, #104]	; 0x68
+     446:	4798      	blx	r3
+     448:	6823      	ldr	r3, [r4, #0]
+     44a:	2103      	movs	r1, #3
+     44c:	6d5b      	ldr	r3, [r3, #84]	; 0x54
+     44e:	f04f 2040 	mov.w	r0, #1073758208	; 0x40004000
+     452:	4798      	blx	r3
+     454:	2e00      	cmp	r6, #0
+     456:	d04b      	beq.n	4f0 <PinoutSet+0x13c>
+     458:	4b44      	ldr	r3, [pc, #272]	; (56c <PinoutSet+0x1b8>)
+     45a:	4a45      	ldr	r2, [pc, #276]	; (570 <PinoutSet+0x1bc>)
+     45c:	601a      	str	r2, [r3, #0]
+     45e:	22ff      	movs	r2, #255	; 0xff
+     460:	605a      	str	r2, [r3, #4]
+     462:	6823      	ldr	r3, [r4, #0]
+     464:	4843      	ldr	r0, [pc, #268]	; (574 <PinoutSet+0x1c0>)
+     466:	6e9b      	ldr	r3, [r3, #104]	; 0x68
+     468:	4798      	blx	r3
+     46a:	6823      	ldr	r3, [r4, #0]
+     46c:	4842      	ldr	r0, [pc, #264]	; (578 <PinoutSet+0x1c4>)
+     46e:	6f1b      	ldr	r3, [r3, #112]	; 0x70
+     470:	2103      	movs	r1, #3
+     472:	4798      	blx	r3
+     474:	6823      	ldr	r3, [r4, #0]
+     476:	4841      	ldr	r0, [pc, #260]	; (57c <PinoutSet+0x1c8>)
+     478:	6e1b      	ldr	r3, [r3, #96]	; 0x60
+     47a:	2140      	movs	r1, #64	; 0x40
+     47c:	4798      	blx	r3
+     47e:	6823      	ldr	r3, [r4, #0]
+     480:	483f      	ldr	r0, [pc, #252]	; (580 <PinoutSet+0x1cc>)
+     482:	6f1b      	ldr	r3, [r3, #112]	; 0x70
+     484:	21c0      	movs	r1, #192	; 0xc0
+     486:	4798      	blx	r3
+     488:	6823      	ldr	r3, [r4, #0]
+     48a:	483e      	ldr	r0, [pc, #248]	; (584 <PinoutSet+0x1d0>)
+     48c:	6b9b      	ldr	r3, [r3, #56]	; 0x38
+     48e:	2110      	movs	r1, #16
+     490:	4798      	blx	r3
+     492:	4c3d      	ldr	r4, [pc, #244]	; (588 <PinoutSet+0x1d4>)
+     494:	6823      	ldr	r3, [r4, #0]
+     496:	2d00      	cmp	r5, #0
+     498:	d036      	beq.n	508 <PinoutSet+0x154>
+     49a:	6e9b      	ldr	r3, [r3, #104]	; 0x68
+     49c:	f04f 1005 	mov.w	r0, #327685	; 0x50005
+     4a0:	4798      	blx	r3
+     4a2:	6823      	ldr	r3, [r4, #0]
+     4a4:	4839      	ldr	r0, [pc, #228]	; (58c <PinoutSet+0x1d8>)
+     4a6:	6e9b      	ldr	r3, [r3, #104]	; 0x68
+     4a8:	4798      	blx	r3
+     4aa:	4839      	ldr	r0, [pc, #228]	; (590 <PinoutSet+0x1dc>)
+     4ac:	2111      	movs	r1, #17
+     4ae:	f001 fb8f 	bl	1bd0 <GPIOPinTypeEthernetLED>
+     4b2:	4c35      	ldr	r4, [pc, #212]	; (588 <PinoutSet+0x1d4>)
+     4b4:	4837      	ldr	r0, [pc, #220]	; (594 <PinoutSet+0x1e0>)
+     4b6:	6823      	ldr	r3, [r4, #0]
+     4b8:	2103      	movs	r1, #3
+     4ba:	6b9b      	ldr	r3, [r3, #56]	; 0x38
+     4bc:	4798      	blx	r3
+     4be:	6823      	ldr	r3, [r4, #0]
+     4c0:	4834      	ldr	r0, [pc, #208]	; (594 <PinoutSet+0x1e0>)
+     4c2:	681b      	ldr	r3, [r3, #0]
+     4c4:	2200      	movs	r2, #0
+     4c6:	2103      	movs	r1, #3
+     4c8:	4798      	blx	r3
+     4ca:	6823      	ldr	r3, [r4, #0]
+     4cc:	4832      	ldr	r0, [pc, #200]	; (598 <PinoutSet+0x1e4>)
+     4ce:	6bdb      	ldr	r3, [r3, #60]	; 0x3c
+     4d0:	2103      	movs	r1, #3
+     4d2:	4798      	blx	r3
+     4d4:	4830      	ldr	r0, [pc, #192]	; (598 <PinoutSet+0x1e4>)
+     4d6:	2308      	movs	r3, #8
+     4d8:	2277      	movs	r2, #119	; 0x77
+     4da:	2103      	movs	r1, #3
+     4dc:	f001 fac8 	bl	1a70 <GPIOPadConfigSet>
+     4e0:	6823      	ldr	r3, [r4, #0]
+     4e2:	482d      	ldr	r0, [pc, #180]	; (598 <PinoutSet+0x1e4>)
+     4e4:	681b      	ldr	r3, [r3, #0]
+     4e6:	e8bd 4070 	ldmia.w	sp!, {r4, r5, r6, lr}
+     4ea:	2200      	movs	r2, #0
+     4ec:	2103      	movs	r1, #3
+     4ee:	4718      	bx	r3
+     4f0:	6823      	ldr	r3, [r4, #0]
+     4f2:	4822      	ldr	r0, [pc, #136]	; (57c <PinoutSet+0x1c8>)
+     4f4:	6b9b      	ldr	r3, [r3, #56]	; 0x38
+     4f6:	2140      	movs	r1, #64	; 0x40
+     4f8:	4798      	blx	r3
+     4fa:	4820      	ldr	r0, [pc, #128]	; (57c <PinoutSet+0x1c8>)
+     4fc:	230c      	movs	r3, #12
+     4fe:	2201      	movs	r2, #1
+     500:	2140      	movs	r1, #64	; 0x40
+     502:	f001 fab5 	bl	1a70 <GPIOPadConfigSet>
+     506:	e7c4      	b.n	492 <PinoutSet+0xde>
+     508:	6bdb      	ldr	r3, [r3, #60]	; 0x3c
+     50a:	4821      	ldr	r0, [pc, #132]	; (590 <PinoutSet+0x1dc>)
+     50c:	2111      	movs	r1, #17
+     50e:	4798      	blx	r3
+     510:	6823      	ldr	r3, [r4, #0]
+     512:	481f      	ldr	r0, [pc, #124]	; (590 <PinoutSet+0x1dc>)
+     514:	681b      	ldr	r3, [r3, #0]
+     516:	462a      	mov	r2, r5
+     518:	2111      	movs	r1, #17
+     51a:	4798      	blx	r3
+     51c:	481c      	ldr	r0, [pc, #112]	; (590 <PinoutSet+0x1dc>)
+     51e:	2308      	movs	r3, #8
+     520:	2277      	movs	r2, #119	; 0x77
+     522:	2111      	movs	r1, #17
+     524:	f001 faa4 	bl	1a70 <GPIOPadConfigSet>
+     528:	e7c3      	b.n	4b2 <PinoutSet+0xfe>
+     52a:	bf00      	nop
+     52c:	01000044 	tsteq	r0, r4, asr #32
+     530:	f0000800 			; <UNDEFINED> instruction: 0xf0000800
+     534:	f0000801 			; <UNDEFINED> instruction: 0xf0000801
+     538:	f0000802 			; <UNDEFINED> instruction: 0xf0000802
+     53c:	f0000803 			; <UNDEFINED> instruction: 0xf0000803
+     540:	f0000804 			; <UNDEFINED> instruction: 0xf0000804
+     544:	f0000805 			; <UNDEFINED> instruction: 0xf0000805
+     548:	f0000806 			; <UNDEFINED> instruction: 0xf0000806
+     54c:	f0000807 			; <UNDEFINED> instruction: 0xf0000807
+     550:	f0000808 			; <UNDEFINED> instruction: 0xf0000808
+     554:	f0000809 			; <UNDEFINED> instruction: 0xf0000809
+     558:	f000080a 			; <UNDEFINED> instruction: 0xf000080a
+     55c:	f000080b 			; <UNDEFINED> instruction: 0xf000080b
+     560:	f000080c 			; <UNDEFINED> instruction: 0xf000080c
+     564:	f000080d 			; <UNDEFINED> instruction: 0xf000080d
+     568:	f000080e 			; <UNDEFINED> instruction: 0xf000080e
+     56c:	40007520 	andmi	r7, r0, r0, lsr #10
+     570:	4c4f434b 	mcrrmi	3, 4, r4, pc, cr11
+     574:	00031805 	andeq	r1, r3, r5, lsl #16
+     578:	40005000 	andmi	r5, r0, r0
+     57c:	40007000 	andmi	r7, r0, r0
+     580:	40062000 	andmi	r2, r6, r0
+     584:	40066000 	andmi	r6, r6, r0
+     588:	01000020 	tsteq	r0, r0, lsr #32
+     58c:	00051005 	andeq	r1, r5, r5
+     590:	40025000 	andmi	r5, r2, r0
+     594:	4003d000 	andmi	sp, r3, r0
+     598:	40064000 	andmi	r4, r6, r0
+
+0000059c <UARTStdioConfig>:
+     59c:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+     5a0:	4b14      	ldr	r3, [pc, #80]	; (5f4 <UARTStdioConfig+0x58>)
+     5a2:	f8df 9060 	ldr.w	r9, [pc, #96]	; 604 <UARTStdioConfig+0x68>
+     5a6:	f853 8020 	ldr.w	r8, [r3, r0, lsl #2]
+     5aa:	f8d9 3000 	ldr.w	r3, [r9]
+     5ae:	4604      	mov	r4, r0
+     5b0:	691b      	ldr	r3, [r3, #16]
+     5b2:	4640      	mov	r0, r8
+     5b4:	460f      	mov	r7, r1
+     5b6:	4616      	mov	r6, r2
+     5b8:	4798      	blx	r3
+     5ba:	b1c0      	cbz	r0, 5ee <UARTStdioConfig+0x52>
+     5bc:	4b0e      	ldr	r3, [pc, #56]	; (5f8 <UARTStdioConfig+0x5c>)
+     5be:	4d0f      	ldr	r5, [pc, #60]	; (5fc <UARTStdioConfig+0x60>)
+     5c0:	f853 3024 	ldr.w	r3, [r3, r4, lsl #2]
+     5c4:	602b      	str	r3, [r5, #0]
+     5c6:	f8d9 3000 	ldr.w	r3, [r9]
+     5ca:	4c0d      	ldr	r4, [pc, #52]	; (600 <UARTStdioConfig+0x64>)
+     5cc:	699b      	ldr	r3, [r3, #24]
+     5ce:	4640      	mov	r0, r8
+     5d0:	4798      	blx	r3
+     5d2:	6823      	ldr	r3, [r4, #0]
+     5d4:	6828      	ldr	r0, [r5, #0]
+     5d6:	f8d3 8014 	ldr.w	r8, [r3, #20]
+     5da:	463a      	mov	r2, r7
+     5dc:	2360      	movs	r3, #96	; 0x60
+     5de:	4631      	mov	r1, r6
+     5e0:	47c0      	blx	r8
+     5e2:	6823      	ldr	r3, [r4, #0]
+     5e4:	6828      	ldr	r0, [r5, #0]
+     5e6:	69db      	ldr	r3, [r3, #28]
+     5e8:	e8bd 47f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
+     5ec:	4718      	bx	r3
+     5ee:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
+     5f2:	bf00      	nop
+     5f4:	00001f28 	andeq	r1, r0, r8, lsr #30
+     5f8:	00001f1c 	andeq	r1, r0, ip, lsl pc
+     5fc:	20001010 	andcs	r1, r0, r0, lsl r0
+     600:	01000014 	tsteq	r0, r4, lsl r0
+     604:	01000044 	tsteq	r0, r4, asr #32
+
+00000608 <UARTwrite>:
+     608:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+     60c:	4f10      	ldr	r7, [pc, #64]	; (650 <UARTwrite+0x48>)
+     60e:	f8df 8044 	ldr.w	r8, [pc, #68]	; 654 <UARTwrite+0x4c>
+     612:	4605      	mov	r5, r0
+     614:	1846      	adds	r6, r0, r1
+     616:	4604      	mov	r4, r0
+     618:	42b4      	cmp	r4, r6
+     61a:	eba4 0005 	sub.w	r0, r4, r5
+     61e:	d014      	beq.n	64a <UARTwrite+0x42>
+     620:	7823      	ldrb	r3, [r4, #0]
+     622:	2b0a      	cmp	r3, #10
+     624:	46a1      	mov	r9, r4
+     626:	d10e      	bne.n	646 <UARTwrite+0x3e>
+     628:	f8d8 3000 	ldr.w	r3, [r8]
+     62c:	6838      	ldr	r0, [r7, #0]
+     62e:	681b      	ldr	r3, [r3, #0]
+     630:	210d      	movs	r1, #13
+     632:	4798      	blx	r3
+     634:	f8d8 3000 	ldr.w	r3, [r8]
+     638:	f899 1000 	ldrb.w	r1, [r9]
+     63c:	681b      	ldr	r3, [r3, #0]
+     63e:	6838      	ldr	r0, [r7, #0]
+     640:	3401      	adds	r4, #1
+     642:	4798      	blx	r3
+     644:	e7e8      	b.n	618 <UARTwrite+0x10>
+     646:	2b00      	cmp	r3, #0
+     648:	d1f4      	bne.n	634 <UARTwrite+0x2c>
+     64a:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+     64e:	bf00      	nop
+     650:	20001010 	andcs	r1, r0, r0, lsl r0
+     654:	01000014 	tsteq	r0, r4, lsl r0
+
+00000658 <UARTvprintf>:
+     658:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+     65c:	4e71      	ldr	r6, [pc, #452]	; (824 <UARTvprintf+0x1cc>)
+     65e:	4f72      	ldr	r7, [pc, #456]	; (828 <UARTvprintf+0x1d0>)
+     660:	b087      	sub	sp, #28
+     662:	4605      	mov	r5, r0
+     664:	460c      	mov	r4, r1
+     666:	782b      	ldrb	r3, [r5, #0]
+     668:	2b00      	cmp	r3, #0
+     66a:	f000 80d7 	beq.w	81c <UARTvprintf+0x1c4>
+     66e:	462b      	mov	r3, r5
+     670:	e000      	b.n	674 <UARTvprintf+0x1c>
+     672:	b12a      	cbz	r2, 680 <UARTvprintf+0x28>
+     674:	1b59      	subs	r1, r3, r5
+     676:	4698      	mov	r8, r3
+     678:	f813 2b01 	ldrb.w	r2, [r3], #1
+     67c:	2a25      	cmp	r2, #37	; 0x25
+     67e:	d1f8      	bne.n	672 <UARTvprintf+0x1a>
+     680:	4628      	mov	r0, r5
+     682:	f7ff ffc1 	bl	608 <UARTwrite>
+     686:	f898 3000 	ldrb.w	r3, [r8]
+     68a:	2b25      	cmp	r3, #37	; 0x25
+     68c:	d001      	beq.n	692 <UARTvprintf+0x3a>
+     68e:	4645      	mov	r5, r8
+     690:	e7e9      	b.n	666 <UARTvprintf+0xe>
+     692:	f108 0001 	add.w	r0, r8, #1
+     696:	f04f 0c20 	mov.w	ip, #32
+     69a:	f04f 0800 	mov.w	r8, #0
+     69e:	220a      	movs	r2, #10
+     6a0:	4605      	mov	r5, r0
+     6a2:	f815 3b01 	ldrb.w	r3, [r5], #1
+     6a6:	2b64      	cmp	r3, #100	; 0x64
+     6a8:	d041      	beq.n	72e <UARTvprintf+0xd6>
+     6aa:	d815      	bhi.n	6d8 <UARTvprintf+0x80>
+     6ac:	2b39      	cmp	r3, #57	; 0x39
+     6ae:	d807      	bhi.n	6c0 <UARTvprintf+0x68>
+     6b0:	2b2f      	cmp	r3, #47	; 0x2f
+     6b2:	d82f      	bhi.n	714 <UARTvprintf+0xbc>
+     6b4:	2b25      	cmp	r3, #37	; 0x25
+     6b6:	f000 80af 	beq.w	818 <UARTvprintf+0x1c0>
+     6ba:	2105      	movs	r1, #5
+     6bc:	4638      	mov	r0, r7
+     6be:	e008      	b.n	6d2 <UARTvprintf+0x7a>
+     6c0:	2b58      	cmp	r3, #88	; 0x58
+     6c2:	d06a      	beq.n	79a <UARTvprintf+0x142>
+     6c4:	2b63      	cmp	r3, #99	; 0x63
+     6c6:	d1f8      	bne.n	6ba <UARTvprintf+0x62>
+     6c8:	f854 3b04 	ldr.w	r3, [r4], #4
+     6cc:	9301      	str	r3, [sp, #4]
+     6ce:	2101      	movs	r1, #1
+     6d0:	a801      	add	r0, sp, #4
+     6d2:	f7ff ff99 	bl	608 <UARTwrite>
+     6d6:	e7c6      	b.n	666 <UARTvprintf+0xe>
+     6d8:	2b69      	cmp	r3, #105	; 0x69
+     6da:	d028      	beq.n	72e <UARTvprintf+0xd6>
+     6dc:	3b70      	subs	r3, #112	; 0x70
+     6de:	b2da      	uxtb	r2, r3
+     6e0:	2a08      	cmp	r2, #8
+     6e2:	d8ea      	bhi.n	6ba <UARTvprintf+0x62>
+     6e4:	2b08      	cmp	r3, #8
+     6e6:	d8e8      	bhi.n	6ba <UARTvprintf+0x62>
+     6e8:	a201      	add	r2, pc, #4	; (adr r2, 6f0 <UARTvprintf+0x98>)
+     6ea:	f852 f023 	ldr.w	pc, [r2, r3, lsl #2]
+     6ee:	bf00      	nop
+     6f0:	0000079b 	muleq	r0, fp, r7
+     6f4:	000006bb 			; <UNDEFINED> instruction: 0x000006bb
+     6f8:	000006bb 			; <UNDEFINED> instruction: 0x000006bb
+     6fc:	0000075b 	andeq	r0, r0, fp, asr r7
+     700:	000006bb 			; <UNDEFINED> instruction: 0x000006bb
+     704:	00000795 	muleq	r0, r5, r7
+     708:	000006bb 			; <UNDEFINED> instruction: 0x000006bb
+     70c:	000006bb 			; <UNDEFINED> instruction: 0x000006bb
+     710:	0000079b 	muleq	r0, fp, r7
+     714:	2b30      	cmp	r3, #48	; 0x30
+     716:	d104      	bne.n	722 <UARTvprintf+0xca>
+     718:	f1b8 0f00 	cmp.w	r8, #0
+     71c:	bf08      	it	eq
+     71e:	f04f 0c30 	moveq.w	ip, #48	; 0x30
+     722:	fb02 3308 	mla	r3, r2, r8, r3
+     726:	f1a3 0830 	sub.w	r8, r3, #48	; 0x30
+     72a:	4628      	mov	r0, r5
+     72c:	e7b8      	b.n	6a0 <UARTvprintf+0x48>
+     72e:	f854 3b04 	ldr.w	r3, [r4], #4
+     732:	2b00      	cmp	r3, #0
+     734:	db02      	blt.n	73c <UARTvprintf+0xe4>
+     736:	9301      	str	r3, [sp, #4]
+     738:	2200      	movs	r2, #0
+     73a:	e002      	b.n	742 <UARTvprintf+0xea>
+     73c:	425b      	negs	r3, r3
+     73e:	9301      	str	r3, [sp, #4]
+     740:	2201      	movs	r2, #1
+     742:	230a      	movs	r3, #10
+     744:	f8dd 9004 	ldr.w	r9, [sp, #4]
+     748:	f04f 0e01 	mov.w	lr, #1
+     74c:	fb03 f10e 	mul.w	r1, r3, lr
+     750:	4549      	cmp	r1, r9
+     752:	d928      	bls.n	7a6 <UARTvprintf+0x14e>
+     754:	bb7a      	cbnz	r2, 7b6 <UARTvprintf+0x15e>
+     756:	2100      	movs	r1, #0
+     758:	e037      	b.n	7ca <UARTvprintf+0x172>
+     75a:	f854 0b04 	ldr.w	r0, [r4], #4
+     75e:	f04f 0900 	mov.w	r9, #0
+     762:	f810 3009 	ldrb.w	r3, [r0, r9]
+     766:	b993      	cbnz	r3, 78e <UARTvprintf+0x136>
+     768:	4649      	mov	r1, r9
+     76a:	f7ff ff4d 	bl	608 <UARTwrite>
+     76e:	45c1      	cmp	r9, r8
+     770:	f4bf af79 	bcs.w	666 <UARTvprintf+0xe>
+     774:	eba8 0809 	sub.w	r8, r8, r9
+     778:	f8df 90b0 	ldr.w	r9, [pc, #176]	; 82c <UARTvprintf+0x1d4>
+     77c:	f1b8 0801 	subs.w	r8, r8, #1
+     780:	f4ff af71 	bcc.w	666 <UARTvprintf+0xe>
+     784:	2101      	movs	r1, #1
+     786:	4648      	mov	r0, r9
+     788:	f7ff ff3e 	bl	608 <UARTwrite>
+     78c:	e7f6      	b.n	77c <UARTvprintf+0x124>
+     78e:	f109 0901 	add.w	r9, r9, #1
+     792:	e7e6      	b.n	762 <UARTvprintf+0x10a>
+     794:	f854 3b04 	ldr.w	r3, [r4], #4
+     798:	e7cd      	b.n	736 <UARTvprintf+0xde>
+     79a:	f854 3b04 	ldr.w	r3, [r4], #4
+     79e:	9301      	str	r3, [sp, #4]
+     7a0:	2200      	movs	r2, #0
+     7a2:	2310      	movs	r3, #16
+     7a4:	e7ce      	b.n	744 <UARTvprintf+0xec>
+     7a6:	fbb1 f0f3 	udiv	r0, r1, r3
+     7aa:	4570      	cmp	r0, lr
+     7ac:	d1d2      	bne.n	754 <UARTvprintf+0xfc>
+     7ae:	f108 38ff 	add.w	r8, r8, #4294967295	; 0xffffffff
+     7b2:	468e      	mov	lr, r1
+     7b4:	e7ca      	b.n	74c <UARTvprintf+0xf4>
+     7b6:	f1bc 0f30 	cmp.w	ip, #48	; 0x30
+     7ba:	f108 38ff 	add.w	r8, r8, #4294967295	; 0xffffffff
+     7be:	d1ca      	bne.n	756 <UARTvprintf+0xfe>
+     7c0:	212d      	movs	r1, #45	; 0x2d
+     7c2:	f88d 1008 	strb.w	r1, [sp, #8]
+     7c6:	4611      	mov	r1, r2
+     7c8:	2200      	movs	r2, #0
+     7ca:	f1a8 0002 	sub.w	r0, r8, #2
+     7ce:	280d      	cmp	r0, #13
+     7d0:	a802      	add	r0, sp, #8
+     7d2:	d80a      	bhi.n	7ea <UARTvprintf+0x192>
+     7d4:	f108 3aff 	add.w	sl, r8, #4294967295	; 0xffffffff
+     7d8:	eb00 0b01 	add.w	fp, r0, r1
+     7dc:	f1ba 0a01 	subs.w	sl, sl, #1
+     7e0:	f80b cb01 	strb.w	ip, [fp], #1
+     7e4:	d1fa      	bne.n	7dc <UARTvprintf+0x184>
+     7e6:	4441      	add	r1, r8
+     7e8:	3901      	subs	r1, #1
+     7ea:	b132      	cbz	r2, 7fa <UARTvprintf+0x1a2>
+     7ec:	aa06      	add	r2, sp, #24
+     7ee:	440a      	add	r2, r1
+     7f0:	f04f 0c2d 	mov.w	ip, #45	; 0x2d
+     7f4:	f802 cc10 	strb.w	ip, [r2, #-16]
+     7f8:	3101      	adds	r1, #1
+     7fa:	f1be 0f00 	cmp.w	lr, #0
+     7fe:	f43f af68 	beq.w	6d2 <UARTvprintf+0x7a>
+     802:	fbb9 fcfe 	udiv	ip, r9, lr
+     806:	fbbc f2f3 	udiv	r2, ip, r3
+     80a:	fb03 c212 	mls	r2, r3, r2, ip
+     80e:	fbbe fef3 	udiv	lr, lr, r3
+     812:	5d92      	ldrb	r2, [r2, r6]
+     814:	5442      	strb	r2, [r0, r1]
+     816:	e7ef      	b.n	7f8 <UARTvprintf+0x1a0>
+     818:	2101      	movs	r1, #1
+     81a:	e75a      	b.n	6d2 <UARTvprintf+0x7a>
+     81c:	b007      	add	sp, #28
+     81e:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+     822:	bf00      	nop
+     824:	00001f05 	andeq	r1, r0, r5, lsl #30
+     828:	00001f16 	andeq	r1, r0, r6, lsl pc
+     82c:	00001f03 	andeq	r1, r0, r3, lsl #30
+
+00000830 <UARTprintf>:
+     830:	b40f      	push	{r0, r1, r2, r3}
+     832:	b507      	push	{r0, r1, r2, lr}
+     834:	a904      	add	r1, sp, #16
+     836:	f851 0b04 	ldr.w	r0, [r1], #4
+     83a:	9101      	str	r1, [sp, #4]
+     83c:	f7ff ff0c 	bl	658 <UARTvprintf>
+     840:	b003      	add	sp, #12
+     842:	f85d eb04 	ldr.w	lr, [sp], #4
+     846:	b004      	add	sp, #16
+     848:	4770      	bx	lr
+	...
+
+0000084c <OS_SchedNew>:
+     84c:	4a05      	ldr	r2, [pc, #20]	; (864 <OS_SchedNew+0x18>)
+     84e:	4b06      	ldr	r3, [pc, #24]	; (868 <OS_SchedNew+0x1c>)
+     850:	7812      	ldrb	r2, [r2, #0]
+     852:	4906      	ldr	r1, [pc, #24]	; (86c <OS_SchedNew+0x20>)
+     854:	5c9a      	ldrb	r2, [r3, r2]
+     856:	5c89      	ldrb	r1, [r1, r2]
+     858:	5c5b      	ldrb	r3, [r3, r1]
+     85a:	eb03 03c2 	add.w	r3, r3, r2, lsl #3
+     85e:	4a04      	ldr	r2, [pc, #16]	; (870 <OS_SchedNew+0x24>)
+     860:	7013      	strb	r3, [r2, #0]
+     862:	4770      	bx	lr
+     864:	20002fcc 	andcs	r2, r0, ip, asr #31
+     868:	00001f52 	andeq	r1, r0, r2, asr pc
+     86c:	20002fcd 	andcs	r2, r0, sp, asr #31
+     870:	20002876 	andcs	r2, r0, r6, ror r8
+
+00000874 <OS_TaskIdle>:
+     874:	b510      	push	{r4, lr}
+     876:	4c05      	ldr	r4, [pc, #20]	; (88c <OS_TaskIdle+0x18>)
+     878:	f001 f886 	bl	1988 <OS_CPU_SR_Save>
+     87c:	6823      	ldr	r3, [r4, #0]
+     87e:	3301      	adds	r3, #1
+     880:	6023      	str	r3, [r4, #0]
+     882:	f001 f885 	bl	1990 <OS_CPU_SR_Restore>
+     886:	f001 f800 	bl	188a <OSTaskIdleHook>
+     88a:	e7f5      	b.n	878 <OS_TaskIdle+0x4>
+     88c:	20002870 	andcs	r2, r0, r0, ror r8
+
+00000890 <OSEventNameSet>:
+     890:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+     892:	4b0b      	ldr	r3, [pc, #44]	; (8c0 <OSEventNameSet+0x30>)
+     894:	781f      	ldrb	r7, [r3, #0]
+     896:	4605      	mov	r5, r0
+     898:	460e      	mov	r6, r1
+     89a:	4614      	mov	r4, r2
+     89c:	b117      	cbz	r7, 8a4 <OSEventNameSet+0x14>
+     89e:	2312      	movs	r3, #18
+     8a0:	7023      	strb	r3, [r4, #0]
+     8a2:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+     8a4:	7803      	ldrb	r3, [r0, #0]
+     8a6:	3b01      	subs	r3, #1
+     8a8:	2b03      	cmp	r3, #3
+     8aa:	d901      	bls.n	8b0 <OSEventNameSet+0x20>
+     8ac:	2301      	movs	r3, #1
+     8ae:	e7f7      	b.n	8a0 <OSEventNameSet+0x10>
+     8b0:	f001 f86a 	bl	1988 <OS_CPU_SR_Save>
+     8b4:	616e      	str	r6, [r5, #20]
+     8b6:	f001 f86b 	bl	1990 <OS_CPU_SR_Restore>
+     8ba:	7027      	strb	r7, [r4, #0]
+     8bc:	e7f1      	b.n	8a2 <OSEventNameSet+0x12>
+     8be:	bf00      	nop
+     8c0:	200031dc 	ldrdcs	r3, [r0], -ip
+
+000008c4 <OSIntExit>:
+     8c4:	b510      	push	{r4, lr}
+     8c6:	4b17      	ldr	r3, [pc, #92]	; (924 <OSIntExit+0x60>)
+     8c8:	781b      	ldrb	r3, [r3, #0]
+     8ca:	2b01      	cmp	r3, #1
+     8cc:	d129      	bne.n	922 <OSIntExit+0x5e>
+     8ce:	f001 f85b 	bl	1988 <OS_CPU_SR_Save>
+     8d2:	4a15      	ldr	r2, [pc, #84]	; (928 <OSIntExit+0x64>)
+     8d4:	7813      	ldrb	r3, [r2, #0]
+     8d6:	4604      	mov	r4, r0
+     8d8:	b9cb      	cbnz	r3, 90e <OSIntExit+0x4a>
+     8da:	4b14      	ldr	r3, [pc, #80]	; (92c <OSIntExit+0x68>)
+     8dc:	781b      	ldrb	r3, [r3, #0]
+     8de:	b9db      	cbnz	r3, 918 <OSIntExit+0x54>
+     8e0:	f7ff ffb4 	bl	84c <OS_SchedNew>
+     8e4:	4b12      	ldr	r3, [pc, #72]	; (930 <OSIntExit+0x6c>)
+     8e6:	4913      	ldr	r1, [pc, #76]	; (934 <OSIntExit+0x70>)
+     8e8:	781a      	ldrb	r2, [r3, #0]
+     8ea:	4b13      	ldr	r3, [pc, #76]	; (938 <OSIntExit+0x74>)
+     8ec:	f853 3022 	ldr.w	r3, [r3, r2, lsl #2]
+     8f0:	600b      	str	r3, [r1, #0]
+     8f2:	4912      	ldr	r1, [pc, #72]	; (93c <OSIntExit+0x78>)
+     8f4:	7809      	ldrb	r1, [r1, #0]
+     8f6:	4291      	cmp	r1, r2
+     8f8:	d00e      	beq.n	918 <OSIntExit+0x54>
+     8fa:	6b9a      	ldr	r2, [r3, #56]	; 0x38
+     8fc:	3201      	adds	r2, #1
+     8fe:	639a      	str	r2, [r3, #56]	; 0x38
+     900:	4a0f      	ldr	r2, [pc, #60]	; (940 <OSIntExit+0x7c>)
+     902:	6813      	ldr	r3, [r2, #0]
+     904:	3301      	adds	r3, #1
+     906:	6013      	str	r3, [r2, #0]
+     908:	f001 f86a 	bl	19e0 <OSIntCtxSw>
+     90c:	e004      	b.n	918 <OSIntExit+0x54>
+     90e:	3b01      	subs	r3, #1
+     910:	b2db      	uxtb	r3, r3
+     912:	7013      	strb	r3, [r2, #0]
+     914:	2b00      	cmp	r3, #0
+     916:	d0e0      	beq.n	8da <OSIntExit+0x16>
+     918:	4620      	mov	r0, r4
+     91a:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
+     91e:	f001 b837 	b.w	1990 <OS_CPU_SR_Restore>
+     922:	bd10      	pop	{r4, pc}
+     924:	2000286d 	andcs	r2, r0, sp, ror #16
+     928:	200031dc 	ldrdcs	r3, [r0], -ip
+     92c:	20002864 	andcs	r2, r0, r4, ror #16
+     930:	20002876 	andcs	r2, r0, r6, ror r8
+     934:	20002fc4 	andcs	r2, r0, r4, asr #31
+     938:	20003c20 	andcs	r3, r0, r0, lsr #24
+     93c:	20002b48 	andcs	r2, r0, r8, asr #22
+     940:	20002dcc 	andcs	r2, r0, ip, asr #27
+
+00000944 <OSSchedLock>:
+     944:	b508      	push	{r3, lr}
+     946:	4b0a      	ldr	r3, [pc, #40]	; (970 <OSSchedLock+0x2c>)
+     948:	781b      	ldrb	r3, [r3, #0]
+     94a:	2b01      	cmp	r3, #1
+     94c:	d10e      	bne.n	96c <OSSchedLock+0x28>
+     94e:	f001 f81b 	bl	1988 <OS_CPU_SR_Save>
+     952:	4b08      	ldr	r3, [pc, #32]	; (974 <OSSchedLock+0x30>)
+     954:	781b      	ldrb	r3, [r3, #0]
+     956:	b92b      	cbnz	r3, 964 <OSSchedLock+0x20>
+     958:	4a07      	ldr	r2, [pc, #28]	; (978 <OSSchedLock+0x34>)
+     95a:	7813      	ldrb	r3, [r2, #0]
+     95c:	2bff      	cmp	r3, #255	; 0xff
+     95e:	bf1c      	itt	ne
+     960:	3301      	addne	r3, #1
+     962:	7013      	strbne	r3, [r2, #0]
+     964:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+     968:	f001 b812 	b.w	1990 <OS_CPU_SR_Restore>
+     96c:	bd08      	pop	{r3, pc}
+     96e:	bf00      	nop
+     970:	2000286d 	andcs	r2, r0, sp, ror #16
+     974:	200031dc 	ldrdcs	r3, [r0], -ip
+     978:	20002864 	andcs	r2, r0, r4, ror #16
+
+0000097c <OSStart>:
+     97c:	b508      	push	{r3, lr}
+     97e:	4b0a      	ldr	r3, [pc, #40]	; (9a8 <OSStart+0x2c>)
+     980:	781b      	ldrb	r3, [r3, #0]
+     982:	b983      	cbnz	r3, 9a6 <OSStart+0x2a>
+     984:	f7ff ff62 	bl	84c <OS_SchedNew>
+     988:	4b08      	ldr	r3, [pc, #32]	; (9ac <OSStart+0x30>)
+     98a:	4a09      	ldr	r2, [pc, #36]	; (9b0 <OSStart+0x34>)
+     98c:	781b      	ldrb	r3, [r3, #0]
+     98e:	7013      	strb	r3, [r2, #0]
+     990:	4a08      	ldr	r2, [pc, #32]	; (9b4 <OSStart+0x38>)
+     992:	f852 3023 	ldr.w	r3, [r2, r3, lsl #2]
+     996:	4a08      	ldr	r2, [pc, #32]	; (9b8 <OSStart+0x3c>)
+     998:	6013      	str	r3, [r2, #0]
+     99a:	4a08      	ldr	r2, [pc, #32]	; (9bc <OSStart+0x40>)
+     99c:	6013      	str	r3, [r2, #0]
+     99e:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+     9a2:	f000 bff9 	b.w	1998 <OSStartHighRdy>
+     9a6:	bd08      	pop	{r3, pc}
+     9a8:	2000286d 	andcs	r2, r0, sp, ror #16
+     9ac:	20002876 	andcs	r2, r0, r6, ror r8
+     9b0:	20002b48 	andcs	r2, r0, r8, asr #22
+     9b4:	20003c20 	andcs	r3, r0, r0, lsr #24
+     9b8:	20002fc4 	andcs	r2, r0, r4, asr #31
+     9bc:	200031e0 	andcs	r3, r0, r0, ror #3
+
+000009c0 <OSStatInit>:
+     9c0:	b510      	push	{r4, lr}
+     9c2:	2002      	movs	r0, #2
+     9c4:	4c0b      	ldr	r4, [pc, #44]	; (9f4 <OSStatInit+0x34>)
+     9c6:	f000 fe05 	bl	15d4 <OSTimeDly>
+     9ca:	f000 ffdd 	bl	1988 <OS_CPU_SR_Save>
+     9ce:	2300      	movs	r3, #0
+     9d0:	6023      	str	r3, [r4, #0]
+     9d2:	f000 ffdd 	bl	1990 <OS_CPU_SR_Restore>
+     9d6:	200a      	movs	r0, #10
+     9d8:	f000 fdfc 	bl	15d4 <OSTimeDly>
+     9dc:	f000 ffd4 	bl	1988 <OS_CPU_SR_Save>
+     9e0:	4b05      	ldr	r3, [pc, #20]	; (9f8 <OSStatInit+0x38>)
+     9e2:	6822      	ldr	r2, [r4, #0]
+     9e4:	601a      	str	r2, [r3, #0]
+     9e6:	4b05      	ldr	r3, [pc, #20]	; (9fc <OSStatInit+0x3c>)
+     9e8:	2201      	movs	r2, #1
+     9ea:	701a      	strb	r2, [r3, #0]
+     9ec:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
+     9f0:	f000 bfce 	b.w	1990 <OS_CPU_SR_Restore>
+     9f4:	20002870 	andcs	r2, r0, r0, ror r8
+     9f8:	20002dd4 	ldrdcs	r2, [r0], -r4
+     9fc:	20003c1c 	andcs	r3, r0, ip, lsl ip
+
+00000a00 <OSTimeTick>:
+     a00:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+     a02:	f000 ff83 	bl	190c <OSTimeTickHook>
+     a06:	f000 ffbf 	bl	1988 <OS_CPU_SR_Save>
+     a0a:	4a24      	ldr	r2, [pc, #144]	; (a9c <OSTimeTick+0x9c>)
+     a0c:	6813      	ldr	r3, [r2, #0]
+     a0e:	3301      	adds	r3, #1
+     a10:	6013      	str	r3, [r2, #0]
+     a12:	f000 ffbd 	bl	1990 <OS_CPU_SR_Restore>
+     a16:	4b22      	ldr	r3, [pc, #136]	; (aa0 <OSTimeTick+0xa0>)
+     a18:	7819      	ldrb	r1, [r3, #0]
+     a1a:	2901      	cmp	r1, #1
+     a1c:	d10f      	bne.n	a3e <OSTimeTick+0x3e>
+     a1e:	4b21      	ldr	r3, [pc, #132]	; (aa4 <OSTimeTick+0xa4>)
+     a20:	781a      	ldrb	r2, [r3, #0]
+     a22:	2a01      	cmp	r2, #1
+     a24:	d00b      	beq.n	a3e <OSTimeTick+0x3e>
+     a26:	2a02      	cmp	r2, #2
+     a28:	d00a      	beq.n	a40 <OSTimeTick+0x40>
+     a2a:	b95a      	cbnz	r2, a44 <OSTimeTick+0x44>
+     a2c:	4b1e      	ldr	r3, [pc, #120]	; (aa8 <OSTimeTick+0xa8>)
+     a2e:	4d1f      	ldr	r5, [pc, #124]	; (aac <OSTimeTick+0xac>)
+     a30:	681c      	ldr	r4, [r3, #0]
+     a32:	4e1f      	ldr	r6, [pc, #124]	; (ab0 <OSTimeTick+0xb0>)
+     a34:	2701      	movs	r7, #1
+     a36:	f894 3032 	ldrb.w	r3, [r4, #50]	; 0x32
+     a3a:	2b3f      	cmp	r3, #63	; 0x3f
+     a3c:	d105      	bne.n	a4a <OSTimeTick+0x4a>
+     a3e:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+     a40:	7019      	strb	r1, [r3, #0]
+     a42:	e7f3      	b.n	a2c <OSTimeTick+0x2c>
+     a44:	2200      	movs	r2, #0
+     a46:	701a      	strb	r2, [r3, #0]
+     a48:	e7f0      	b.n	a2c <OSTimeTick+0x2c>
+     a4a:	f000 ff9d 	bl	1988 <OS_CPU_SR_Save>
+     a4e:	6ae3      	ldr	r3, [r4, #44]	; 0x2c
+     a50:	b303      	cbz	r3, a94 <OSTimeTick+0x94>
+     a52:	3b01      	subs	r3, #1
+     a54:	62e3      	str	r3, [r4, #44]	; 0x2c
+     a56:	b9eb      	cbnz	r3, a94 <OSTimeTick+0x94>
+     a58:	f894 3030 	ldrb.w	r3, [r4, #48]	; 0x30
+     a5c:	f013 0237 	ands.w	r2, r3, #55	; 0x37
+     a60:	bf1c      	itt	ne
+     a62:	f023 0337 	bicne.w	r3, r3, #55	; 0x37
+     a66:	f884 3030 	strbne.w	r3, [r4, #48]	; 0x30
+     a6a:	f894 3030 	ldrb.w	r3, [r4, #48]	; 0x30
+     a6e:	bf14      	ite	ne
+     a70:	f884 7031 	strbne.w	r7, [r4, #49]	; 0x31
+     a74:	f884 2031 	strbeq.w	r2, [r4, #49]	; 0x31
+     a78:	071b      	lsls	r3, r3, #28
+     a7a:	d40b      	bmi.n	a94 <OSTimeTick+0x94>
+     a7c:	782a      	ldrb	r2, [r5, #0]
+     a7e:	f894 3036 	ldrb.w	r3, [r4, #54]	; 0x36
+     a82:	f894 1035 	ldrb.w	r1, [r4, #53]	; 0x35
+     a86:	4313      	orrs	r3, r2
+     a88:	f894 2034 	ldrb.w	r2, [r4, #52]	; 0x34
+     a8c:	702b      	strb	r3, [r5, #0]
+     a8e:	5cb3      	ldrb	r3, [r6, r2]
+     a90:	430b      	orrs	r3, r1
+     a92:	54b3      	strb	r3, [r6, r2]
+     a94:	6964      	ldr	r4, [r4, #20]
+     a96:	f000 ff7b 	bl	1990 <OS_CPU_SR_Restore>
+     a9a:	e7cc      	b.n	a36 <OSTimeTick+0x36>
+     a9c:	200031e8 	andcs	r3, r0, r8, ror #3
+     aa0:	2000286d 	andcs	r2, r0, sp, ror #16
+     aa4:	20002bc8 	andcs	r2, r0, r8, asr #23
+     aa8:	20002b4c 	andcs	r2, r0, ip, asr #22
+     aac:	20002fcc 	andcs	r2, r0, ip, asr #31
+     ab0:	20002fcd 	andcs	r2, r0, sp, asr #31
+
+00000ab4 <OS_Dummy>:
+     ab4:	4770      	bx	lr
+	...
+
+00000ab8 <OS_EventTaskWait>:
+     ab8:	b530      	push	{r4, r5, lr}
+     aba:	4b0e      	ldr	r3, [pc, #56]	; (af4 <OS_EventTaskWait+0x3c>)
+     abc:	681a      	ldr	r2, [r3, #0]
+     abe:	f892 1034 	ldrb.w	r1, [r2, #52]	; 0x34
+     ac2:	61d0      	str	r0, [r2, #28]
+     ac4:	1843      	adds	r3, r0, r1
+     ac6:	f892 5035 	ldrb.w	r5, [r2, #53]	; 0x35
+     aca:	7adc      	ldrb	r4, [r3, #11]
+     acc:	432c      	orrs	r4, r5
+     ace:	72dc      	strb	r4, [r3, #11]
+     ad0:	f892 4036 	ldrb.w	r4, [r2, #54]	; 0x36
+     ad4:	7a82      	ldrb	r2, [r0, #10]
+     ad6:	4322      	orrs	r2, r4
+     ad8:	7282      	strb	r2, [r0, #10]
+     ada:	4a07      	ldr	r2, [pc, #28]	; (af8 <OS_EventTaskWait+0x40>)
+     adc:	5c53      	ldrb	r3, [r2, r1]
+     ade:	ea23 0305 	bic.w	r3, r3, r5
+     ae2:	5453      	strb	r3, [r2, r1]
+     ae4:	b923      	cbnz	r3, af0 <OS_EventTaskWait+0x38>
+     ae6:	4a05      	ldr	r2, [pc, #20]	; (afc <OS_EventTaskWait+0x44>)
+     ae8:	7813      	ldrb	r3, [r2, #0]
+     aea:	ea23 0304 	bic.w	r3, r3, r4
+     aee:	7013      	strb	r3, [r2, #0]
+     af0:	bd30      	pop	{r4, r5, pc}
+     af2:	bf00      	nop
+     af4:	200031e0 	andcs	r3, r0, r0, ror #3
+     af8:	20002fcd 	andcs	r2, r0, sp, asr #31
+     afc:	20002fcc 	andcs	r2, r0, ip, asr #31
+
+00000b00 <OS_EventTaskRemove>:
+     b00:	b510      	push	{r4, lr}
+     b02:	f890 2034 	ldrb.w	r2, [r0, #52]	; 0x34
+     b06:	f890 4035 	ldrb.w	r4, [r0, #53]	; 0x35
+     b0a:	440a      	add	r2, r1
+     b0c:	7ad3      	ldrb	r3, [r2, #11]
+     b0e:	ea23 0304 	bic.w	r3, r3, r4
+     b12:	72d3      	strb	r3, [r2, #11]
+     b14:	b92b      	cbnz	r3, b22 <OS_EventTaskRemove+0x22>
+     b16:	f890 2036 	ldrb.w	r2, [r0, #54]	; 0x36
+     b1a:	7a8b      	ldrb	r3, [r1, #10]
+     b1c:	ea23 0302 	bic.w	r3, r3, r2
+     b20:	728b      	strb	r3, [r1, #10]
+     b22:	2300      	movs	r3, #0
+     b24:	61c3      	str	r3, [r0, #28]
+     b26:	bd10      	pop	{r4, pc}
+
+00000b28 <OS_EventTaskRdy>:
+     b28:	b5f8      	push	{r3, r4, r5, r6, r7, lr}
+     b2a:	4606      	mov	r6, r0
+     b2c:	4814      	ldr	r0, [pc, #80]	; (b80 <OS_EventTaskRdy+0x58>)
+     b2e:	7ab4      	ldrb	r4, [r6, #10]
+     b30:	5d05      	ldrb	r5, [r0, r4]
+     b32:	1974      	adds	r4, r6, r5
+     b34:	2700      	movs	r7, #0
+     b36:	7ae4      	ldrb	r4, [r4, #11]
+     b38:	5d04      	ldrb	r4, [r0, r4]
+     b3a:	4812      	ldr	r0, [pc, #72]	; (b84 <OS_EventTaskRdy+0x5c>)
+     b3c:	eb04 04c5 	add.w	r4, r4, r5, lsl #3
+     b40:	b2e4      	uxtb	r4, r4
+     b42:	f850 0024 	ldr.w	r0, [r0, r4, lsl #2]
+     b46:	6201      	str	r1, [r0, #32]
+     b48:	f890 1030 	ldrb.w	r1, [r0, #48]	; 0x30
+     b4c:	f880 3031 	strb.w	r3, [r0, #49]	; 0x31
+     b50:	ea21 0202 	bic.w	r2, r1, r2
+     b54:	0713      	lsls	r3, r2, #28
+     b56:	62c7      	str	r7, [r0, #44]	; 0x2c
+     b58:	f880 2030 	strb.w	r2, [r0, #48]	; 0x30
+     b5c:	d40b      	bmi.n	b76 <OS_EventTaskRdy+0x4e>
+     b5e:	4a0a      	ldr	r2, [pc, #40]	; (b88 <OS_EventTaskRdy+0x60>)
+     b60:	f890 3036 	ldrb.w	r3, [r0, #54]	; 0x36
+     b64:	7811      	ldrb	r1, [r2, #0]
+     b66:	430b      	orrs	r3, r1
+     b68:	7013      	strb	r3, [r2, #0]
+     b6a:	4a08      	ldr	r2, [pc, #32]	; (b8c <OS_EventTaskRdy+0x64>)
+     b6c:	f890 1035 	ldrb.w	r1, [r0, #53]	; 0x35
+     b70:	5d53      	ldrb	r3, [r2, r5]
+     b72:	430b      	orrs	r3, r1
+     b74:	5553      	strb	r3, [r2, r5]
+     b76:	4631      	mov	r1, r6
+     b78:	f7ff ffc2 	bl	b00 <OS_EventTaskRemove>
+     b7c:	4620      	mov	r0, r4
+     b7e:	bdf8      	pop	{r3, r4, r5, r6, r7, pc}
+     b80:	00001f52 	andeq	r1, r0, r2, asr pc
+     b84:	20003c20 	andcs	r3, r0, r0, lsr #24
+     b88:	20002fcc 	andcs	r2, r0, ip, asr #31
+     b8c:	20002fcd 	andcs	r2, r0, sp, asr #31
+
+00000b90 <OS_EventWaitListInit>:
+     b90:	2300      	movs	r3, #0
+     b92:	8143      	strh	r3, [r0, #10]
+     b94:	60c3      	str	r3, [r0, #12]
+     b96:	8203      	strh	r3, [r0, #16]
+     b98:	7483      	strb	r3, [r0, #18]
+     b9a:	4770      	bx	lr
+
+00000b9c <OS_MemClr>:
+     b9c:	4401      	add	r1, r0
+     b9e:	2300      	movs	r3, #0
+     ba0:	4288      	cmp	r0, r1
+     ba2:	d100      	bne.n	ba6 <OS_MemClr+0xa>
+     ba4:	4770      	bx	lr
+     ba6:	f800 3b01 	strb.w	r3, [r0], #1
+     baa:	e7f9      	b.n	ba0 <OS_MemClr+0x4>
+
+00000bac <OSInit>:
+     bac:	b570      	push	{r4, r5, r6, lr}
+     bae:	b088      	sub	sp, #32
+     bb0:	f000 fe4e 	bl	1850 <OSInitHookBegin>
+     bb4:	4a4f      	ldr	r2, [pc, #316]	; (cf4 <OSInit+0x148>)
+     bb6:	4850      	ldr	r0, [pc, #320]	; (cf8 <OSInit+0x14c>)
+     bb8:	2300      	movs	r3, #0
+     bba:	6013      	str	r3, [r2, #0]
+     bbc:	4a4f      	ldr	r2, [pc, #316]	; (cfc <OSInit+0x150>)
+     bbe:	7013      	strb	r3, [r2, #0]
+     bc0:	4a4f      	ldr	r2, [pc, #316]	; (d00 <OSInit+0x154>)
+     bc2:	7013      	strb	r3, [r2, #0]
+     bc4:	4a4f      	ldr	r2, [pc, #316]	; (d04 <OSInit+0x158>)
+     bc6:	7013      	strb	r3, [r2, #0]
+     bc8:	4a4f      	ldr	r2, [pc, #316]	; (d08 <OSInit+0x15c>)
+     bca:	7013      	strb	r3, [r2, #0]
+     bcc:	4a4f      	ldr	r2, [pc, #316]	; (d0c <OSInit+0x160>)
+     bce:	6013      	str	r3, [r2, #0]
+     bd0:	4a4f      	ldr	r2, [pc, #316]	; (d10 <OSInit+0x164>)
+     bd2:	6013      	str	r3, [r2, #0]
+     bd4:	4a4f      	ldr	r2, [pc, #316]	; (d14 <OSInit+0x168>)
+     bd6:	6013      	str	r3, [r2, #0]
+     bd8:	4a4f      	ldr	r2, [pc, #316]	; (d18 <OSInit+0x16c>)
+     bda:	6013      	str	r3, [r2, #0]
+     bdc:	4a4f      	ldr	r2, [pc, #316]	; (d1c <OSInit+0x170>)
+     bde:	7013      	strb	r3, [r2, #0]
+     be0:	4a4f      	ldr	r2, [pc, #316]	; (d20 <OSInit+0x174>)
+     be2:	7013      	strb	r3, [r2, #0]
+     be4:	4a4f      	ldr	r2, [pc, #316]	; (d24 <OSInit+0x178>)
+     be6:	7013      	strb	r3, [r2, #0]
+     be8:	4a4f      	ldr	r2, [pc, #316]	; (d28 <OSInit+0x17c>)
+     bea:	7013      	strb	r3, [r2, #0]
+     bec:	7053      	strb	r3, [r2, #1]
+     bee:	7093      	strb	r3, [r2, #2]
+     bf0:	70d3      	strb	r3, [r2, #3]
+     bf2:	7113      	strb	r3, [r2, #4]
+     bf4:	7153      	strb	r3, [r2, #5]
+     bf6:	7193      	strb	r3, [r2, #6]
+     bf8:	71d3      	strb	r3, [r2, #7]
+     bfa:	4a4c      	ldr	r2, [pc, #304]	; (d2c <OSInit+0x180>)
+     bfc:	7013      	strb	r3, [r2, #0]
+     bfe:	4a4c      	ldr	r2, [pc, #304]	; (d30 <OSInit+0x184>)
+     c00:	7013      	strb	r3, [r2, #0]
+     c02:	4a4c      	ldr	r2, [pc, #304]	; (d34 <OSInit+0x188>)
+     c04:	6013      	str	r3, [r2, #0]
+     c06:	4a4c      	ldr	r2, [pc, #304]	; (d38 <OSInit+0x18c>)
+     c08:	f44f 61e7 	mov.w	r1, #1848	; 0x738
+     c0c:	6013      	str	r3, [r2, #0]
+     c0e:	f7ff ffc5 	bl	b9c <OS_MemClr>
+     c12:	f44f 7180 	mov.w	r1, #256	; 0x100
+     c16:	4849      	ldr	r0, [pc, #292]	; (d3c <OSInit+0x190>)
+     c18:	f7ff ffc0 	bl	b9c <OS_MemClr>
+     c1c:	4948      	ldr	r1, [pc, #288]	; (d40 <OSInit+0x194>)
+     c1e:	4b49      	ldr	r3, [pc, #292]	; (d44 <OSInit+0x198>)
+     c20:	2201      	movs	r2, #1
+     c22:	460d      	mov	r5, r1
+     c24:	3201      	adds	r2, #1
+     c26:	2a16      	cmp	r2, #22
+     c28:	f843 3c40 	str.w	r3, [r3, #-64]
+     c2c:	f843 1c08 	str.w	r1, [r3, #-8]
+     c30:	f103 0354 	add.w	r3, r3, #84	; 0x54
+     c34:	d1f6      	bne.n	c24 <OSInit+0x78>
+     c36:	4b30      	ldr	r3, [pc, #192]	; (cf8 <OSInit+0x14c>)
+     c38:	4843      	ldr	r0, [pc, #268]	; (d48 <OSInit+0x19c>)
+     c3a:	f8c3 1730 	str.w	r1, [r3, #1840]	; 0x730
+     c3e:	4943      	ldr	r1, [pc, #268]	; (d4c <OSInit+0x1a0>)
+     c40:	2200      	movs	r2, #0
+     c42:	600a      	str	r2, [r1, #0]
+     c44:	4942      	ldr	r1, [pc, #264]	; (d50 <OSInit+0x1a4>)
+     c46:	f8c3 26f8 	str.w	r2, [r3, #1784]	; 0x6f8
+     c4a:	600b      	str	r3, [r1, #0]
+     c4c:	21f0      	movs	r1, #240	; 0xf0
+     c4e:	f7ff ffa5 	bl	b9c <OS_MemClr>
+     c52:	4940      	ldr	r1, [pc, #256]	; (d54 <OSInit+0x1a8>)
+     c54:	4613      	mov	r3, r2
+     c56:	4614      	mov	r4, r2
+     c58:	3301      	adds	r3, #1
+     c5a:	2b09      	cmp	r3, #9
+     c5c:	f801 4c18 	strb.w	r4, [r1, #-24]
+     c60:	f841 1c14 	str.w	r1, [r1, #-20]
+     c64:	f841 5c04 	str.w	r5, [r1, #-4]
+     c68:	f101 0118 	add.w	r1, r1, #24
+     c6c:	d1f4      	bne.n	c58 <OSInit+0xac>
+     c6e:	4b36      	ldr	r3, [pc, #216]	; (d48 <OSInit+0x19c>)
+     c70:	4a39      	ldr	r2, [pc, #228]	; (d58 <OSInit+0x1ac>)
+     c72:	f883 40d8 	strb.w	r4, [r3, #216]	; 0xd8
+     c76:	f8c3 40dc 	str.w	r4, [r3, #220]	; 0xdc
+     c7a:	f8c3 50ec 	str.w	r5, [r3, #236]	; 0xec
+     c7e:	6013      	str	r3, [r2, #0]
+     c80:	f000 f9aa 	bl	fd8 <OS_FlagInit>
+     c84:	f000 f9e2 	bl	104c <OS_MemInit>
+     c88:	f000 fa04 	bl	1094 <OS_QInit>
+     c8c:	4a33      	ldr	r2, [pc, #204]	; (d5c <OSInit+0x1b0>)
+     c8e:	9201      	str	r2, [sp, #4]
+     c90:	2603      	movs	r6, #3
+     c92:	2580      	movs	r5, #128	; 0x80
+     c94:	f64f 73ff 	movw	r3, #65535	; 0xffff
+     c98:	9300      	str	r3, [sp, #0]
+     c9a:	e9cd 4603 	strd	r4, r6, [sp, #12]
+     c9e:	233f      	movs	r3, #63	; 0x3f
+     ca0:	9502      	str	r5, [sp, #8]
+     ca2:	f502 72fe 	add.w	r2, r2, #508	; 0x1fc
+     ca6:	2100      	movs	r1, #0
+     ca8:	482d      	ldr	r0, [pc, #180]	; (d60 <OSInit+0x1b4>)
+     caa:	f000 fc3f 	bl	152c <OSTaskCreateExt>
+     cae:	f10d 021f 	add.w	r2, sp, #31
+     cb2:	492c      	ldr	r1, [pc, #176]	; (d64 <OSInit+0x1b8>)
+     cb4:	203f      	movs	r0, #63	; 0x3f
+     cb6:	f000 fb7f 	bl	13b8 <OSTaskNameSet>
+     cba:	4a2b      	ldr	r2, [pc, #172]	; (d68 <OSInit+0x1bc>)
+     cbc:	9201      	str	r2, [sp, #4]
+     cbe:	f64f 73fe 	movw	r3, #65534	; 0xfffe
+     cc2:	9300      	str	r3, [sp, #0]
+     cc4:	e9cd 4603 	strd	r4, r6, [sp, #12]
+     cc8:	233e      	movs	r3, #62	; 0x3e
+     cca:	9502      	str	r5, [sp, #8]
+     ccc:	f502 72fe 	add.w	r2, r2, #508	; 0x1fc
+     cd0:	2100      	movs	r1, #0
+     cd2:	4826      	ldr	r0, [pc, #152]	; (d6c <OSInit+0x1c0>)
+     cd4:	f000 fc2a 	bl	152c <OSTaskCreateExt>
+     cd8:	4925      	ldr	r1, [pc, #148]	; (d70 <OSInit+0x1c4>)
+     cda:	f10d 021f 	add.w	r2, sp, #31
+     cde:	203e      	movs	r0, #62	; 0x3e
+     ce0:	f000 fb6a 	bl	13b8 <OSTaskNameSet>
+     ce4:	f000 fd30 	bl	1748 <OSTmr_Init>
+     ce8:	f000 fdca 	bl	1880 <OSInitHookEnd>
+     cec:	f000 feac 	bl	1a48 <OSDebugInit>
+     cf0:	b008      	add	sp, #32
+     cf2:	bd70      	pop	{r4, r5, r6, pc}
+     cf4:	200031e8 	andcs	r3, r0, r8, ror #3
+     cf8:	200034e0 	andcs	r3, r0, r0, ror #9
+     cfc:	200031dc 	ldrdcs	r3, [r0], -ip
+     d00:	20002864 	andcs	r2, r0, r4, ror #16
+     d04:	20002ddd 	ldrdcs	r2, [r0], -sp
+     d08:	2000286d 	andcs	r2, r0, sp, ror #16
+     d0c:	20002dcc 	andcs	r2, r0, ip, asr #27
+     d10:	20002870 	andcs	r2, r0, r0, ror r8
+     d14:	20003d20 	andcs	r3, r0, r0, lsr #26
+     d18:	20002dd4 	ldrdcs	r2, [r0], -r4
+     d1c:	20003c1c 	andcs	r3, r0, ip, lsl ip
+     d20:	2000286c 	andcs	r2, r0, ip, ror #16
+     d24:	20002fcc 	andcs	r2, r0, ip, asr #31
+     d28:	20002fcd 	andcs	r2, r0, sp, asr #31
+     d2c:	20002b48 	andcs	r2, r0, r8, asr #22
+     d30:	20002876 	andcs	r2, r0, r6, ror r8
+     d34:	20002fc4 	andcs	r2, r0, r4, asr #31
+     d38:	200031e0 	andcs	r3, r0, r0, ror #3
+     d3c:	20003c20 	andcs	r3, r0, r0, lsr #24
+     d40:	00001f34 	andeq	r1, r0, r4, lsr pc
+     d44:	20003534 	andcs	r3, r0, r4, lsr r5
+     d48:	200033f0 	strdcs	r3, [r0], -r0
+     d4c:	20002b4c 	andcs	r2, r0, ip, asr #22
+     d50:	20002dd8 	ldrdcs	r2, [r0], -r8
+     d54:	20003408 	andcs	r3, r0, r8, lsl #8
+     d58:	200031d8 	ldrdcs	r3, [r0], -r8
+     d5c:	200031f0 	strdcs	r3, [r0], -r0
+     d60:	00000875 	andeq	r0, r0, r5, ror r8
+     d64:	00001f36 	andeq	r1, r0, r6, lsr pc
+     d68:	20002bcc 	andcs	r2, r0, ip, asr #23
+     d6c:	00000e59 	andeq	r0, r0, r9, asr lr
+     d70:	00001f44 	andeq	r1, r0, r4, asr #30
+
+00000d74 <OS_Sched>:
+     d74:	b510      	push	{r4, lr}
+     d76:	f000 fe07 	bl	1988 <OS_CPU_SR_Save>
+     d7a:	4b11      	ldr	r3, [pc, #68]	; (dc0 <OS_Sched+0x4c>)
+     d7c:	781a      	ldrb	r2, [r3, #0]
+     d7e:	4b11      	ldr	r3, [pc, #68]	; (dc4 <OS_Sched+0x50>)
+     d80:	781b      	ldrb	r3, [r3, #0]
+     d82:	4313      	orrs	r3, r2
+     d84:	4604      	mov	r4, r0
+     d86:	d115      	bne.n	db4 <OS_Sched+0x40>
+     d88:	f7ff fd60 	bl	84c <OS_SchedNew>
+     d8c:	4b0e      	ldr	r3, [pc, #56]	; (dc8 <OS_Sched+0x54>)
+     d8e:	490f      	ldr	r1, [pc, #60]	; (dcc <OS_Sched+0x58>)
+     d90:	781a      	ldrb	r2, [r3, #0]
+     d92:	4b0f      	ldr	r3, [pc, #60]	; (dd0 <OS_Sched+0x5c>)
+     d94:	f853 3022 	ldr.w	r3, [r3, r2, lsl #2]
+     d98:	600b      	str	r3, [r1, #0]
+     d9a:	490e      	ldr	r1, [pc, #56]	; (dd4 <OS_Sched+0x60>)
+     d9c:	7809      	ldrb	r1, [r1, #0]
+     d9e:	4291      	cmp	r1, r2
+     da0:	d008      	beq.n	db4 <OS_Sched+0x40>
+     da2:	6b9a      	ldr	r2, [r3, #56]	; 0x38
+     da4:	3201      	adds	r2, #1
+     da6:	639a      	str	r2, [r3, #56]	; 0x38
+     da8:	4a0b      	ldr	r2, [pc, #44]	; (dd8 <OS_Sched+0x64>)
+     daa:	6813      	ldr	r3, [r2, #0]
+     dac:	3301      	adds	r3, #1
+     dae:	6013      	str	r3, [r2, #0]
+     db0:	f000 fe0e 	bl	19d0 <OSCtxSw>
+     db4:	4620      	mov	r0, r4
+     db6:	e8bd 4010 	ldmia.w	sp!, {r4, lr}
+     dba:	f000 bde9 	b.w	1990 <OS_CPU_SR_Restore>
+     dbe:	bf00      	nop
+     dc0:	200031dc 	ldrdcs	r3, [r0], -ip
+     dc4:	20002864 	andcs	r2, r0, r4, ror #16
+     dc8:	20002876 	andcs	r2, r0, r6, ror r8
+     dcc:	20002fc4 	andcs	r2, r0, r4, asr #31
+     dd0:	20003c20 	andcs	r3, r0, r0, lsr #24
+     dd4:	20002b48 	andcs	r2, r0, r8, asr #22
+     dd8:	20002dcc 	andcs	r2, r0, ip, asr #27
+
+00000ddc <OSSchedUnlock>:
+     ddc:	b508      	push	{r3, lr}
+     dde:	4b0d      	ldr	r3, [pc, #52]	; (e14 <OSSchedUnlock+0x38>)
+     de0:	781b      	ldrb	r3, [r3, #0]
+     de2:	2b01      	cmp	r3, #1
+     de4:	d115      	bne.n	e12 <OSSchedUnlock+0x36>
+     de6:	f000 fdcf 	bl	1988 <OS_CPU_SR_Save>
+     dea:	4b0b      	ldr	r3, [pc, #44]	; (e18 <OSSchedUnlock+0x3c>)
+     dec:	781b      	ldrb	r3, [r3, #0]
+     dee:	b963      	cbnz	r3, e0a <OSSchedUnlock+0x2e>
+     df0:	4a0a      	ldr	r2, [pc, #40]	; (e1c <OSSchedUnlock+0x40>)
+     df2:	7813      	ldrb	r3, [r2, #0]
+     df4:	b14b      	cbz	r3, e0a <OSSchedUnlock+0x2e>
+     df6:	3b01      	subs	r3, #1
+     df8:	b2db      	uxtb	r3, r3
+     dfa:	7013      	strb	r3, [r2, #0]
+     dfc:	b92b      	cbnz	r3, e0a <OSSchedUnlock+0x2e>
+     dfe:	f000 fdc7 	bl	1990 <OS_CPU_SR_Restore>
+     e02:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+     e06:	f7ff bfb5 	b.w	d74 <OS_Sched>
+     e0a:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+     e0e:	f000 bdbf 	b.w	1990 <OS_CPU_SR_Restore>
+     e12:	bd08      	pop	{r3, pc}
+     e14:	2000286d 	andcs	r2, r0, sp, ror #16
+     e18:	200031dc 	ldrdcs	r3, [r0], -ip
+     e1c:	20002864 	andcs	r2, r0, r4, ror #16
+
+00000e20 <OS_TaskStatStkChk>:
+     e20:	b537      	push	{r0, r1, r2, r4, r5, lr}
+     e22:	4d0c      	ldr	r5, [pc, #48]	; (e54 <OS_TaskStatStkChk+0x34>)
+     e24:	2400      	movs	r4, #0
+     e26:	4669      	mov	r1, sp
+     e28:	b2e0      	uxtb	r0, r4
+     e2a:	f000 faed 	bl	1408 <OSTaskStkChk>
+     e2e:	b958      	cbnz	r0, e48 <OS_TaskStatStkChk+0x28>
+     e30:	f855 3024 	ldr.w	r3, [r5, r4, lsl #2]
+     e34:	b143      	cbz	r3, e48 <OS_TaskStatStkChk+0x28>
+     e36:	2b01      	cmp	r3, #1
+     e38:	d006      	beq.n	e48 <OS_TaskStatStkChk+0x28>
+     e3a:	e9d3 2102 	ldrd	r2, r1, [r3, #8]
+     e3e:	eb02 0281 	add.w	r2, r2, r1, lsl #2
+     e42:	645a      	str	r2, [r3, #68]	; 0x44
+     e44:	9a01      	ldr	r2, [sp, #4]
+     e46:	649a      	str	r2, [r3, #72]	; 0x48
+     e48:	3401      	adds	r4, #1
+     e4a:	2c40      	cmp	r4, #64	; 0x40
+     e4c:	d1eb      	bne.n	e26 <OS_TaskStatStkChk+0x6>
+     e4e:	b003      	add	sp, #12
+     e50:	bd30      	pop	{r4, r5, pc}
+     e52:	bf00      	nop
+     e54:	20003c20 	andcs	r3, r0, r0, lsr #24
+
+00000e58 <OS_TaskStat>:
+     e58:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+     e5c:	4c1c      	ldr	r4, [pc, #112]	; (ed0 <OS_TaskStat+0x78>)
+     e5e:	7823      	ldrb	r3, [r4, #0]
+     e60:	b38b      	cbz	r3, ec6 <OS_TaskStat+0x6e>
+     e62:	4d1c      	ldr	r5, [pc, #112]	; (ed4 <OS_TaskStat+0x7c>)
+     e64:	4e1c      	ldr	r6, [pc, #112]	; (ed8 <OS_TaskStat+0x80>)
+     e66:	6829      	ldr	r1, [r5, #0]
+     e68:	2963      	cmp	r1, #99	; 0x63
+     e6a:	f04f 0264 	mov.w	r2, #100	; 0x64
+     e6e:	fbb1 f2f2 	udiv	r2, r1, r2
+     e72:	602a      	str	r2, [r5, #0]
+     e74:	d804      	bhi.n	e80 <OS_TaskStat+0x28>
+     e76:	2300      	movs	r3, #0
+     e78:	20ff      	movs	r0, #255	; 0xff
+     e7a:	7033      	strb	r3, [r6, #0]
+     e7c:	f000 faf6 	bl	146c <OSTaskSuspend>
+     e80:	f000 fd82 	bl	1988 <OS_CPU_SR_Save>
+     e84:	682a      	ldr	r2, [r5, #0]
+     e86:	4c15      	ldr	r4, [pc, #84]	; (edc <OS_TaskStat+0x84>)
+     e88:	4f15      	ldr	r7, [pc, #84]	; (ee0 <OS_TaskStat+0x88>)
+     e8a:	2364      	movs	r3, #100	; 0x64
+     e8c:	4353      	muls	r3, r2
+     e8e:	6023      	str	r3, [r4, #0]
+     e90:	f000 fd7e 	bl	1990 <OS_CPU_SR_Restore>
+     e94:	f04f 0800 	mov.w	r8, #0
+     e98:	f000 fd76 	bl	1988 <OS_CPU_SR_Save>
+     e9c:	6823      	ldr	r3, [r4, #0]
+     e9e:	603b      	str	r3, [r7, #0]
+     ea0:	f8c4 8000 	str.w	r8, [r4]
+     ea4:	f000 fd74 	bl	1990 <OS_CPU_SR_Restore>
+     ea8:	682a      	ldr	r2, [r5, #0]
+     eaa:	683b      	ldr	r3, [r7, #0]
+     eac:	fbb3 f3f2 	udiv	r3, r3, r2
+     eb0:	f1c3 0364 	rsb	r3, r3, #100	; 0x64
+     eb4:	7033      	strb	r3, [r6, #0]
+     eb6:	f000 fcec 	bl	1892 <OSTaskStatHook>
+     eba:	f7ff ffb1 	bl	e20 <OS_TaskStatStkChk>
+     ebe:	200a      	movs	r0, #10
+     ec0:	f000 fb88 	bl	15d4 <OSTimeDly>
+     ec4:	e7e8      	b.n	e98 <OS_TaskStat+0x40>
+     ec6:	2014      	movs	r0, #20
+     ec8:	f000 fb84 	bl	15d4 <OSTimeDly>
+     ecc:	e7c7      	b.n	e5e <OS_TaskStat+0x6>
+     ece:	bf00      	nop
+     ed0:	20003c1c 	andcs	r3, r0, ip, lsl ip
+     ed4:	20002dd4 	ldrdcs	r2, [r0], -r4
+     ed8:	20002ddc 	ldrdcs	r2, [r0], -ip
+     edc:	20002870 	andcs	r2, r0, r0, ror r8
+     ee0:	20003d20 	andcs	r3, r0, r0, lsr #26
+
+00000ee4 <OS_TCBInit>:
+     ee4:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+     ee8:	461f      	mov	r7, r3
+     eea:	4606      	mov	r6, r0
+     eec:	460d      	mov	r5, r1
+     eee:	4690      	mov	r8, r2
+     ef0:	f000 fd4a 	bl	1988 <OS_CPU_SR_Save>
+     ef4:	4b31      	ldr	r3, [pc, #196]	; (fbc <OS_TCBInit+0xd8>)
+     ef6:	681c      	ldr	r4, [r3, #0]
+     ef8:	2c00      	cmp	r4, #0
+     efa:	d05b      	beq.n	fb4 <OS_TCBInit+0xd0>
+     efc:	6962      	ldr	r2, [r4, #20]
+     efe:	601a      	str	r2, [r3, #0]
+     f00:	f000 fd46 	bl	1990 <OS_CPU_SR_Restore>
+     f04:	9b07      	ldr	r3, [sp, #28]
+     f06:	6063      	str	r3, [r4, #4]
+     f08:	9b06      	ldr	r3, [sp, #24]
+     f0a:	6025      	str	r5, [r4, #0]
+     f0c:	e9c4 8302 	strd	r8, r3, [r4, #8]
+     f10:	f8bd 3020 	ldrh.w	r3, [sp, #32]
+     f14:	8223      	strh	r3, [r4, #16]
+     f16:	f006 0107 	and.w	r1, r6, #7
+     f1a:	08f2      	lsrs	r2, r6, #3
+     f1c:	2301      	movs	r3, #1
+     f1e:	f884 2034 	strb.w	r2, [r4, #52]	; 0x34
+     f22:	fa03 f202 	lsl.w	r2, r3, r2
+     f26:	408b      	lsls	r3, r1
+     f28:	f884 3035 	strb.w	r3, [r4, #53]	; 0x35
+     f2c:	4b24      	ldr	r3, [pc, #144]	; (fc0 <OS_TCBInit+0xdc>)
+     f2e:	f884 2036 	strb.w	r2, [r4, #54]	; 0x36
+     f32:	2500      	movs	r5, #0
+     f34:	f884 1033 	strb.w	r1, [r4, #51]	; 0x33
+     f38:	e9c4 3513 	strd	r3, r5, [r4, #76]	; 0x4c
+     f3c:	4620      	mov	r0, r4
+     f3e:	e9c4 5508 	strd	r5, r5, [r4, #32]
+     f42:	e9c4 550f 	strd	r5, r5, [r4, #60]	; 0x3c
+     f46:	e9c4 5511 	strd	r5, r5, [r4, #68]	; 0x44
+     f4a:	f884 6032 	strb.w	r6, [r4, #50]	; 0x32
+     f4e:	62e5      	str	r5, [r4, #44]	; 0x2c
+     f50:	8625      	strh	r5, [r4, #48]	; 0x30
+     f52:	8267      	strh	r7, [r4, #18]
+     f54:	f884 5037 	strb.w	r5, [r4, #55]	; 0x37
+     f58:	61e5      	str	r5, [r4, #28]
+     f5a:	63a5      	str	r5, [r4, #56]	; 0x38
+     f5c:	f000 fcd4 	bl	1908 <OSTCBInitHook>
+     f60:	f000 fd12 	bl	1988 <OS_CPU_SR_Save>
+     f64:	4b17      	ldr	r3, [pc, #92]	; (fc4 <OS_TCBInit+0xe0>)
+     f66:	f843 4026 	str.w	r4, [r3, r6, lsl #2]
+     f6a:	f000 fd11 	bl	1990 <OS_CPU_SR_Restore>
+     f6e:	4620      	mov	r0, r4
+     f70:	f000 fc87 	bl	1882 <OSTaskCreateHook>
+     f74:	f000 fd08 	bl	1988 <OS_CPU_SR_Save>
+     f78:	4b13      	ldr	r3, [pc, #76]	; (fc8 <OS_TCBInit+0xe4>)
+     f7a:	681a      	ldr	r2, [r3, #0]
+     f7c:	e9c4 2505 	strd	r2, r5, [r4, #20]
+     f80:	b102      	cbz	r2, f84 <OS_TCBInit+0xa0>
+     f82:	6194      	str	r4, [r2, #24]
+     f84:	4a11      	ldr	r2, [pc, #68]	; (fcc <OS_TCBInit+0xe8>)
+     f86:	601c      	str	r4, [r3, #0]
+     f88:	7811      	ldrb	r1, [r2, #0]
+     f8a:	f894 3036 	ldrb.w	r3, [r4, #54]	; 0x36
+     f8e:	430b      	orrs	r3, r1
+     f90:	7013      	strb	r3, [r2, #0]
+     f92:	490f      	ldr	r1, [pc, #60]	; (fd0 <OS_TCBInit+0xec>)
+     f94:	f894 2034 	ldrb.w	r2, [r4, #52]	; 0x34
+     f98:	f894 4035 	ldrb.w	r4, [r4, #53]	; 0x35
+     f9c:	5c8b      	ldrb	r3, [r1, r2]
+     f9e:	4323      	orrs	r3, r4
+     fa0:	548b      	strb	r3, [r1, r2]
+     fa2:	4a0c      	ldr	r2, [pc, #48]	; (fd4 <OS_TCBInit+0xf0>)
+     fa4:	7813      	ldrb	r3, [r2, #0]
+     fa6:	3301      	adds	r3, #1
+     fa8:	7013      	strb	r3, [r2, #0]
+     faa:	f000 fcf1 	bl	1990 <OS_CPU_SR_Restore>
+     fae:	2000      	movs	r0, #0
+     fb0:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+     fb4:	f000 fcec 	bl	1990 <OS_CPU_SR_Restore>
+     fb8:	2042      	movs	r0, #66	; 0x42
+     fba:	e7f9      	b.n	fb0 <OS_TCBInit+0xcc>
+     fbc:	20002dd8 	ldrdcs	r2, [r0], -r8
+     fc0:	00001f34 	andeq	r1, r0, r4, lsr pc
+     fc4:	20003c20 	andcs	r3, r0, r0, lsr #24
+     fc8:	20002b4c 	andcs	r2, r0, ip, asr #22
+     fcc:	20002fcc 	andcs	r2, r0, ip, asr #31
+     fd0:	20002fcd 	andcs	r2, r0, sp, asr #31
+     fd4:	20002ddd 	ldrdcs	r2, [r0], -sp
+
+00000fd8 <OS_FlagInit>:
+     fd8:	b510      	push	{r4, lr}
+     fda:	4c12      	ldr	r4, [pc, #72]	; (1024 <OS_FlagInit+0x4c>)
+     fdc:	2150      	movs	r1, #80	; 0x50
+     fde:	4620      	mov	r0, r4
+     fe0:	f7ff fddc 	bl	b9c <OS_MemClr>
+     fe4:	4622      	mov	r2, r4
+     fe6:	2300      	movs	r3, #0
+     fe8:	f802 3b10 	strb.w	r3, [r2], #16
+     fec:	f104 0120 	add.w	r1, r4, #32
+     ff0:	7423      	strb	r3, [r4, #16]
+     ff2:	6161      	str	r1, [r4, #20]
+     ff4:	f884 3020 	strb.w	r3, [r4, #32]
+     ff8:	f104 0130 	add.w	r1, r4, #48	; 0x30
+     ffc:	f884 3030 	strb.w	r3, [r4, #48]	; 0x30
+    1000:	f884 3040 	strb.w	r3, [r4, #64]	; 0x40
+    1004:	6463      	str	r3, [r4, #68]	; 0x44
+    1006:	4b08      	ldr	r3, [pc, #32]	; (1028 <OS_FlagInit+0x50>)
+    1008:	6062      	str	r2, [r4, #4]
+    100a:	6261      	str	r1, [r4, #36]	; 0x24
+    100c:	4a07      	ldr	r2, [pc, #28]	; (102c <OS_FlagInit+0x54>)
+    100e:	60e2      	str	r2, [r4, #12]
+    1010:	f104 0140 	add.w	r1, r4, #64	; 0x40
+    1014:	61e2      	str	r2, [r4, #28]
+    1016:	62e2      	str	r2, [r4, #44]	; 0x2c
+    1018:	6361      	str	r1, [r4, #52]	; 0x34
+    101a:	63e2      	str	r2, [r4, #60]	; 0x3c
+    101c:	64e2      	str	r2, [r4, #76]	; 0x4c
+    101e:	601c      	str	r4, [r3, #0]
+    1020:	bd10      	pop	{r4, pc}
+    1022:	bf00      	nop
+    1024:	20002878 	andcs	r2, r0, r8, ror r8
+    1028:	20003c18 	andcs	r3, r0, r8, lsl ip
+    102c:	00001f34 	andeq	r1, r0, r4, lsr pc
+
+00001030 <OS_FlagUnlink>:
+    1030:	e9d0 3200 	ldrd	r3, r2, [r0]
+    1034:	b93a      	cbnz	r2, 1046 <OS_FlagUnlink+0x16>
+    1036:	68c1      	ldr	r1, [r0, #12]
+    1038:	604b      	str	r3, [r1, #4]
+    103a:	b103      	cbz	r3, 103e <OS_FlagUnlink+0xe>
+    103c:	605a      	str	r2, [r3, #4]
+    103e:	6883      	ldr	r3, [r0, #8]
+    1040:	2200      	movs	r2, #0
+    1042:	625a      	str	r2, [r3, #36]	; 0x24
+    1044:	4770      	bx	lr
+    1046:	6013      	str	r3, [r2, #0]
+    1048:	e7f7      	b.n	103a <OS_FlagUnlink+0xa>
+	...
+
+0000104c <OS_MemInit>:
+    104c:	b510      	push	{r4, lr}
+    104e:	4c0e      	ldr	r4, [pc, #56]	; (1088 <OS_MemInit+0x3c>)
+    1050:	2178      	movs	r1, #120	; 0x78
+    1052:	4620      	mov	r0, r4
+    1054:	f7ff fda2 	bl	b9c <OS_MemClr>
+    1058:	f104 0318 	add.w	r3, r4, #24
+    105c:	f104 0230 	add.w	r2, r4, #48	; 0x30
+    1060:	6063      	str	r3, [r4, #4]
+    1062:	61e2      	str	r2, [r4, #28]
+    1064:	4b09      	ldr	r3, [pc, #36]	; (108c <OS_MemInit+0x40>)
+    1066:	6163      	str	r3, [r4, #20]
+    1068:	f104 0248 	add.w	r2, r4, #72	; 0x48
+    106c:	62e3      	str	r3, [r4, #44]	; 0x2c
+    106e:	6362      	str	r2, [r4, #52]	; 0x34
+    1070:	6463      	str	r3, [r4, #68]	; 0x44
+    1072:	f104 0260 	add.w	r2, r4, #96	; 0x60
+    1076:	65e3      	str	r3, [r4, #92]	; 0x5c
+    1078:	6763      	str	r3, [r4, #116]	; 0x74
+    107a:	4b05      	ldr	r3, [pc, #20]	; (1090 <OS_MemInit+0x44>)
+    107c:	64e2      	str	r2, [r4, #76]	; 0x4c
+    107e:	2200      	movs	r2, #0
+    1080:	6662      	str	r2, [r4, #100]	; 0x64
+    1082:	601c      	str	r4, [r3, #0]
+    1084:	bd10      	pop	{r4, pc}
+    1086:	bf00      	nop
+    1088:	20002b50 	andcs	r2, r0, r0, asr fp
+    108c:	00001f34 	andeq	r1, r0, r4, lsr pc
+    1090:	20002de0 	andcs	r2, r0, r0, ror #27
+
+00001094 <OS_QInit>:
+    1094:	b508      	push	{r3, lr}
+    1096:	480a      	ldr	r0, [pc, #40]	; (10c0 <OS_QInit+0x2c>)
+    1098:	f44f 71f0 	mov.w	r1, #480	; 0x1e0
+    109c:	f7ff fd7e 	bl	b9c <OS_MemClr>
+    10a0:	4b08      	ldr	r3, [pc, #32]	; (10c4 <OS_QInit+0x30>)
+    10a2:	2201      	movs	r2, #1
+    10a4:	3201      	adds	r2, #1
+    10a6:	2a14      	cmp	r2, #20
+    10a8:	f843 3c18 	str.w	r3, [r3, #-24]
+    10ac:	f103 0318 	add.w	r3, r3, #24
+    10b0:	d1f8      	bne.n	10a4 <OS_QInit+0x10>
+    10b2:	4b03      	ldr	r3, [pc, #12]	; (10c0 <OS_QInit+0x2c>)
+    10b4:	2200      	movs	r2, #0
+    10b6:	f8c3 21c8 	str.w	r2, [r3, #456]	; 0x1c8
+    10ba:	4a03      	ldr	r2, [pc, #12]	; (10c8 <OS_QInit+0x34>)
+    10bc:	6013      	str	r3, [r2, #0]
+    10be:	bd08      	pop	{r3, pc}
+    10c0:	20002de4 	andcs	r2, r0, r4, ror #27
+    10c4:	20002dfc 	strdcs	r2, [r0], -ip
+    10c8:	20002fc8 	andcs	r2, r0, r8, asr #31
+
+000010cc <OSSemCreate>:
+    10cc:	b538      	push	{r3, r4, r5, lr}
+    10ce:	4b0e      	ldr	r3, [pc, #56]	; (1108 <OSSemCreate+0x3c>)
+    10d0:	781b      	ldrb	r3, [r3, #0]
+    10d2:	4605      	mov	r5, r0
+    10d4:	b9ab      	cbnz	r3, 1102 <OSSemCreate+0x36>
+    10d6:	f000 fc57 	bl	1988 <OS_CPU_SR_Save>
+    10da:	4b0c      	ldr	r3, [pc, #48]	; (110c <OSSemCreate+0x40>)
+    10dc:	681c      	ldr	r4, [r3, #0]
+    10de:	b10c      	cbz	r4, 10e4 <OSSemCreate+0x18>
+    10e0:	6862      	ldr	r2, [r4, #4]
+    10e2:	601a      	str	r2, [r3, #0]
+    10e4:	f000 fc54 	bl	1990 <OS_CPU_SR_Restore>
+    10e8:	b14c      	cbz	r4, 10fe <OSSemCreate+0x32>
+    10ea:	2303      	movs	r3, #3
+    10ec:	7023      	strb	r3, [r4, #0]
+    10ee:	2300      	movs	r3, #0
+    10f0:	6063      	str	r3, [r4, #4]
+    10f2:	4b07      	ldr	r3, [pc, #28]	; (1110 <OSSemCreate+0x44>)
+    10f4:	8125      	strh	r5, [r4, #8]
+    10f6:	6163      	str	r3, [r4, #20]
+    10f8:	4620      	mov	r0, r4
+    10fa:	f7ff fd49 	bl	b90 <OS_EventWaitListInit>
+    10fe:	4620      	mov	r0, r4
+    1100:	bd38      	pop	{r3, r4, r5, pc}
+    1102:	2400      	movs	r4, #0
+    1104:	e7fb      	b.n	10fe <OSSemCreate+0x32>
+    1106:	bf00      	nop
+    1108:	200031dc 	ldrdcs	r3, [r0], -ip
+    110c:	200031d8 	ldrdcs	r3, [r0], -r8
+    1110:	00001f34 	andeq	r1, r0, r4, lsr pc
+
+00001114 <OSSemPend>:
+    1114:	e92d 41f0 	stmdb	sp!, {r4, r5, r6, r7, r8, lr}
+    1118:	7803      	ldrb	r3, [r0, #0]
+    111a:	2b03      	cmp	r3, #3
+    111c:	4605      	mov	r5, r0
+    111e:	4688      	mov	r8, r1
+    1120:	4614      	mov	r4, r2
+    1122:	d003      	beq.n	112c <OSSemPend+0x18>
+    1124:	2301      	movs	r3, #1
+    1126:	7023      	strb	r3, [r4, #0]
+    1128:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
+    112c:	4b20      	ldr	r3, [pc, #128]	; (11b0 <OSSemPend+0x9c>)
+    112e:	781b      	ldrb	r3, [r3, #0]
+    1130:	b10b      	cbz	r3, 1136 <OSSemPend+0x22>
+    1132:	2302      	movs	r3, #2
+    1134:	e7f7      	b.n	1126 <OSSemPend+0x12>
+    1136:	4b1f      	ldr	r3, [pc, #124]	; (11b4 <OSSemPend+0xa0>)
+    1138:	781e      	ldrb	r6, [r3, #0]
+    113a:	b10e      	cbz	r6, 1140 <OSSemPend+0x2c>
+    113c:	230d      	movs	r3, #13
+    113e:	e7f2      	b.n	1126 <OSSemPend+0x12>
+    1140:	f000 fc22 	bl	1988 <OS_CPU_SR_Save>
+    1144:	892b      	ldrh	r3, [r5, #8]
+    1146:	4607      	mov	r7, r0
+    1148:	b12b      	cbz	r3, 1156 <OSSemPend+0x42>
+    114a:	3b01      	subs	r3, #1
+    114c:	812b      	strh	r3, [r5, #8]
+    114e:	f000 fc1f 	bl	1990 <OS_CPU_SR_Restore>
+    1152:	7026      	strb	r6, [r4, #0]
+    1154:	e7e8      	b.n	1128 <OSSemPend+0x14>
+    1156:	4e18      	ldr	r6, [pc, #96]	; (11b8 <OSSemPend+0xa4>)
+    1158:	6832      	ldr	r2, [r6, #0]
+    115a:	f892 1030 	ldrb.w	r1, [r2, #48]	; 0x30
+    115e:	f882 3031 	strb.w	r3, [r2, #49]	; 0x31
+    1162:	f041 0101 	orr.w	r1, r1, #1
+    1166:	f882 1030 	strb.w	r1, [r2, #48]	; 0x30
+    116a:	f8c2 802c 	str.w	r8, [r2, #44]	; 0x2c
+    116e:	4628      	mov	r0, r5
+    1170:	f7ff fca2 	bl	ab8 <OS_EventTaskWait>
+    1174:	4638      	mov	r0, r7
+    1176:	f000 fc0b 	bl	1990 <OS_CPU_SR_Restore>
+    117a:	f7ff fdfb 	bl	d74 <OS_Sched>
+    117e:	f000 fc03 	bl	1988 <OS_CPU_SR_Save>
+    1182:	4607      	mov	r7, r0
+    1184:	6830      	ldr	r0, [r6, #0]
+    1186:	f890 3031 	ldrb.w	r3, [r0, #49]	; 0x31
+    118a:	b13b      	cbz	r3, 119c <OSSemPend+0x88>
+    118c:	2b02      	cmp	r3, #2
+    118e:	d004      	beq.n	119a <OSSemPend+0x86>
+    1190:	4629      	mov	r1, r5
+    1192:	f7ff fcb5 	bl	b00 <OS_EventTaskRemove>
+    1196:	230a      	movs	r3, #10
+    1198:	e000      	b.n	119c <OSSemPend+0x88>
+    119a:	230e      	movs	r3, #14
+    119c:	7023      	strb	r3, [r4, #0]
+    119e:	6833      	ldr	r3, [r6, #0]
+    11a0:	2200      	movs	r2, #0
+    11a2:	861a      	strh	r2, [r3, #48]	; 0x30
+    11a4:	4638      	mov	r0, r7
+    11a6:	61da      	str	r2, [r3, #28]
+    11a8:	e8bd 41f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, lr}
+    11ac:	f000 bbf0 	b.w	1990 <OS_CPU_SR_Restore>
+    11b0:	200031dc 	ldrdcs	r3, [r0], -ip
+    11b4:	20002864 	andcs	r2, r0, r4, ror #16
+    11b8:	200031e0 	andcs	r3, r0, r0, ror #3
+
+000011bc <OSSemPost>:
+    11bc:	b570      	push	{r4, r5, r6, lr}
+    11be:	7803      	ldrb	r3, [r0, #0]
+    11c0:	2b03      	cmp	r3, #3
+    11c2:	4604      	mov	r4, r0
+    11c4:	d120      	bne.n	1208 <OSSemPost+0x4c>
+    11c6:	f000 fbdf 	bl	1988 <OS_CPU_SR_Save>
+    11ca:	7aa5      	ldrb	r5, [r4, #10]
+    11cc:	4606      	mov	r6, r0
+    11ce:	b16d      	cbz	r5, 11ec <OSSemPost+0x30>
+    11d0:	2300      	movs	r3, #0
+    11d2:	2201      	movs	r2, #1
+    11d4:	4619      	mov	r1, r3
+    11d6:	4620      	mov	r0, r4
+    11d8:	f7ff fca6 	bl	b28 <OS_EventTaskRdy>
+    11dc:	4630      	mov	r0, r6
+    11de:	f000 fbd7 	bl	1990 <OS_CPU_SR_Restore>
+    11e2:	f7ff fdc7 	bl	d74 <OS_Sched>
+    11e6:	2500      	movs	r5, #0
+    11e8:	4628      	mov	r0, r5
+    11ea:	bd70      	pop	{r4, r5, r6, pc}
+    11ec:	8923      	ldrh	r3, [r4, #8]
+    11ee:	f64f 72ff 	movw	r2, #65535	; 0xffff
+    11f2:	4293      	cmp	r3, r2
+    11f4:	d004      	beq.n	1200 <OSSemPost+0x44>
+    11f6:	3301      	adds	r3, #1
+    11f8:	8123      	strh	r3, [r4, #8]
+    11fa:	f000 fbc9 	bl	1990 <OS_CPU_SR_Restore>
+    11fe:	e7f3      	b.n	11e8 <OSSemPost+0x2c>
+    1200:	f000 fbc6 	bl	1990 <OS_CPU_SR_Restore>
+    1204:	2533      	movs	r5, #51	; 0x33
+    1206:	e7ef      	b.n	11e8 <OSSemPost+0x2c>
+    1208:	2501      	movs	r5, #1
+    120a:	e7ed      	b.n	11e8 <OSSemPost+0x2c>
+
+0000120c <OSTaskCreate>:
+    120c:	e92d 43f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, lr}
+    1210:	b085      	sub	sp, #20
+    1212:	461e      	mov	r6, r3
+    1214:	4605      	mov	r5, r0
+    1216:	4688      	mov	r8, r1
+    1218:	4691      	mov	r9, r2
+    121a:	f000 fbb5 	bl	1988 <OS_CPU_SR_Save>
+    121e:	4b1b      	ldr	r3, [pc, #108]	; (128c <OSTaskCreate+0x80>)
+    1220:	781b      	ldrb	r3, [r3, #0]
+    1222:	b133      	cbz	r3, 1232 <OSTaskCreate+0x26>
+    1224:	f000 fbb4 	bl	1990 <OS_CPU_SR_Restore>
+    1228:	253c      	movs	r5, #60	; 0x3c
+    122a:	4628      	mov	r0, r5
+    122c:	b005      	add	sp, #20
+    122e:	e8bd 83f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, pc}
+    1232:	4f17      	ldr	r7, [pc, #92]	; (1290 <OSTaskCreate+0x84>)
+    1234:	f857 4026 	ldr.w	r4, [r7, r6, lsl #2]
+    1238:	bb1c      	cbnz	r4, 1282 <OSTaskCreate+0x76>
+    123a:	2301      	movs	r3, #1
+    123c:	f847 3026 	str.w	r3, [r7, r6, lsl #2]
+    1240:	f000 fba6 	bl	1990 <OS_CPU_SR_Restore>
+    1244:	4623      	mov	r3, r4
+    1246:	464a      	mov	r2, r9
+    1248:	4641      	mov	r1, r8
+    124a:	4628      	mov	r0, r5
+    124c:	f000 fb24 	bl	1898 <OSTaskStkInit>
+    1250:	e9cd 4401 	strd	r4, r4, [sp, #4]
+    1254:	4601      	mov	r1, r0
+    1256:	9400      	str	r4, [sp, #0]
+    1258:	4623      	mov	r3, r4
+    125a:	4622      	mov	r2, r4
+    125c:	4630      	mov	r0, r6
+    125e:	f7ff fe41 	bl	ee4 <OS_TCBInit>
+    1262:	4605      	mov	r5, r0
+    1264:	b930      	cbnz	r0, 1274 <OSTaskCreate+0x68>
+    1266:	4b0b      	ldr	r3, [pc, #44]	; (1294 <OSTaskCreate+0x88>)
+    1268:	781b      	ldrb	r3, [r3, #0]
+    126a:	2b01      	cmp	r3, #1
+    126c:	d1dd      	bne.n	122a <OSTaskCreate+0x1e>
+    126e:	f7ff fd81 	bl	d74 <OS_Sched>
+    1272:	e7da      	b.n	122a <OSTaskCreate+0x1e>
+    1274:	f000 fb88 	bl	1988 <OS_CPU_SR_Save>
+    1278:	f847 4026 	str.w	r4, [r7, r6, lsl #2]
+    127c:	f000 fb88 	bl	1990 <OS_CPU_SR_Restore>
+    1280:	e7d3      	b.n	122a <OSTaskCreate+0x1e>
+    1282:	f000 fb85 	bl	1990 <OS_CPU_SR_Restore>
+    1286:	2528      	movs	r5, #40	; 0x28
+    1288:	e7cf      	b.n	122a <OSTaskCreate+0x1e>
+    128a:	bf00      	nop
+    128c:	200031dc 	ldrdcs	r3, [r0], -ip
+    1290:	20003c20 	andcs	r3, r0, r0, lsr #24
+    1294:	2000286d 	andcs	r2, r0, sp, ror #16
+
+00001298 <OSTaskDel>:
+    1298:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+    129c:	4b3b      	ldr	r3, [pc, #236]	; (138c <OSTaskDel+0xf4>)
+    129e:	781e      	ldrb	r6, [r3, #0]
+    12a0:	4605      	mov	r5, r0
+    12a2:	2e00      	cmp	r6, #0
+    12a4:	d16e      	bne.n	1384 <OSTaskDel+0xec>
+    12a6:	283f      	cmp	r0, #63	; 0x3f
+    12a8:	d06e      	beq.n	1388 <OSTaskDel+0xf0>
+    12aa:	f000 fb6d 	bl	1988 <OS_CPU_SR_Save>
+    12ae:	2dff      	cmp	r5, #255	; 0xff
+    12b0:	bf02      	ittt	eq
+    12b2:	4b37      	ldreq	r3, [pc, #220]	; (1390 <OSTaskDel+0xf8>)
+    12b4:	681b      	ldreq	r3, [r3, #0]
+    12b6:	f893 5032 	ldrbeq.w	r5, [r3, #50]	; 0x32
+    12ba:	4b36      	ldr	r3, [pc, #216]	; (1394 <OSTaskDel+0xfc>)
+    12bc:	f853 4025 	ldr.w	r4, [r3, r5, lsl #2]
+    12c0:	4680      	mov	r8, r0
+    12c2:	4699      	mov	r9, r3
+    12c4:	b92c      	cbnz	r4, 12d2 <OSTaskDel+0x3a>
+    12c6:	f000 fb63 	bl	1990 <OS_CPU_SR_Restore>
+    12ca:	2643      	movs	r6, #67	; 0x43
+    12cc:	4630      	mov	r0, r6
+    12ce:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+    12d2:	2c01      	cmp	r4, #1
+    12d4:	d103      	bne.n	12de <OSTaskDel+0x46>
+    12d6:	f000 fb5b 	bl	1990 <OS_CPU_SR_Restore>
+    12da:	263d      	movs	r6, #61	; 0x3d
+    12dc:	e7f6      	b.n	12cc <OSTaskDel+0x34>
+    12de:	f894 2034 	ldrb.w	r2, [r4, #52]	; 0x34
+    12e2:	492d      	ldr	r1, [pc, #180]	; (1398 <OSTaskDel+0x100>)
+    12e4:	f894 0035 	ldrb.w	r0, [r4, #53]	; 0x35
+    12e8:	5c8b      	ldrb	r3, [r1, r2]
+    12ea:	ea23 0300 	bic.w	r3, r3, r0
+    12ee:	548b      	strb	r3, [r1, r2]
+    12f0:	b933      	cbnz	r3, 1300 <OSTaskDel+0x68>
+    12f2:	4a2a      	ldr	r2, [pc, #168]	; (139c <OSTaskDel+0x104>)
+    12f4:	f894 1036 	ldrb.w	r1, [r4, #54]	; 0x36
+    12f8:	7813      	ldrb	r3, [r2, #0]
+    12fa:	ea23 0301 	bic.w	r3, r3, r1
+    12fe:	7013      	strb	r3, [r2, #0]
+    1300:	69e1      	ldr	r1, [r4, #28]
+    1302:	b111      	cbz	r1, 130a <OSTaskDel+0x72>
+    1304:	4620      	mov	r0, r4
+    1306:	f7ff fbfb 	bl	b00 <OS_EventTaskRemove>
+    130a:	6a60      	ldr	r0, [r4, #36]	; 0x24
+    130c:	b108      	cbz	r0, 1312 <OSTaskDel+0x7a>
+    130e:	f7ff fe8f 	bl	1030 <OS_FlagUnlink>
+    1312:	4f23      	ldr	r7, [pc, #140]	; (13a0 <OSTaskDel+0x108>)
+    1314:	2300      	movs	r3, #0
+    1316:	62e3      	str	r3, [r4, #44]	; 0x2c
+    1318:	8623      	strh	r3, [r4, #48]	; 0x30
+    131a:	783b      	ldrb	r3, [r7, #0]
+    131c:	2bff      	cmp	r3, #255	; 0xff
+    131e:	bf18      	it	ne
+    1320:	3301      	addne	r3, #1
+    1322:	4640      	mov	r0, r8
+    1324:	bf18      	it	ne
+    1326:	703b      	strbne	r3, [r7, #0]
+    1328:	f000 fb32 	bl	1990 <OS_CPU_SR_Restore>
+    132c:	f7ff fbc2 	bl	ab4 <OS_Dummy>
+    1330:	f000 fb2a 	bl	1988 <OS_CPU_SR_Save>
+    1334:	783b      	ldrb	r3, [r7, #0]
+    1336:	4680      	mov	r8, r0
+    1338:	b10b      	cbz	r3, 133e <OSTaskDel+0xa6>
+    133a:	3b01      	subs	r3, #1
+    133c:	703b      	strb	r3, [r7, #0]
+    133e:	4620      	mov	r0, r4
+    1340:	f000 faa1 	bl	1886 <OSTaskDelHook>
+    1344:	4a17      	ldr	r2, [pc, #92]	; (13a4 <OSTaskDel+0x10c>)
+    1346:	7813      	ldrb	r3, [r2, #0]
+    1348:	3b01      	subs	r3, #1
+    134a:	7013      	strb	r3, [r2, #0]
+    134c:	2300      	movs	r3, #0
+    134e:	f849 3025 	str.w	r3, [r9, r5, lsl #2]
+    1352:	e9d4 3205 	ldrd	r3, r2, [r4, #20]
+    1356:	b992      	cbnz	r2, 137e <OSTaskDel+0xe6>
+    1358:	619a      	str	r2, [r3, #24]
+    135a:	4a13      	ldr	r2, [pc, #76]	; (13a8 <OSTaskDel+0x110>)
+    135c:	6013      	str	r3, [r2, #0]
+    135e:	4b13      	ldr	r3, [pc, #76]	; (13ac <OSTaskDel+0x114>)
+    1360:	681a      	ldr	r2, [r3, #0]
+    1362:	601c      	str	r4, [r3, #0]
+    1364:	4b12      	ldr	r3, [pc, #72]	; (13b0 <OSTaskDel+0x118>)
+    1366:	64e3      	str	r3, [r4, #76]	; 0x4c
+    1368:	6162      	str	r2, [r4, #20]
+    136a:	4640      	mov	r0, r8
+    136c:	f000 fb10 	bl	1990 <OS_CPU_SR_Restore>
+    1370:	4b10      	ldr	r3, [pc, #64]	; (13b4 <OSTaskDel+0x11c>)
+    1372:	781b      	ldrb	r3, [r3, #0]
+    1374:	2b01      	cmp	r3, #1
+    1376:	d1a9      	bne.n	12cc <OSTaskDel+0x34>
+    1378:	f7ff fcfc 	bl	d74 <OS_Sched>
+    137c:	e7a6      	b.n	12cc <OSTaskDel+0x34>
+    137e:	6153      	str	r3, [r2, #20]
+    1380:	619a      	str	r2, [r3, #24]
+    1382:	e7ec      	b.n	135e <OSTaskDel+0xc6>
+    1384:	2640      	movs	r6, #64	; 0x40
+    1386:	e7a1      	b.n	12cc <OSTaskDel+0x34>
+    1388:	263e      	movs	r6, #62	; 0x3e
+    138a:	e79f      	b.n	12cc <OSTaskDel+0x34>
+    138c:	200031dc 	ldrdcs	r3, [r0], -ip
+    1390:	200031e0 	andcs	r3, r0, r0, ror #3
+    1394:	20003c20 	andcs	r3, r0, r0, lsr #24
+    1398:	20002fcd 	andcs	r2, r0, sp, asr #31
+    139c:	20002fcc 	andcs	r2, r0, ip, asr #31
+    13a0:	20002864 	andcs	r2, r0, r4, ror #16
+    13a4:	20002ddd 	ldrdcs	r2, [r0], -sp
+    13a8:	20002b4c 	andcs	r2, r0, ip, asr #22
+    13ac:	20002dd8 	ldrdcs	r2, [r0], -r8
+    13b0:	00001f34 	andeq	r1, r0, r4, lsr pc
+    13b4:	2000286d 	andcs	r2, r0, sp, ror #16
+
+000013b8 <OSTaskNameSet>:
+    13b8:	b570      	push	{r4, r5, r6, lr}
+    13ba:	4b10      	ldr	r3, [pc, #64]	; (13fc <OSTaskNameSet+0x44>)
+    13bc:	781b      	ldrb	r3, [r3, #0]
+    13be:	4605      	mov	r5, r0
+    13c0:	460e      	mov	r6, r1
+    13c2:	4614      	mov	r4, r2
+    13c4:	b113      	cbz	r3, 13cc <OSTaskNameSet+0x14>
+    13c6:	2312      	movs	r3, #18
+    13c8:	7023      	strb	r3, [r4, #0]
+    13ca:	bd70      	pop	{r4, r5, r6, pc}
+    13cc:	f000 fadc 	bl	1988 <OS_CPU_SR_Save>
+    13d0:	2dff      	cmp	r5, #255	; 0xff
+    13d2:	bf02      	ittt	eq
+    13d4:	4b0a      	ldreq	r3, [pc, #40]	; (1400 <OSTaskNameSet+0x48>)
+    13d6:	681b      	ldreq	r3, [r3, #0]
+    13d8:	f893 5032 	ldrbeq.w	r5, [r3, #50]	; 0x32
+    13dc:	4b09      	ldr	r3, [pc, #36]	; (1404 <OSTaskNameSet+0x4c>)
+    13de:	f853 3025 	ldr.w	r3, [r3, r5, lsl #2]
+    13e2:	b91b      	cbnz	r3, 13ec <OSTaskNameSet+0x34>
+    13e4:	f000 fad4 	bl	1990 <OS_CPU_SR_Restore>
+    13e8:	2343      	movs	r3, #67	; 0x43
+    13ea:	e7ed      	b.n	13c8 <OSTaskNameSet+0x10>
+    13ec:	2b01      	cmp	r3, #1
+    13ee:	d0f9      	beq.n	13e4 <OSTaskNameSet+0x2c>
+    13f0:	64de      	str	r6, [r3, #76]	; 0x4c
+    13f2:	f000 facd 	bl	1990 <OS_CPU_SR_Restore>
+    13f6:	2300      	movs	r3, #0
+    13f8:	e7e6      	b.n	13c8 <OSTaskNameSet+0x10>
+    13fa:	bf00      	nop
+    13fc:	200031dc 	ldrdcs	r3, [r0], -ip
+    1400:	200031e0 	andcs	r3, r0, r0, ror #3
+    1404:	20003c20 	andcs	r3, r0, r0, lsr #24
+
+00001408 <OSTaskStkChk>:
+    1408:	2300      	movs	r3, #0
+    140a:	e9c1 3300 	strd	r3, r3, [r1]
+    140e:	b570      	push	{r4, r5, r6, lr}
+    1410:	4605      	mov	r5, r0
+    1412:	460c      	mov	r4, r1
+    1414:	f000 fab8 	bl	1988 <OS_CPU_SR_Save>
+    1418:	2dff      	cmp	r5, #255	; 0xff
+    141a:	bf02      	ittt	eq
+    141c:	4b11      	ldreq	r3, [pc, #68]	; (1464 <OSTaskStkChk+0x5c>)
+    141e:	681b      	ldreq	r3, [r3, #0]
+    1420:	f893 5032 	ldrbeq.w	r5, [r3, #50]	; 0x32
+    1424:	4b10      	ldr	r3, [pc, #64]	; (1468 <OSTaskStkChk+0x60>)
+    1426:	f853 2025 	ldr.w	r2, [r3, r5, lsl #2]
+    142a:	b91a      	cbnz	r2, 1434 <OSTaskStkChk+0x2c>
+    142c:	f000 fab0 	bl	1990 <OS_CPU_SR_Restore>
+    1430:	2043      	movs	r0, #67	; 0x43
+    1432:	bd70      	pop	{r4, r5, r6, pc}
+    1434:	2a01      	cmp	r2, #1
+    1436:	d0f9      	beq.n	142c <OSTaskStkChk+0x24>
+    1438:	8a13      	ldrh	r3, [r2, #16]
+    143a:	07db      	lsls	r3, r3, #31
+    143c:	d403      	bmi.n	1446 <OSTaskStkChk+0x3e>
+    143e:	f000 faa7 	bl	1990 <OS_CPU_SR_Restore>
+    1442:	2045      	movs	r0, #69	; 0x45
+    1444:	e7f5      	b.n	1432 <OSTaskStkChk+0x2a>
+    1446:	e9d2 6502 	ldrd	r6, r5, [r2, #8]
+    144a:	f000 faa1 	bl	1990 <OS_CPU_SR_Restore>
+    144e:	2300      	movs	r3, #0
+    1450:	f856 2023 	ldr.w	r2, [r6, r3, lsl #2]
+    1454:	b122      	cbz	r2, 1460 <OSTaskStkChk+0x58>
+    1456:	6023      	str	r3, [r4, #0]
+    1458:	1aeb      	subs	r3, r5, r3
+    145a:	6063      	str	r3, [r4, #4]
+    145c:	2000      	movs	r0, #0
+    145e:	e7e8      	b.n	1432 <OSTaskStkChk+0x2a>
+    1460:	3301      	adds	r3, #1
+    1462:	e7f5      	b.n	1450 <OSTaskStkChk+0x48>
+    1464:	200031e0 	andcs	r3, r0, r0, ror #3
+    1468:	20003c20 	andcs	r3, r0, r0, lsr #24
+
+0000146c <OSTaskSuspend>:
+    146c:	b570      	push	{r4, r5, r6, lr}
+    146e:	4605      	mov	r5, r0
+    1470:	f000 fa8a 	bl	1988 <OS_CPU_SR_Save>
+    1474:	4b1d      	ldr	r3, [pc, #116]	; (14ec <OSTaskSuspend+0x80>)
+    1476:	2dff      	cmp	r5, #255	; 0xff
+    1478:	681b      	ldr	r3, [r3, #0]
+    147a:	d10b      	bne.n	1494 <OSTaskSuspend+0x28>
+    147c:	f893 5032 	ldrb.w	r5, [r3, #50]	; 0x32
+    1480:	2401      	movs	r4, #1
+    1482:	4b1b      	ldr	r3, [pc, #108]	; (14f0 <OSTaskSuspend+0x84>)
+    1484:	f853 3025 	ldr.w	r3, [r3, r5, lsl #2]
+    1488:	b953      	cbnz	r3, 14a0 <OSTaskSuspend+0x34>
+    148a:	f000 fa81 	bl	1990 <OS_CPU_SR_Restore>
+    148e:	2448      	movs	r4, #72	; 0x48
+    1490:	4620      	mov	r0, r4
+    1492:	bd70      	pop	{r4, r5, r6, pc}
+    1494:	f893 4032 	ldrb.w	r4, [r3, #50]	; 0x32
+    1498:	1b63      	subs	r3, r4, r5
+    149a:	425c      	negs	r4, r3
+    149c:	415c      	adcs	r4, r3
+    149e:	e7f0      	b.n	1482 <OSTaskSuspend+0x16>
+    14a0:	2b01      	cmp	r3, #1
+    14a2:	d103      	bne.n	14ac <OSTaskSuspend+0x40>
+    14a4:	f000 fa74 	bl	1990 <OS_CPU_SR_Restore>
+    14a8:	2443      	movs	r4, #67	; 0x43
+    14aa:	e7f1      	b.n	1490 <OSTaskSuspend+0x24>
+    14ac:	f893 1034 	ldrb.w	r1, [r3, #52]	; 0x34
+    14b0:	4d10      	ldr	r5, [pc, #64]	; (14f4 <OSTaskSuspend+0x88>)
+    14b2:	f893 6035 	ldrb.w	r6, [r3, #53]	; 0x35
+    14b6:	5c6a      	ldrb	r2, [r5, r1]
+    14b8:	ea22 0206 	bic.w	r2, r2, r6
+    14bc:	546a      	strb	r2, [r5, r1]
+    14be:	b932      	cbnz	r2, 14ce <OSTaskSuspend+0x62>
+    14c0:	490d      	ldr	r1, [pc, #52]	; (14f8 <OSTaskSuspend+0x8c>)
+    14c2:	f893 5036 	ldrb.w	r5, [r3, #54]	; 0x36
+    14c6:	780a      	ldrb	r2, [r1, #0]
+    14c8:	ea22 0205 	bic.w	r2, r2, r5
+    14cc:	700a      	strb	r2, [r1, #0]
+    14ce:	f893 2030 	ldrb.w	r2, [r3, #48]	; 0x30
+    14d2:	f042 0208 	orr.w	r2, r2, #8
+    14d6:	f883 2030 	strb.w	r2, [r3, #48]	; 0x30
+    14da:	f000 fa59 	bl	1990 <OS_CPU_SR_Restore>
+    14de:	2c01      	cmp	r4, #1
+    14e0:	d1d6      	bne.n	1490 <OSTaskSuspend+0x24>
+    14e2:	f7ff fc47 	bl	d74 <OS_Sched>
+    14e6:	2400      	movs	r4, #0
+    14e8:	e7d2      	b.n	1490 <OSTaskSuspend+0x24>
+    14ea:	bf00      	nop
+    14ec:	200031e0 	andcs	r3, r0, r0, ror #3
+    14f0:	20003c20 	andcs	r3, r0, r0, lsr #24
+    14f4:	20002fcd 	andcs	r2, r0, sp, asr #31
+    14f8:	20002fcc 	andcs	r2, r0, ip, asr #31
+
+000014fc <OS_TaskReturn>:
+    14fc:	b508      	push	{r3, lr}
+    14fe:	4b04      	ldr	r3, [pc, #16]	; (1510 <OS_TaskReturn+0x14>)
+    1500:	6818      	ldr	r0, [r3, #0]
+    1502:	f000 f9c4 	bl	188e <OSTaskReturnHook>
+    1506:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+    150a:	20ff      	movs	r0, #255	; 0xff
+    150c:	f7ff bec4 	b.w	1298 <OSTaskDel>
+    1510:	200031e0 	andcs	r3, r0, r0, ror #3
+
+00001514 <OS_TaskStkClr>:
+    1514:	f002 0203 	and.w	r2, r2, #3
+    1518:	2a03      	cmp	r2, #3
+    151a:	d101      	bne.n	1520 <OS_TaskStkClr+0xc>
+    151c:	2300      	movs	r3, #0
+    151e:	b901      	cbnz	r1, 1522 <OS_TaskStkClr+0xe>
+    1520:	4770      	bx	lr
+    1522:	f840 3b04 	str.w	r3, [r0], #4
+    1526:	3901      	subs	r1, #1
+    1528:	e7f9      	b.n	151e <OS_TaskStkClr+0xa>
+	...
+
+0000152c <OSTaskCreateExt>:
+    152c:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
+    1530:	b085      	sub	sp, #20
+    1532:	461c      	mov	r4, r3
+    1534:	f8dd b03c 	ldr.w	fp, [sp, #60]	; 0x3c
+    1538:	f8bd 6048 	ldrh.w	r6, [sp, #72]	; 0x48
+    153c:	4607      	mov	r7, r0
+    153e:	4688      	mov	r8, r1
+    1540:	4691      	mov	r9, r2
+    1542:	f000 fa21 	bl	1988 <OS_CPU_SR_Save>
+    1546:	4b20      	ldr	r3, [pc, #128]	; (15c8 <OSTaskCreateExt+0x9c>)
+    1548:	781b      	ldrb	r3, [r3, #0]
+    154a:	b133      	cbz	r3, 155a <OSTaskCreateExt+0x2e>
+    154c:	f000 fa20 	bl	1990 <OS_CPU_SR_Restore>
+    1550:	263c      	movs	r6, #60	; 0x3c
+    1552:	4630      	mov	r0, r6
+    1554:	b005      	add	sp, #20
+    1556:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
+    155a:	4d1c      	ldr	r5, [pc, #112]	; (15cc <OSTaskCreateExt+0xa0>)
+    155c:	f855 a024 	ldr.w	sl, [r5, r4, lsl #2]
+    1560:	f1ba 0f00 	cmp.w	sl, #0
+    1564:	d12b      	bne.n	15be <OSTaskCreateExt+0x92>
+    1566:	2301      	movs	r3, #1
+    1568:	f845 3024 	str.w	r3, [r5, r4, lsl #2]
+    156c:	f000 fa10 	bl	1990 <OS_CPU_SR_Restore>
+    1570:	4632      	mov	r2, r6
+    1572:	9910      	ldr	r1, [sp, #64]	; 0x40
+    1574:	4658      	mov	r0, fp
+    1576:	f7ff ffcd 	bl	1514 <OS_TaskStkClr>
+    157a:	4633      	mov	r3, r6
+    157c:	464a      	mov	r2, r9
+    157e:	4641      	mov	r1, r8
+    1580:	4638      	mov	r0, r7
+    1582:	f000 f989 	bl	1898 <OSTaskStkInit>
+    1586:	9b11      	ldr	r3, [sp, #68]	; 0x44
+    1588:	9301      	str	r3, [sp, #4]
+    158a:	9b10      	ldr	r3, [sp, #64]	; 0x40
+    158c:	9602      	str	r6, [sp, #8]
+    158e:	4601      	mov	r1, r0
+    1590:	9300      	str	r3, [sp, #0]
+    1592:	465a      	mov	r2, fp
+    1594:	f8bd 3038 	ldrh.w	r3, [sp, #56]	; 0x38
+    1598:	4620      	mov	r0, r4
+    159a:	f7ff fca3 	bl	ee4 <OS_TCBInit>
+    159e:	4606      	mov	r6, r0
+    15a0:	b930      	cbnz	r0, 15b0 <OSTaskCreateExt+0x84>
+    15a2:	4b0b      	ldr	r3, [pc, #44]	; (15d0 <OSTaskCreateExt+0xa4>)
+    15a4:	781b      	ldrb	r3, [r3, #0]
+    15a6:	2b01      	cmp	r3, #1
+    15a8:	d1d3      	bne.n	1552 <OSTaskCreateExt+0x26>
+    15aa:	f7ff fbe3 	bl	d74 <OS_Sched>
+    15ae:	e7d0      	b.n	1552 <OSTaskCreateExt+0x26>
+    15b0:	f000 f9ea 	bl	1988 <OS_CPU_SR_Save>
+    15b4:	f845 a024 	str.w	sl, [r5, r4, lsl #2]
+    15b8:	f000 f9ea 	bl	1990 <OS_CPU_SR_Restore>
+    15bc:	e7c9      	b.n	1552 <OSTaskCreateExt+0x26>
+    15be:	f000 f9e7 	bl	1990 <OS_CPU_SR_Restore>
+    15c2:	2628      	movs	r6, #40	; 0x28
+    15c4:	e7c5      	b.n	1552 <OSTaskCreateExt+0x26>
+    15c6:	bf00      	nop
+    15c8:	200031dc 	ldrdcs	r3, [r0], -ip
+    15cc:	20003c20 	andcs	r3, r0, r0, lsr #24
+    15d0:	2000286d 	andcs	r2, r0, sp, ror #16
+
+000015d4 <OSTimeDly>:
+    15d4:	b570      	push	{r4, r5, r6, lr}
+    15d6:	4b12      	ldr	r3, [pc, #72]	; (1620 <OSTimeDly+0x4c>)
+    15d8:	781a      	ldrb	r2, [r3, #0]
+    15da:	4b12      	ldr	r3, [pc, #72]	; (1624 <OSTimeDly+0x50>)
+    15dc:	781b      	ldrb	r3, [r3, #0]
+    15de:	4313      	orrs	r3, r2
+    15e0:	4604      	mov	r4, r0
+    15e2:	d11c      	bne.n	161e <OSTimeDly+0x4a>
+    15e4:	b1d8      	cbz	r0, 161e <OSTimeDly+0x4a>
+    15e6:	f000 f9cf 	bl	1988 <OS_CPU_SR_Save>
+    15ea:	4b0f      	ldr	r3, [pc, #60]	; (1628 <OSTimeDly+0x54>)
+    15ec:	4d0f      	ldr	r5, [pc, #60]	; (162c <OSTimeDly+0x58>)
+    15ee:	681b      	ldr	r3, [r3, #0]
+    15f0:	f893 1034 	ldrb.w	r1, [r3, #52]	; 0x34
+    15f4:	f893 6035 	ldrb.w	r6, [r3, #53]	; 0x35
+    15f8:	5c6a      	ldrb	r2, [r5, r1]
+    15fa:	ea22 0206 	bic.w	r2, r2, r6
+    15fe:	546a      	strb	r2, [r5, r1]
+    1600:	b932      	cbnz	r2, 1610 <OSTimeDly+0x3c>
+    1602:	490b      	ldr	r1, [pc, #44]	; (1630 <OSTimeDly+0x5c>)
+    1604:	f893 5036 	ldrb.w	r5, [r3, #54]	; 0x36
+    1608:	780a      	ldrb	r2, [r1, #0]
+    160a:	ea22 0205 	bic.w	r2, r2, r5
+    160e:	700a      	strb	r2, [r1, #0]
+    1610:	62dc      	str	r4, [r3, #44]	; 0x2c
+    1612:	f000 f9bd 	bl	1990 <OS_CPU_SR_Restore>
+    1616:	e8bd 4070 	ldmia.w	sp!, {r4, r5, r6, lr}
+    161a:	f7ff bbab 	b.w	d74 <OS_Sched>
+    161e:	bd70      	pop	{r4, r5, r6, pc}
+    1620:	200031dc 	ldrdcs	r3, [r0], -ip
+    1624:	20002864 	andcs	r2, r0, r4, ror #16
+    1628:	200031e0 	andcs	r3, r0, r0, ror #3
+    162c:	20002fcd 	andcs	r2, r0, sp, asr #31
+    1630:	20002fcc 	andcs	r2, r0, ip, asr #31
+
+00001634 <OSTmr_Link>:
+    1634:	2303      	movs	r3, #3
+    1636:	f880 3025 	strb.w	r3, [r0, #37]	; 0x25
+    163a:	4b11      	ldr	r3, [pc, #68]	; (1680 <OSTmr_Link+0x4c>)
+    163c:	2901      	cmp	r1, #1
+    163e:	b510      	push	{r4, lr}
+    1640:	681a      	ldr	r2, [r3, #0]
+    1642:	d101      	bne.n	1648 <OSTmr_Link+0x14>
+    1644:	69c3      	ldr	r3, [r0, #28]
+    1646:	e002      	b.n	164e <OSTmr_Link+0x1a>
+    1648:	6983      	ldr	r3, [r0, #24]
+    164a:	2b00      	cmp	r3, #0
+    164c:	d0fa      	beq.n	1644 <OSTmr_Link+0x10>
+    164e:	4413      	add	r3, r2
+    1650:	6143      	str	r3, [r0, #20]
+    1652:	6942      	ldr	r2, [r0, #20]
+    1654:	4b0b      	ldr	r3, [pc, #44]	; (1684 <OSTmr_Link+0x50>)
+    1656:	f002 0207 	and.w	r2, r2, #7
+    165a:	00d4      	lsls	r4, r2, #3
+    165c:	f853 1032 	ldr.w	r1, [r3, r2, lsl #3]
+    1660:	f843 0032 	str.w	r0, [r3, r2, lsl #3]
+    1664:	60c1      	str	r1, [r0, #12]
+    1666:	b929      	cbnz	r1, 1674 <OSTmr_Link+0x40>
+    1668:	4423      	add	r3, r4
+    166a:	2201      	movs	r2, #1
+    166c:	809a      	strh	r2, [r3, #4]
+    166e:	2300      	movs	r3, #0
+    1670:	6103      	str	r3, [r0, #16]
+    1672:	bd10      	pop	{r4, pc}
+    1674:	4423      	add	r3, r4
+    1676:	6108      	str	r0, [r1, #16]
+    1678:	889a      	ldrh	r2, [r3, #4]
+    167a:	3201      	adds	r2, #1
+    167c:	e7f6      	b.n	166c <OSTmr_Link+0x38>
+    167e:	bf00      	nop
+    1680:	200031e4 	andcs	r3, r0, r4, ror #3
+    1684:	20002824 	andcs	r2, r0, r4, lsr #16
+
+00001688 <OSTmr_Unlink>:
+    1688:	6943      	ldr	r3, [r0, #20]
+    168a:	68c2      	ldr	r2, [r0, #12]
+    168c:	f003 0107 	and.w	r1, r3, #7
+    1690:	4b0d      	ldr	r3, [pc, #52]	; (16c8 <OSTmr_Unlink+0x40>)
+    1692:	b510      	push	{r4, lr}
+    1694:	f853 4031 	ldr.w	r4, [r3, r1, lsl #3]
+    1698:	4284      	cmp	r4, r0
+    169a:	d105      	bne.n	16a8 <OSTmr_Unlink+0x20>
+    169c:	f843 2031 	str.w	r2, [r3, r1, lsl #3]
+    16a0:	b132      	cbz	r2, 16b0 <OSTmr_Unlink+0x28>
+    16a2:	2400      	movs	r4, #0
+    16a4:	6114      	str	r4, [r2, #16]
+    16a6:	e003      	b.n	16b0 <OSTmr_Unlink+0x28>
+    16a8:	6904      	ldr	r4, [r0, #16]
+    16aa:	60e2      	str	r2, [r4, #12]
+    16ac:	2a00      	cmp	r2, #0
+    16ae:	d1f9      	bne.n	16a4 <OSTmr_Unlink+0x1c>
+    16b0:	2201      	movs	r2, #1
+    16b2:	eb03 03c1 	add.w	r3, r3, r1, lsl #3
+    16b6:	f880 2025 	strb.w	r2, [r0, #37]	; 0x25
+    16ba:	2200      	movs	r2, #0
+    16bc:	e9c0 2203 	strd	r2, r2, [r0, #12]
+    16c0:	889a      	ldrh	r2, [r3, #4]
+    16c2:	3a01      	subs	r2, #1
+    16c4:	809a      	strh	r2, [r3, #4]
+    16c6:	bd10      	pop	{r4, pc}
+    16c8:	20002824 	andcs	r2, r0, r4, lsr #16
+
+000016cc <OSTmr_Task>:
+    16cc:	e92d 41f3 	stmdb	sp!, {r0, r1, r4, r5, r6, r7, r8, lr}
+    16d0:	4c17      	ldr	r4, [pc, #92]	; (1730 <OSTmr_Task+0x64>)
+    16d2:	4d18      	ldr	r5, [pc, #96]	; (1734 <OSTmr_Task+0x68>)
+    16d4:	4626      	mov	r6, r4
+    16d6:	6828      	ldr	r0, [r5, #0]
+    16d8:	f10d 0207 	add.w	r2, sp, #7
+    16dc:	2100      	movs	r1, #0
+    16de:	f7ff fd19 	bl	1114 <OSSemPend>
+    16e2:	f7ff f92f 	bl	944 <OSSchedLock>
+    16e6:	6823      	ldr	r3, [r4, #0]
+    16e8:	4a13      	ldr	r2, [pc, #76]	; (1738 <OSTmr_Task+0x6c>)
+    16ea:	3301      	adds	r3, #1
+    16ec:	6023      	str	r3, [r4, #0]
+    16ee:	f003 0307 	and.w	r3, r3, #7
+    16f2:	2702      	movs	r7, #2
+    16f4:	f852 0033 	ldr.w	r0, [r2, r3, lsl #3]
+    16f8:	b910      	cbnz	r0, 1700 <OSTmr_Task+0x34>
+    16fa:	f7ff fb6f 	bl	ddc <OSSchedUnlock>
+    16fe:	e7ea      	b.n	16d6 <OSTmr_Task+0xa>
+    1700:	6942      	ldr	r2, [r0, #20]
+    1702:	6833      	ldr	r3, [r6, #0]
+    1704:	f8d0 800c 	ldr.w	r8, [r0, #12]
+    1708:	429a      	cmp	r2, r3
+    170a:	d10c      	bne.n	1726 <OSTmr_Task+0x5a>
+    170c:	f7ff ffbc 	bl	1688 <OSTmr_Unlink>
+    1710:	f890 3024 	ldrb.w	r3, [r0, #36]	; 0x24
+    1714:	2b02      	cmp	r3, #2
+    1716:	d108      	bne.n	172a <OSTmr_Task+0x5e>
+    1718:	2101      	movs	r1, #1
+    171a:	f7ff ff8b 	bl	1634 <OSTmr_Link>
+    171e:	6843      	ldr	r3, [r0, #4]
+    1720:	b10b      	cbz	r3, 1726 <OSTmr_Task+0x5a>
+    1722:	6881      	ldr	r1, [r0, #8]
+    1724:	4798      	blx	r3
+    1726:	4640      	mov	r0, r8
+    1728:	e7e6      	b.n	16f8 <OSTmr_Task+0x2c>
+    172a:	f880 7025 	strb.w	r7, [r0, #37]	; 0x25
+    172e:	e7f6      	b.n	171e <OSTmr_Task+0x52>
+    1730:	200031e4 	andcs	r3, r0, r4, ror #3
+    1734:	20002868 	andcs	r2, r0, r8, ror #16
+    1738:	20002824 	andcs	r2, r0, r4, lsr #16
+
+0000173c <OSTmrSignal>:
+    173c:	4b01      	ldr	r3, [pc, #4]	; (1744 <OSTmrSignal+0x8>)
+    173e:	6818      	ldr	r0, [r3, #0]
+    1740:	f7ff bd3c 	b.w	11bc <OSSemPost>
+    1744:	20002868 	andcs	r2, r0, r8, ror #16
+
+00001748 <OSTmr_Init>:
+    1748:	b570      	push	{r4, r5, r6, lr}
+    174a:	482e      	ldr	r0, [pc, #184]	; (1804 <OSTmr_Init+0xbc>)
+    174c:	b088      	sub	sp, #32
+    174e:	f44f 7120 	mov.w	r1, #640	; 0x280
+    1752:	f7ff fa23 	bl	b9c <OS_MemClr>
+    1756:	482c      	ldr	r0, [pc, #176]	; (1808 <OSTmr_Init+0xc0>)
+    1758:	2140      	movs	r1, #64	; 0x40
+    175a:	f7ff fa1f 	bl	b9c <OS_MemClr>
+    175e:	2200      	movs	r2, #0
+    1760:	4b2a      	ldr	r3, [pc, #168]	; (180c <OSTmr_Init+0xc4>)
+    1762:	492b      	ldr	r1, [pc, #172]	; (1810 <OSTmr_Init+0xc8>)
+    1764:	2064      	movs	r0, #100	; 0x64
+    1766:	4614      	mov	r4, r2
+    1768:	3201      	adds	r2, #1
+    176a:	2a0f      	cmp	r2, #15
+    176c:	f803 0c28 	strb.w	r0, [r3, #-40]
+    1770:	f803 4c03 	strb.w	r4, [r3, #-3]
+    1774:	f843 3c1c 	str.w	r3, [r3, #-28]
+    1778:	f843 1c08 	str.w	r1, [r3, #-8]
+    177c:	f103 0328 	add.w	r3, r3, #40	; 0x28
+    1780:	d1f2      	bne.n	1768 <OSTmr_Init+0x20>
+    1782:	4a24      	ldr	r2, [pc, #144]	; (1814 <OSTmr_Init+0xcc>)
+    1784:	4b1f      	ldr	r3, [pc, #124]	; (1804 <OSTmr_Init+0xbc>)
+    1786:	6014      	str	r4, [r2, #0]
+    1788:	4a23      	ldr	r2, [pc, #140]	; (1818 <OSTmr_Init+0xd0>)
+    178a:	f8c3 1278 	str.w	r1, [r3, #632]	; 0x278
+    178e:	8014      	strh	r4, [r2, #0]
+    1790:	4a22      	ldr	r2, [pc, #136]	; (181c <OSTmr_Init+0xd4>)
+    1792:	f883 0258 	strb.w	r0, [r3, #600]	; 0x258
+    1796:	2110      	movs	r1, #16
+    1798:	8011      	strh	r1, [r2, #0]
+    179a:	4a21      	ldr	r2, [pc, #132]	; (1820 <OSTmr_Init+0xd8>)
+    179c:	f883 427d 	strb.w	r4, [r3, #637]	; 0x27d
+    17a0:	f8c3 4264 	str.w	r4, [r3, #612]	; 0x264
+    17a4:	2001      	movs	r0, #1
+    17a6:	6013      	str	r3, [r2, #0]
+    17a8:	f7ff fc90 	bl	10cc <OSSemCreate>
+    17ac:	4e1d      	ldr	r6, [pc, #116]	; (1824 <OSTmr_Init+0xdc>)
+    17ae:	4d1e      	ldr	r5, [pc, #120]	; (1828 <OSTmr_Init+0xe0>)
+    17b0:	6030      	str	r0, [r6, #0]
+    17b2:	2000      	movs	r0, #0
+    17b4:	f7ff fc8a 	bl	10cc <OSSemCreate>
+    17b8:	f10d 021e 	add.w	r2, sp, #30
+    17bc:	6028      	str	r0, [r5, #0]
+    17be:	491b      	ldr	r1, [pc, #108]	; (182c <OSTmr_Init+0xe4>)
+    17c0:	6830      	ldr	r0, [r6, #0]
+    17c2:	f7ff f865 	bl	890 <OSEventNameSet>
+    17c6:	6828      	ldr	r0, [r5, #0]
+    17c8:	4919      	ldr	r1, [pc, #100]	; (1830 <OSTmr_Init+0xe8>)
+    17ca:	f10d 021e 	add.w	r2, sp, #30
+    17ce:	f7ff f85f 	bl	890 <OSEventNameSet>
+    17d2:	2303      	movs	r3, #3
+    17d4:	e9cd 4303 	strd	r4, r3, [sp, #12]
+    17d8:	4a16      	ldr	r2, [pc, #88]	; (1834 <OSTmr_Init+0xec>)
+    17da:	9201      	str	r2, [sp, #4]
+    17dc:	2380      	movs	r3, #128	; 0x80
+    17de:	9302      	str	r3, [sp, #8]
+    17e0:	f64f 73fd 	movw	r3, #65533	; 0xfffd
+    17e4:	9300      	str	r3, [sp, #0]
+    17e6:	f502 72fe 	add.w	r2, r2, #508	; 0x1fc
+    17ea:	233d      	movs	r3, #61	; 0x3d
+    17ec:	2100      	movs	r1, #0
+    17ee:	4812      	ldr	r0, [pc, #72]	; (1838 <OSTmr_Init+0xf0>)
+    17f0:	f7ff fe9c 	bl	152c <OSTaskCreateExt>
+    17f4:	4911      	ldr	r1, [pc, #68]	; (183c <OSTmr_Init+0xf4>)
+    17f6:	f10d 021f 	add.w	r2, sp, #31
+    17fa:	203d      	movs	r0, #61	; 0x3d
+    17fc:	f7ff fddc 	bl	13b8 <OSTaskNameSet>
+    1800:	b008      	add	sp, #32
+    1802:	bd70      	pop	{r4, r5, r6, pc}
+    1804:	200028c8 	andcs	r2, r0, r8, asr #17
+    1808:	20002824 	andcs	r2, r0, r4, lsr #16
+    180c:	200028f0 	strdcs	r2, [r0], -r0
+    1810:	00001f34 	andeq	r1, r0, r4, lsr pc
+    1814:	200031e4 	andcs	r3, r0, r4, ror #3
+    1818:	20002874 	andcs	r2, r0, r4, ror r8
+    181c:	20002dd0 	ldrdcs	r2, [r0], -r0
+    1820:	20002820 	andcs	r2, r0, r0, lsr #16
+    1824:	200031ec 	andcs	r3, r0, ip, ror #3
+    1828:	20002868 	andcs	r2, r0, r8, ror #16
+    182c:	00002052 	andeq	r2, r0, r2, asr r0
+    1830:	00002063 	andeq	r2, r0, r3, rrx
+    1834:	20002fd8 	ldrdcs	r2, [r0], -r8
+    1838:	000016cd 	andeq	r1, r0, sp, asr #13
+    183c:	00002076 	andeq	r2, r0, r6, ror r0
+
+00001840 <App_TaskCreateHook>:
+    1840:	4770      	bx	lr
+
+00001842 <App_TaskDelHook>:
+    1842:	4770      	bx	lr
+
+00001844 <App_TaskIdleHook>:
+    1844:	4770      	bx	lr
+
+00001846 <App_TaskReturnHook>:
+    1846:	4770      	bx	lr
+
+00001848 <App_TaskStatHook>:
+    1848:	4770      	bx	lr
+
+0000184a <App_TaskSwHook>:
+    184a:	4770      	bx	lr
+
+0000184c <App_TCBInitHook>:
+    184c:	4770      	bx	lr
+
+0000184e <App_TimeTickHook>:
+    184e:	4770      	bx	lr
+
+00001850 <OSInitHookBegin>:
+    1850:	4a07      	ldr	r2, [pc, #28]	; (1870 <OSInitHookBegin+0x20>)
+    1852:	2380      	movs	r3, #128	; 0x80
+    1854:	2100      	movs	r1, #0
+    1856:	3b01      	subs	r3, #1
+    1858:	f842 1b04 	str.w	r1, [r2], #4
+    185c:	d1fb      	bne.n	1856 <OSInitHookBegin+0x6>
+    185e:	4a05      	ldr	r2, [pc, #20]	; (1874 <OSInitHookBegin+0x24>)
+    1860:	4905      	ldr	r1, [pc, #20]	; (1878 <OSInitHookBegin+0x28>)
+    1862:	f022 0207 	bic.w	r2, r2, #7
+    1866:	600a      	str	r2, [r1, #0]
+    1868:	4a04      	ldr	r2, [pc, #16]	; (187c <OSInitHookBegin+0x2c>)
+    186a:	8013      	strh	r3, [r2, #0]
+    186c:	4770      	bx	lr
+    186e:	bf00      	nop
+    1870:	20003d28 	andcs	r3, r0, r8, lsr #26
+    1874:	20003f28 	andcs	r3, r0, r8, lsr #30
+    1878:	20003d24 	andcs	r3, r0, r4, lsr #26
+    187c:	20001014 	andcs	r1, r0, r4, lsl r0
+
+00001880 <OSInitHookEnd>:
+    1880:	4770      	bx	lr
+
+00001882 <OSTaskCreateHook>:
+    1882:	f7ff bfdd 	b.w	1840 <App_TaskCreateHook>
+
+00001886 <OSTaskDelHook>:
+    1886:	f7ff bfdc 	b.w	1842 <App_TaskDelHook>
+
+0000188a <OSTaskIdleHook>:
+    188a:	f7ff bfdb 	b.w	1844 <App_TaskIdleHook>
+
+0000188e <OSTaskReturnHook>:
+    188e:	f7ff bfda 	b.w	1846 <App_TaskReturnHook>
+
+00001892 <OSTaskStatHook>:
+    1892:	f7ff bfd9 	b.w	1848 <App_TaskStatHook>
+	...
+
+00001898 <OSTaskStkInit>:
+    1898:	3204      	adds	r2, #4
+    189a:	f022 0207 	bic.w	r2, r2, #7
+    189e:	f04f 7380 	mov.w	r3, #16777216	; 0x1000000
+    18a2:	e942 0302 	strd	r0, r3, [r2, #-8]
+    18a6:	4b16      	ldr	r3, [pc, #88]	; (1900 <OSTaskStkInit+0x68>)
+    18a8:	f842 3c0c 	str.w	r3, [r2, #-12]
+    18ac:	f04f 3012 	mov.w	r0, #303174162	; 0x12121212
+    18b0:	f04f 3303 	mov.w	r3, #50529027	; 0x3030303
+    18b4:	e942 3005 	strd	r3, r0, [r2, #-20]
+    18b8:	f04f 3c02 	mov.w	ip, #33686018	; 0x2020202
+    18bc:	f04f 3301 	mov.w	r3, #16843009	; 0x1010101
+    18c0:	e942 3c07 	strd	r3, ip, [r2, #-28]
+    18c4:	f842 1c20 	str.w	r1, [r2, #-32]
+    18c8:	f04f 3310 	mov.w	r3, #269488144	; 0x10101010
+    18cc:	f04f 3111 	mov.w	r1, #286331153	; 0x11111111
+    18d0:	e942 310a 	strd	r3, r1, [r2, #-40]	; 0x28
+    18d4:	f04f 3009 	mov.w	r0, #151587081	; 0x9090909
+    18d8:	f04f 3308 	mov.w	r3, #134744072	; 0x8080808
+    18dc:	e942 300c 	strd	r3, r0, [r2, #-48]	; 0x30
+    18e0:	f04f 3c07 	mov.w	ip, #117901063	; 0x7070707
+    18e4:	f04f 3306 	mov.w	r3, #101058054	; 0x6060606
+    18e8:	e942 3c0e 	strd	r3, ip, [r2, #-56]	; 0x38
+    18ec:	4610      	mov	r0, r2
+    18ee:	f04f 3305 	mov.w	r3, #84215045	; 0x5050505
+    18f2:	f842 3c3c 	str.w	r3, [r2, #-60]
+    18f6:	f04f 3304 	mov.w	r3, #67372036	; 0x4040404
+    18fa:	f840 3d40 	str.w	r3, [r0, #-64]!
+    18fe:	4770      	bx	lr
+    1900:	000014fd 	strdeq	r1, [r0], -sp
+
+00001904 <OSTaskSwHook>:
+    1904:	f7ff bfa1 	b.w	184a <App_TaskSwHook>
+
+00001908 <OSTCBInitHook>:
+    1908:	f7ff bfa0 	b.w	184c <App_TCBInitHook>
+
+0000190c <OSTimeTickHook>:
+    190c:	b508      	push	{r3, lr}
+    190e:	f7ff ff9e 	bl	184e <App_TimeTickHook>
+    1912:	4a07      	ldr	r2, [pc, #28]	; (1930 <OSTimeTickHook+0x24>)
+    1914:	8813      	ldrh	r3, [r2, #0]
+    1916:	3301      	adds	r3, #1
+    1918:	b29b      	uxth	r3, r3
+    191a:	2b09      	cmp	r3, #9
+    191c:	d801      	bhi.n	1922 <OSTimeTickHook+0x16>
+    191e:	8013      	strh	r3, [r2, #0]
+    1920:	bd08      	pop	{r3, pc}
+    1922:	2300      	movs	r3, #0
+    1924:	8013      	strh	r3, [r2, #0]
+    1926:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+    192a:	f7ff bf07 	b.w	173c <OSTmrSignal>
+    192e:	bf00      	nop
+    1930:	20001014 	andcs	r1, r0, r4, lsl r0
+
+00001934 <SysTick_Handler>:
+    1934:	b508      	push	{r3, lr}
+    1936:	f000 f827 	bl	1988 <OS_CPU_SR_Save>
+    193a:	4a06      	ldr	r2, [pc, #24]	; (1954 <SysTick_Handler+0x20>)
+    193c:	7813      	ldrb	r3, [r2, #0]
+    193e:	3301      	adds	r3, #1
+    1940:	7013      	strb	r3, [r2, #0]
+    1942:	f000 f825 	bl	1990 <OS_CPU_SR_Restore>
+    1946:	f7ff f85b 	bl	a00 <OSTimeTick>
+    194a:	e8bd 4008 	ldmia.w	sp!, {r3, lr}
+    194e:	f7fe bfb9 	b.w	8c4 <OSIntExit>
+    1952:	bf00      	nop
+    1954:	200031dc 	ldrdcs	r3, [r0], -ip
+
+00001958 <OS_CPU_SysTickInit>:
+    1958:	4b08      	ldr	r3, [pc, #32]	; (197c <OS_CPU_SysTickInit+0x24>)
+    195a:	4a09      	ldr	r2, [pc, #36]	; (1980 <OS_CPU_SysTickInit+0x28>)
+    195c:	3801      	subs	r0, #1
+    195e:	6018      	str	r0, [r3, #0]
+    1960:	6813      	ldr	r3, [r2, #0]
+    1962:	f023 437f 	bic.w	r3, r3, #4278190080	; 0xff000000
+    1966:	6013      	str	r3, [r2, #0]
+    1968:	4b06      	ldr	r3, [pc, #24]	; (1984 <OS_CPU_SysTickInit+0x2c>)
+    196a:	681a      	ldr	r2, [r3, #0]
+    196c:	f042 0205 	orr.w	r2, r2, #5
+    1970:	601a      	str	r2, [r3, #0]
+    1972:	681a      	ldr	r2, [r3, #0]
+    1974:	f042 0202 	orr.w	r2, r2, #2
+    1978:	601a      	str	r2, [r3, #0]
+    197a:	4770      	bx	lr
+    197c:	e000e014 	and	lr, r0, r4, lsl r0
+    1980:	e000ed20 	and	lr, r0, r0, lsr #26
+    1984:	e000e010 	and	lr, r0, r0, lsl r0
+
+00001988 <OS_CPU_SR_Save>:
+    1988:	f3ef 8010 	mrs	r0, PRIMASK
+    198c:	b672      	cpsid	i
+    198e:	4770      	bx	lr
+
+00001990 <OS_CPU_SR_Restore>:
+    1990:	f380 8810 	msr	PRIMASK, r0
+    1994:	4770      	bx	lr
+	...
+
+00001998 <OSStartHighRdy>:
+    1998:	4809      	ldr	r0, [pc, #36]	; (19c0 <OSStartHang+0x2>)
+    199a:	f04f 01ff 	mov.w	r1, #255	; 0xff
+    199e:	7001      	strb	r1, [r0, #0]
+    19a0:	2000      	movs	r0, #0
+    19a2:	f380 8809 	msr	PSP, r0
+    19a6:	4807      	ldr	r0, [pc, #28]	; (19c4 <OSStartHang+0x6>)
+    19a8:	6801      	ldr	r1, [r0, #0]
+    19aa:	f381 8808 	msr	MSP, r1
+    19ae:	4806      	ldr	r0, [pc, #24]	; (19c8 <OSStartHang+0xa>)
+    19b0:	2101      	movs	r1, #1
+    19b2:	7001      	strb	r1, [r0, #0]
+    19b4:	4805      	ldr	r0, [pc, #20]	; (19cc <OSStartHang+0xe>)
+    19b6:	f04f 5180 	mov.w	r1, #268435456	; 0x10000000
+    19ba:	6001      	str	r1, [r0, #0]
+    19bc:	b662      	cpsie	i
+
+000019be <OSStartHang>:
+    19be:	e7fe      	b.n	19be <OSStartHang>
+    19c0:	e000ed22 	and	lr, r0, r2, lsr #26
+    19c4:	20003d24 	andcs	r3, r0, r4, lsr #26
+    19c8:	2000286d 	andcs	r2, r0, sp, ror #16
+    19cc:	e000ed04 	and	lr, r0, r4, lsl #26
+
+000019d0 <OSCtxSw>:
+    19d0:	4802      	ldr	r0, [pc, #8]	; (19dc <OSCtxSw+0xc>)
+    19d2:	f04f 5180 	mov.w	r1, #268435456	; 0x10000000
+    19d6:	6001      	str	r1, [r0, #0]
+    19d8:	4770      	bx	lr
+    19da:	ed040000 	stc	0, cr0, [r4, #-0]
+    19de:	 	stmdami	r2, {sp, lr, pc}
+
+000019e0 <OSIntCtxSw>:
+    19e0:	4802      	ldr	r0, [pc, #8]	; (19ec <OSIntCtxSw+0xc>)
+    19e2:	f04f 5180 	mov.w	r1, #268435456	; 0x10000000
+    19e6:	6001      	str	r1, [r0, #0]
+    19e8:	4770      	bx	lr
+    19ea:	ed040000 	stc	0, cr0, [r4, #-0]
+    19ee:	 	ldrbtlt	lr, [r2], -r0
+
+000019f0 <PendSV_Handler>:
+    19f0:	b672      	cpsid	i
+    19f2:	f3ef 8009 	mrs	r0, PSP
+    19f6:	b128      	cbz	r0, 1a04 <OS_CPU_PendSVHandler_nosave>
+    19f8:	3820      	subs	r0, #32
+    19fa:	e880 0ff0 	stmia.w	r0, {r4, r5, r6, r7, r8, r9, sl, fp}
+    19fe:	490d      	ldr	r1, [pc, #52]	; (1a34 <OS_CPU_PendSVHandler_nosave+0x30>)
+    1a00:	6809      	ldr	r1, [r1, #0]
+    1a02:	6008      	str	r0, [r1, #0]
+
+00001a04 <OS_CPU_PendSVHandler_nosave>:
+    1a04:	b500      	push	{lr}
+    1a06:	480c      	ldr	r0, [pc, #48]	; (1a38 <OS_CPU_PendSVHandler_nosave+0x34>)
+    1a08:	4780      	blx	r0
+    1a0a:	f85d eb04 	ldr.w	lr, [sp], #4
+    1a0e:	480b      	ldr	r0, [pc, #44]	; (1a3c <OS_CPU_PendSVHandler_nosave+0x38>)
+    1a10:	490b      	ldr	r1, [pc, #44]	; (1a40 <OS_CPU_PendSVHandler_nosave+0x3c>)
+    1a12:	780a      	ldrb	r2, [r1, #0]
+    1a14:	7002      	strb	r2, [r0, #0]
+    1a16:	4807      	ldr	r0, [pc, #28]	; (1a34 <OS_CPU_PendSVHandler_nosave+0x30>)
+    1a18:	490a      	ldr	r1, [pc, #40]	; (1a44 <OS_CPU_PendSVHandler_nosave+0x40>)
+    1a1a:	680a      	ldr	r2, [r1, #0]
+    1a1c:	6002      	str	r2, [r0, #0]
+    1a1e:	6810      	ldr	r0, [r2, #0]
+    1a20:	e890 0ff0 	ldmia.w	r0, {r4, r5, r6, r7, r8, r9, sl, fp}
+    1a24:	3020      	adds	r0, #32
+    1a26:	f380 8809 	msr	PSP, r0
+    1a2a:	f04e 0ef4 	orr.w	lr, lr, #244	; 0xf4
+    1a2e:	b662      	cpsie	i
+    1a30:	4770      	bx	lr
+    1a32:	31e00000 	mvncc	r0, r0
+    1a36:	19052000 	stmdbne	r5, {sp}
+    1a3a:	2b480000 	blcs	1201a42 <_etext+0x11ff76a>
+    1a3e:	28762000 	ldmdacs	r6!, {sp}^
+    1a42:	2fc42000 	svccs	0x00c42000
+    1a46:	 	ldrbmi	r2, [r0, -r0]!
+
+00001a48 <OSDebugInit>:
+    1a48:	4770      	bx	lr
+
+00001a4a <GPIODirModeSet>:
+    1a4a:	f8d0 3400 	ldr.w	r3, [r0, #1024]	; 0x400
+    1a4e:	f012 0f01 	tst.w	r2, #1
+    1a52:	bf14      	ite	ne
+    1a54:	430b      	orrne	r3, r1
+    1a56:	438b      	biceq	r3, r1
+    1a58:	f8c0 3400 	str.w	r3, [r0, #1024]	; 0x400
+    1a5c:	f8d0 3420 	ldr.w	r3, [r0, #1056]	; 0x420
+    1a60:	0792      	lsls	r2, r2, #30
+    1a62:	bf4c      	ite	mi
+    1a64:	4319      	orrmi	r1, r3
+    1a66:	ea23 0101 	bicpl.w	r1, r3, r1
+    1a6a:	f8c0 1420 	str.w	r1, [r0, #1056]	; 0x420
+    1a6e:	4770      	bx	lr
+
+00001a70 <GPIOPadConfigSet>:
+    1a70:	b5f0      	push	{r4, r5, r6, r7, lr}
+    1a72:	4c4e      	ldr	r4, [pc, #312]	; (1bac <GPIOPadConfigSet+0x13c>)
+    1a74:	6825      	ldr	r5, [r4, #0]
+    1a76:	4c4e      	ldr	r4, [pc, #312]	; (1bb0 <GPIOPadConfigSet+0x140>)
+    1a78:	402c      	ands	r4, r5
+    1a7a:	4d4e      	ldr	r5, [pc, #312]	; (1bb4 <GPIOPadConfigSet+0x144>)
+    1a7c:	42ac      	cmp	r4, r5
+    1a7e:	d106      	bne.n	1a8e <GPIOPadConfigSet+0x1e>
+    1a80:	07d5      	lsls	r5, r2, #31
+    1a82:	d421      	bmi.n	1ac8 <GPIOPadConfigSet+0x58>
+    1a84:	f8d0 4500 	ldr.w	r4, [r0, #1280]	; 0x500
+    1a88:	ea24 0401 	bic.w	r4, r4, r1
+    1a8c:	e01f      	b.n	1ace <GPIOPadConfigSet+0x5e>
+    1a8e:	f3c2 1741 	ubfx	r7, r2, #5, #2
+    1a92:	2500      	movs	r5, #0
+    1a94:	f04f 0c03 	mov.w	ip, #3
+    1a98:	fa41 f405 	asr.w	r4, r1, r5
+    1a9c:	07e4      	lsls	r4, r4, #31
+    1a9e:	d50f      	bpl.n	1ac0 <GPIOPadConfigSet+0x50>
+    1aa0:	f8d0 6fc4 	ldr.w	r6, [r0, #4036]	; 0xfc4
+    1aa4:	006c      	lsls	r4, r5, #1
+    1aa6:	fa0c fe04 	lsl.w	lr, ip, r4
+    1aaa:	ea26 060e 	bic.w	r6, r6, lr
+    1aae:	f8c0 6fc4 	str.w	r6, [r0, #4036]	; 0xfc4
+    1ab2:	f8d0 6fc4 	ldr.w	r6, [r0, #4036]	; 0xfc4
+    1ab6:	fa07 f404 	lsl.w	r4, r7, r4
+    1aba:	4334      	orrs	r4, r6
+    1abc:	f8c0 4fc4 	str.w	r4, [r0, #4036]	; 0xfc4
+    1ac0:	3501      	adds	r5, #1
+    1ac2:	2d08      	cmp	r5, #8
+    1ac4:	d1e8      	bne.n	1a98 <GPIOPadConfigSet+0x28>
+    1ac6:	e7db      	b.n	1a80 <GPIOPadConfigSet+0x10>
+    1ac8:	f8d0 4500 	ldr.w	r4, [r0, #1280]	; 0x500
+    1acc:	430c      	orrs	r4, r1
+    1ace:	f8c0 4500 	str.w	r4, [r0, #1280]	; 0x500
+    1ad2:	f8d0 4504 	ldr.w	r4, [r0, #1284]	; 0x504
+    1ad6:	0797      	lsls	r7, r2, #30
+    1ad8:	bf4c      	ite	mi
+    1ada:	430c      	orrmi	r4, r1
+    1adc:	438c      	bicpl	r4, r1
+    1ade:	f8c0 4504 	str.w	r4, [r0, #1284]	; 0x504
+    1ae2:	f8d0 4508 	ldr.w	r4, [r0, #1288]	; 0x508
+    1ae6:	0756      	lsls	r6, r2, #29
+    1ae8:	bf4c      	ite	mi
+    1aea:	430c      	orrmi	r4, r1
+    1aec:	438c      	bicpl	r4, r1
+    1aee:	f8c0 4508 	str.w	r4, [r0, #1288]	; 0x508
+    1af2:	f8d0 4518 	ldr.w	r4, [r0, #1304]	; 0x518
+    1af6:	0715      	lsls	r5, r2, #28
+    1af8:	bf4c      	ite	mi
+    1afa:	430c      	orrmi	r4, r1
+    1afc:	438c      	bicpl	r4, r1
+    1afe:	f8c0 4518 	str.w	r4, [r0, #1304]	; 0x518
+    1b02:	4c2a      	ldr	r4, [pc, #168]	; (1bac <GPIOPadConfigSet+0x13c>)
+    1b04:	6825      	ldr	r5, [r4, #0]
+    1b06:	4c2a      	ldr	r4, [pc, #168]	; (1bb0 <GPIOPadConfigSet+0x140>)
+    1b08:	402c      	ands	r4, r5
+    1b0a:	4d2a      	ldr	r5, [pc, #168]	; (1bb4 <GPIOPadConfigSet+0x144>)
+    1b0c:	42ac      	cmp	r4, r5
+    1b0e:	d008      	beq.n	1b22 <GPIOPadConfigSet+0xb2>
+    1b10:	f012 0f10 	tst.w	r2, #16
+    1b14:	f8d0 253c 	ldr.w	r2, [r0, #1340]	; 0x53c
+    1b18:	bf14      	ite	ne
+    1b1a:	430a      	orrne	r2, r1
+    1b1c:	438a      	biceq	r2, r1
+    1b1e:	f8c0 253c 	str.w	r2, [r0, #1340]	; 0x53c
+    1b22:	f8d0 250c 	ldr.w	r2, [r0, #1292]	; 0x50c
+    1b26:	07dc      	lsls	r4, r3, #31
+    1b28:	bf4c      	ite	mi
+    1b2a:	430a      	orrmi	r2, r1
+    1b2c:	438a      	bicpl	r2, r1
+    1b2e:	f8c0 250c 	str.w	r2, [r0, #1292]	; 0x50c
+    1b32:	f8d0 2510 	ldr.w	r2, [r0, #1296]	; 0x510
+    1b36:	079f      	lsls	r7, r3, #30
+    1b38:	bf4c      	ite	mi
+    1b3a:	430a      	orrmi	r2, r1
+    1b3c:	438a      	bicpl	r2, r1
+    1b3e:	f8c0 2510 	str.w	r2, [r0, #1296]	; 0x510
+    1b42:	f8d0 2514 	ldr.w	r2, [r0, #1300]	; 0x514
+    1b46:	075e      	lsls	r6, r3, #29
+    1b48:	bf4c      	ite	mi
+    1b4a:	430a      	orrmi	r2, r1
+    1b4c:	438a      	bicpl	r2, r1
+    1b4e:	f8c0 2514 	str.w	r2, [r0, #1300]	; 0x514
+    1b52:	f8d0 251c 	ldr.w	r2, [r0, #1308]	; 0x51c
+    1b56:	071d      	lsls	r5, r3, #28
+    1b58:	bf4c      	ite	mi
+    1b5a:	430a      	orrmi	r2, r1
+    1b5c:	438a      	bicpl	r2, r1
+    1b5e:	f8c0 251c 	str.w	r2, [r0, #1308]	; 0x51c
+    1b62:	4a12      	ldr	r2, [pc, #72]	; (1bac <GPIOPadConfigSet+0x13c>)
+    1b64:	6814      	ldr	r4, [r2, #0]
+    1b66:	4a12      	ldr	r2, [pc, #72]	; (1bb0 <GPIOPadConfigSet+0x140>)
+    1b68:	4022      	ands	r2, r4
+    1b6a:	4c12      	ldr	r4, [pc, #72]	; (1bb4 <GPIOPadConfigSet+0x144>)
+    1b6c:	42a2      	cmp	r2, r4
+    1b6e:	d010      	beq.n	1b92 <GPIOPadConfigSet+0x122>
+    1b70:	f8d0 2544 	ldr.w	r2, [r0, #1348]	; 0x544
+    1b74:	059c      	lsls	r4, r3, #22
+    1b76:	bf4c      	ite	mi
+    1b78:	430a      	orrmi	r2, r1
+    1b7a:	438a      	bicpl	r2, r1
+    1b7c:	f8c0 2544 	str.w	r2, [r0, #1348]	; 0x544
+    1b80:	f8d0 2540 	ldr.w	r2, [r0, #1344]	; 0x540
+    1b84:	f413 7f40 	tst.w	r3, #768	; 0x300
+    1b88:	bf14      	ite	ne
+    1b8a:	430a      	orrne	r2, r1
+    1b8c:	438a      	biceq	r2, r1
+    1b8e:	f8c0 2540 	str.w	r2, [r0, #1344]	; 0x540
+    1b92:	b92b      	cbnz	r3, 1ba0 <GPIOPadConfigSet+0x130>
+    1b94:	f8d0 3528 	ldr.w	r3, [r0, #1320]	; 0x528
+    1b98:	4319      	orrs	r1, r3
+    1b9a:	f8c0 1528 	str.w	r1, [r0, #1320]	; 0x528
+    1b9e:	bdf0      	pop	{r4, r5, r6, r7, pc}
+    1ba0:	f8d0 3528 	ldr.w	r3, [r0, #1320]	; 0x528
+    1ba4:	ea23 0101 	bic.w	r1, r3, r1
+    1ba8:	e7f7      	b.n	1b9a <GPIOPadConfigSet+0x12a>
+    1baa:	bf00      	nop
+    1bac:	400fe000 	andmi	lr, pc, r0
+    1bb0:	70ff0000 	rscsvc	r0, pc, r0
+    1bb4:	10050000 	andne	r0, r5, r0
+
+00001bb8 <GPIOPinTypeCAN>:
+    1bb8:	b570      	push	{r4, r5, r6, lr}
+    1bba:	2202      	movs	r2, #2
+    1bbc:	460d      	mov	r5, r1
+    1bbe:	f7ff ff44 	bl	1a4a <GPIODirModeSet>
+    1bc2:	4629      	mov	r1, r5
+    1bc4:	2308      	movs	r3, #8
+    1bc6:	e8bd 4070 	ldmia.w	sp!, {r4, r5, r6, lr}
+    1bca:	2266      	movs	r2, #102	; 0x66
+    1bcc:	f7ff bf50 	b.w	1a70 <GPIOPadConfigSet>
+
+00001bd0 <GPIOPinTypeEthernetLED>:
+    1bd0:	f7ff bff2 	b.w	1bb8 <GPIOPinTypeCAN>
+
+00001bd4 <_SysCtlMemTimingGet>:
+    1bd4:	4b11      	ldr	r3, [pc, #68]	; (1c1c <_SysCtlMemTimingGet+0x48>)
+    1bd6:	4298      	cmp	r0, r3
+    1bd8:	d914      	bls.n	1c04 <_SysCtlMemTimingGet+0x30>
+    1bda:	4b11      	ldr	r3, [pc, #68]	; (1c20 <_SysCtlMemTimingGet+0x4c>)
+    1bdc:	4298      	cmp	r0, r3
+    1bde:	d913      	bls.n	1c08 <_SysCtlMemTimingGet+0x34>
+    1be0:	4b10      	ldr	r3, [pc, #64]	; (1c24 <_SysCtlMemTimingGet+0x50>)
+    1be2:	4298      	cmp	r0, r3
+    1be4:	d912      	bls.n	1c0c <_SysCtlMemTimingGet+0x38>
+    1be6:	4b10      	ldr	r3, [pc, #64]	; (1c28 <_SysCtlMemTimingGet+0x54>)
+    1be8:	4298      	cmp	r0, r3
+    1bea:	d911      	bls.n	1c10 <_SysCtlMemTimingGet+0x3c>
+    1bec:	4b0f      	ldr	r3, [pc, #60]	; (1c2c <_SysCtlMemTimingGet+0x58>)
+    1bee:	4298      	cmp	r0, r3
+    1bf0:	d910      	bls.n	1c14 <_SysCtlMemTimingGet+0x40>
+    1bf2:	4b0f      	ldr	r3, [pc, #60]	; (1c30 <_SysCtlMemTimingGet+0x5c>)
+    1bf4:	4298      	cmp	r0, r3
+    1bf6:	d80f      	bhi.n	1c18 <_SysCtlMemTimingGet+0x44>
+    1bf8:	2305      	movs	r3, #5
+    1bfa:	4a0e      	ldr	r2, [pc, #56]	; (1c34 <_SysCtlMemTimingGet+0x60>)
+    1bfc:	eb02 03c3 	add.w	r3, r2, r3, lsl #3
+    1c00:	6858      	ldr	r0, [r3, #4]
+    1c02:	4770      	bx	lr
+    1c04:	2300      	movs	r3, #0
+    1c06:	e7f8      	b.n	1bfa <_SysCtlMemTimingGet+0x26>
+    1c08:	2301      	movs	r3, #1
+    1c0a:	e7f6      	b.n	1bfa <_SysCtlMemTimingGet+0x26>
+    1c0c:	2302      	movs	r3, #2
+    1c0e:	e7f4      	b.n	1bfa <_SysCtlMemTimingGet+0x26>
+    1c10:	2303      	movs	r3, #3
+    1c12:	e7f2      	b.n	1bfa <_SysCtlMemTimingGet+0x26>
+    1c14:	2304      	movs	r3, #4
+    1c16:	e7f0      	b.n	1bfa <_SysCtlMemTimingGet+0x26>
+    1c18:	2000      	movs	r0, #0
+    1c1a:	4770      	bx	lr
+    1c1c:	00f42400 	rscseq	r2, r4, r0, lsl #8
+    1c20:	02625a00 	rsbeq	r5, r2, #0, 20
+    1c24:	03938700 	orrseq	r8, r3, #0, 14
+    1c28:	04c4b400 	strbeq	fp, [r4], #1024	; 0x400
+    1c2c:	05f5e100 	ldrbeq	lr, [r5, #256]!	; 0x100
+    1c30:	07270e00 	streq	r0, [r7, -r0, lsl #28]!
+    1c34:	000022a8 	andeq	r2, r0, r8, lsr #5
+
+00001c38 <SysCtlClockFreqSet>:
+    1c38:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
+    1c3c:	4b7c      	ldr	r3, [pc, #496]	; (1e30 <SysCtlClockFreqSet+0x1f8>)
+    1c3e:	681a      	ldr	r2, [r3, #0]
+    1c40:	4b7c      	ldr	r3, [pc, #496]	; (1e34 <SysCtlClockFreqSet+0x1fc>)
+    1c42:	4013      	ands	r3, r2
+    1c44:	4a7c      	ldr	r2, [pc, #496]	; (1e38 <SysCtlClockFreqSet+0x200>)
+    1c46:	4293      	cmp	r3, r2
+    1c48:	d102      	bne.n	1c50 <SysCtlClockFreqSet+0x18>
+    1c4a:	2000      	movs	r0, #0
+    1c4c:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
+    1c50:	f000 0338 	and.w	r3, r0, #56	; 0x38
+    1c54:	2b10      	cmp	r3, #16
+    1c56:	f000 80a6 	beq.w	1da6 <SysCtlClockFreqSet+0x16e>
+    1c5a:	2b30      	cmp	r3, #48	; 0x30
+    1c5c:	f3c0 1984 	ubfx	r9, r0, #6, #5
+    1c60:	f000 80a7 	beq.w	1db2 <SysCtlClockFreqSet+0x17a>
+    1c64:	2b38      	cmp	r3, #56	; 0x38
+    1c66:	f000 80a9 	beq.w	1dbc <SysCtlClockFreqSet+0x184>
+    1c6a:	2b00      	cmp	r3, #0
+    1c6c:	f040 80ab 	bne.w	1dc6 <SysCtlClockFreqSet+0x18e>
+    1c70:	f1a9 0309 	sub.w	r3, r9, #9
+    1c74:	2b11      	cmp	r3, #17
+    1c76:	d8e8      	bhi.n	1c4a <SysCtlClockFreqSet+0x12>
+    1c78:	4b70      	ldr	r3, [pc, #448]	; (1e3c <SysCtlClockFreqSet+0x204>)
+    1c7a:	4a71      	ldr	r2, [pc, #452]	; (1e40 <SysCtlClockFreqSet+0x208>)
+    1c7c:	f853 8029 	ldr.w	r8, [r3, r9, lsl #2]
+    1c80:	6813      	ldr	r3, [r2, #0]
+    1c82:	4c70      	ldr	r4, [pc, #448]	; (1e44 <SysCtlClockFreqSet+0x20c>)
+    1c84:	f023 031c 	bic.w	r3, r3, #28
+    1c88:	f043 0310 	orr.w	r3, r3, #16
+    1c8c:	6013      	str	r3, [r2, #0]
+    1c8e:	f44f 2300 	mov.w	r3, #524288	; 0x80000
+    1c92:	6822      	ldr	r2, [r4, #0]
+    1c94:	05d5      	lsls	r5, r2, #23
+    1c96:	f140 8082 	bpl.w	1d9e <SysCtlClockFreqSet+0x166>
+    1c9a:	f04f 744c 	mov.w	r4, #53477376	; 0x3300000
+    1c9e:	f410 5f60 	tst.w	r0, #14336	; 0x3800
+    1ca2:	f040 8093 	bne.w	1dcc <SysCtlClockFreqSet+0x194>
+    1ca6:	f010 0f28 	tst.w	r0, #40	; 0x28
+    1caa:	d1ce      	bne.n	1c4a <SysCtlClockFreqSet+0x12>
+    1cac:	f3c0 6602 	ubfx	r6, r0, #24, #3
+    1cb0:	4865      	ldr	r0, [pc, #404]	; (1e48 <SysCtlClockFreqSet+0x210>)
+    1cb2:	4f66      	ldr	r7, [pc, #408]	; (1e4c <SysCtlClockFreqSet+0x214>)
+    1cb4:	4d66      	ldr	r5, [pc, #408]	; (1e50 <SysCtlClockFreqSet+0x218>)
+    1cb6:	f7ff ff8d 	bl	1bd4 <_SysCtlMemTimingGet>
+    1cba:	6038      	str	r0, [r7, #0]
+    1cbc:	682a      	ldr	r2, [r5, #0]
+    1cbe:	4b65      	ldr	r3, [pc, #404]	; (1e54 <SysCtlClockFreqSet+0x21c>)
+    1cc0:	4013      	ands	r3, r2
+    1cc2:	f043 4300 	orr.w	r3, r3, #2147483648	; 0x80000000
+    1cc6:	602b      	str	r3, [r5, #0]
+    1cc8:	4b63      	ldr	r3, [pc, #396]	; (1e58 <SysCtlClockFreqSet+0x220>)
+    1cca:	4a64      	ldr	r2, [pc, #400]	; (1e5c <SysCtlClockFreqSet+0x224>)
+    1ccc:	f853 3026 	ldr.w	r3, [r3, r6, lsl #2]
+    1cd0:	1e48      	subs	r0, r1, #1
+    1cd2:	f1a9 0c09 	sub.w	ip, r9, #9
+    1cd6:	4418      	add	r0, r3
+    1cd8:	f04f 09d8 	mov.w	r9, #216	; 0xd8
+    1cdc:	682b      	ldr	r3, [r5, #0]
+    1cde:	fbb0 f0f1 	udiv	r0, r0, r1
+    1ce2:	fb09 f606 	mul.w	r6, r9, r6
+    1ce6:	f04f 090c 	mov.w	r9, #12
+    1cea:	fb09 690c 	mla	r9, r9, ip, r6
+    1cee:	4323      	orrs	r3, r4
+    1cf0:	602b      	str	r3, [r5, #0]
+    1cf2:	eb02 0309 	add.w	r3, r2, r9
+    1cf6:	495a      	ldr	r1, [pc, #360]	; (1e60 <SysCtlClockFreqSet+0x228>)
+    1cf8:	685b      	ldr	r3, [r3, #4]
+    1cfa:	600b      	str	r3, [r1, #0]
+    1cfc:	680b      	ldr	r3, [r1, #0]
+    1cfe:	4e59      	ldr	r6, [pc, #356]	; (1e64 <SysCtlClockFreqSet+0x22c>)
+    1d00:	f852 2009 	ldr.w	r2, [r2, r9]
+    1d04:	3801      	subs	r0, #1
+    1d06:	ea43 2300 	orr.w	r3, r3, r0, lsl #8
+    1d0a:	600b      	str	r3, [r1, #0]
+    1d0c:	6833      	ldr	r3, [r6, #0]
+    1d0e:	f403 0300 	and.w	r3, r3, #8388608	; 0x800000
+    1d12:	4313      	orrs	r3, r2
+    1d14:	6033      	str	r3, [r6, #0]
+    1d16:	6833      	ldr	r3, [r6, #0]
+    1d18:	6830      	ldr	r0, [r6, #0]
+    1d1a:	f8d1 e000 	ldr.w	lr, [r1]
+    1d1e:	6809      	ldr	r1, [r1, #0]
+    1d20:	0a9a      	lsrs	r2, r3, #10
+    1d22:	f402 7278 	and.w	r2, r2, #992	; 0x3e0
+    1d26:	f3c3 2389 	ubfx	r3, r3, #10, #10
+    1d2a:	1a9a      	subs	r2, r3, r2
+    1d2c:	f001 011f 	and.w	r1, r1, #31
+    1d30:	3101      	adds	r1, #1
+    1d32:	fbb8 f1f1 	udiv	r1, r8, r1
+    1d36:	fb01 fc02 	mul.w	ip, r1, r2
+    1d3a:	095a      	lsrs	r2, r3, #5
+    1d3c:	434a      	muls	r2, r1
+    1d3e:	0952      	lsrs	r2, r2, #5
+    1d40:	f3c0 0009 	ubfx	r0, r0, #0, #10
+    1d44:	eb02 229c 	add.w	r2, r2, ip, lsr #10
+    1d48:	f3ce 2804 	ubfx	r8, lr, #8, #5
+    1d4c:	fb01 2200 	mla	r2, r1, r0, r2
+    1d50:	f108 0801 	add.w	r8, r8, #1
+    1d54:	fbb2 f8f8 	udiv	r8, r2, r8
+    1d58:	ea4f 0858 	mov.w	r8, r8, lsr #1
+    1d5c:	4640      	mov	r0, r8
+    1d5e:	f7ff ff39 	bl	1bd4 <_SysCtlMemTimingGet>
+    1d62:	6038      	str	r0, [r7, #0]
+    1d64:	6833      	ldr	r3, [r6, #0]
+    1d66:	f413 0f00 	tst.w	r3, #8388608	; 0x800000
+    1d6a:	bf15      	itete	ne
+    1d6c:	682a      	ldrne	r2, [r5, #0]
+    1d6e:	6832      	ldreq	r2, [r6, #0]
+    1d70:	f042 4280 	orrne.w	r2, r2, #1073741824	; 0x40000000
+    1d74:	f442 0200 	orreq.w	r2, r2, #8388608	; 0x800000
+    1d78:	bf14      	ite	ne
+    1d7a:	602a      	strne	r2, [r5, #0]
+    1d7c:	6032      	streq	r2, [r6, #0]
+    1d7e:	4a3a      	ldr	r2, [pc, #232]	; (1e68 <SysCtlClockFreqSet+0x230>)
+    1d80:	462b      	mov	r3, r5
+    1d82:	f44f 4100 	mov.w	r1, #32768	; 0x8000
+    1d86:	6810      	ldr	r0, [r2, #0]
+    1d88:	07c0      	lsls	r0, r0, #31
+    1d8a:	d448      	bmi.n	1e1e <SysCtlClockFreqSet+0x1e6>
+    1d8c:	3901      	subs	r1, #1
+    1d8e:	d1fa      	bne.n	1d86 <SysCtlClockFreqSet+0x14e>
+    1d90:	4a2f      	ldr	r2, [pc, #188]	; (1e50 <SysCtlClockFreqSet+0x218>)
+    1d92:	6813      	ldr	r3, [r2, #0]
+    1d94:	f423 0370 	bic.w	r3, r3, #15728640	; 0xf00000
+    1d98:	6013      	str	r3, [r2, #0]
+    1d9a:	4608      	mov	r0, r1
+    1d9c:	e756      	b.n	1c4c <SysCtlClockFreqSet+0x14>
+    1d9e:	3b01      	subs	r3, #1
+    1da0:	f47f af77 	bne.w	1c92 <SysCtlClockFreqSet+0x5a>
+    1da4:	e751      	b.n	1c4a <SysCtlClockFreqSet+0x12>
+    1da6:	f8df 80c4 	ldr.w	r8, [pc, #196]	; 1e6c <SysCtlClockFreqSet+0x234>
+    1daa:	2400      	movs	r4, #0
+    1dac:	f04f 0915 	mov.w	r9, #21
+    1db0:	e775      	b.n	1c9e <SysCtlClockFreqSet+0x66>
+    1db2:	f44f 1400 	mov.w	r4, #2097152	; 0x200000
+    1db6:	f247 5830 	movw	r8, #30000	; 0x7530
+    1dba:	e770      	b.n	1c9e <SysCtlClockFreqSet+0x66>
+    1dbc:	f44f 0480 	mov.w	r4, #4194304	; 0x400000
+    1dc0:	f44f 4800 	mov.w	r8, #32768	; 0x8000
+    1dc4:	e76b      	b.n	1c9e <SysCtlClockFreqSet+0x66>
+    1dc6:	2400      	movs	r4, #0
+    1dc8:	46a0      	mov	r8, r4
+    1dca:	e768      	b.n	1c9e <SysCtlClockFreqSet+0x66>
+    1dcc:	4827      	ldr	r0, [pc, #156]	; (1e6c <SysCtlClockFreqSet+0x234>)
+    1dce:	4f1f      	ldr	r7, [pc, #124]	; (1e4c <SysCtlClockFreqSet+0x214>)
+    1dd0:	4e1f      	ldr	r6, [pc, #124]	; (1e50 <SysCtlClockFreqSet+0x218>)
+    1dd2:	f7ff feff 	bl	1bd4 <_SysCtlMemTimingGet>
+    1dd6:	6038      	str	r0, [r7, #0]
+    1dd8:	4822      	ldr	r0, [pc, #136]	; (1e64 <SysCtlClockFreqSet+0x22c>)
+    1dda:	6803      	ldr	r3, [r0, #0]
+    1ddc:	f423 0300 	bic.w	r3, r3, #8388608	; 0x800000
+    1de0:	6003      	str	r3, [r0, #0]
+    1de2:	6830      	ldr	r0, [r6, #0]
+    1de4:	4b22      	ldr	r3, [pc, #136]	; (1e70 <SysCtlClockFreqSet+0x238>)
+    1de6:	4003      	ands	r3, r0
+    1de8:	f043 4300 	orr.w	r3, r3, #2147483648	; 0x80000000
+    1dec:	6033      	str	r3, [r6, #0]
+    1dee:	b1a1      	cbz	r1, 1e1a <SysCtlClockFreqSet+0x1e2>
+    1df0:	fbb8 f5f1 	udiv	r5, r8, r1
+    1df4:	4588      	cmp	r8, r1
+    1df6:	bf28      	it	cs
+    1df8:	f105 35ff 	addcs.w	r5, r5, #4294967295	; 0xffffffff
+    1dfc:	1c69      	adds	r1, r5, #1
+    1dfe:	fbb8 f1f1 	udiv	r1, r8, r1
+    1e02:	4608      	mov	r0, r1
+    1e04:	f7ff fee6 	bl	1bd4 <_SysCtlMemTimingGet>
+    1e08:	6038      	str	r0, [r7, #0]
+    1e0a:	6833      	ldr	r3, [r6, #0]
+    1e0c:	ea43 2385 	orr.w	r3, r3, r5, lsl #10
+    1e10:	431c      	orrs	r4, r3
+    1e12:	f044 4400 	orr.w	r4, r4, #2147483648	; 0x80000000
+    1e16:	6034      	str	r4, [r6, #0]
+    1e18:	e7ba      	b.n	1d90 <SysCtlClockFreqSet+0x158>
+    1e1a:	460d      	mov	r5, r1
+    1e1c:	e7f1      	b.n	1e02 <SysCtlClockFreqSet+0x1ca>
+    1e1e:	681a      	ldr	r2, [r3, #0]
+    1e20:	4314      	orrs	r4, r2
+    1e22:	f044 4410 	orr.w	r4, r4, #2415919104	; 0x90000000
+    1e26:	f044 0401 	orr.w	r4, r4, #1
+    1e2a:	601c      	str	r4, [r3, #0]
+    1e2c:	4641      	mov	r1, r8
+    1e2e:	e7af      	b.n	1d90 <SysCtlClockFreqSet+0x158>
+    1e30:	400fe000 	andmi	lr, pc, r0
+    1e34:	70ff0000 	rscsvc	r0, pc, r0
+    1e38:	10050000 	andne	r0, r5, r0
+    1e3c:	0000223c 	andeq	r2, r0, ip, lsr r2
+    1e40:	400fe07c 	andmi	lr, pc, ip, ror r0	; <UNPREDICTABLE>
+    1e44:	400fe050 	andmi	lr, pc, r0, asr r0	; <UNPREDICTABLE>
+    1e48:	017d7840 	cmneq	sp, r0, asr #16
+    1e4c:	400fe0c0 	andmi	lr, pc, r0, asr #1
+    1e50:	400fe0b0 	strhmi	lr, [pc], -r0
+    1e54:	e00ffc00 	and	pc, pc, r0, lsl #24
+    1e58:	00002234 	andeq	r2, r0, r4, lsr r2
+    1e5c:	00002084 	andeq	r2, r0, r4, lsl #1
+    1e60:	400fe164 	andmi	lr, pc, r4, ror #2
+    1e64:	400fe160 	andmi	lr, pc, r0, ror #2
+    1e68:	400fe168 	andmi	lr, pc, r8, ror #2
+    1e6c:	00f42400 	rscseq	r2, r4, r0, lsl #8
+    1e70:	ef0003ff 	svc	0x000003ff
+
+00001e74 <OS_GetRandom>:
+    1e74:	4a05      	ldr	r2, [pc, #20]	; (1e8c <OS_GetRandom+0x18>)
+    1e76:	4b06      	ldr	r3, [pc, #24]	; (1e90 <OS_GetRandom+0x1c>)
+    1e78:	6811      	ldr	r1, [r2, #0]
+    1e7a:	681b      	ldr	r3, [r3, #0]
+    1e7c:	440b      	add	r3, r1
+    1e7e:	6013      	str	r3, [r2, #0]
+    1e80:	fbb3 f2f0 	udiv	r2, r3, r0
+    1e84:	fb02 3010 	mls	r0, r2, r0, r3
+    1e88:	b280      	uxth	r0, r0
+    1e8a:	4770      	bx	lr
+    1e8c:	20001018 	andcs	r1, r0, r8, lsl r0
+    1e90:	e000e018 	and	lr, r0, r8, lsl r0
+    1e94:	31313131 	teqcc	r1, r1, lsr r1
+    1e98:	31313131 	teqcc	r1, r1, lsr r1
+    1e9c:	31313131 	teqcc	r1, r1, lsr r1
+    1ea0:	31313131 	teqcc	r1, r1, lsr r1
+    1ea4:	31313131 	teqcc	r1, r1, lsr r1
+    1ea8:	31313131 	teqcc	r1, r1, lsr r1
+    1eac:	31313131 	teqcc	r1, r1, lsr r1
+    1eb0:	31313131 	teqcc	r1, r1, lsr r1
+    1eb4:	31313131 	teqcc	r1, r1, lsr r1
+    1eb8:	31313131 	teqcc	r1, r1, lsr r1
+    1ebc:	31313131 	teqcc	r1, r1, lsr r1
+    1ec0:	31313131 	teqcc	r1, r1, lsr r1
+    1ec4:	000a3131 	andeq	r3, sl, r1, lsr r1
+    1ec8:	32323232 	eorscc	r3, r2, #536870915	; 0x20000003
+    1ecc:	32323232 	eorscc	r3, r2, #536870915	; 0x20000003
+    1ed0:	32323232 	eorscc	r3, r2, #536870915	; 0x20000003
+    1ed4:	32323232 	eorscc	r3, r2, #536870915	; 0x20000003
+    1ed8:	32323232 	eorscc	r3, r2, #536870915	; 0x20000003
+    1edc:	32323232 	eorscc	r3, r2, #536870915	; 0x20000003
+    1ee0:	32323232 	eorscc	r3, r2, #536870915	; 0x20000003
+    1ee4:	32323232 	eorscc	r3, r2, #536870915	; 0x20000003
+    1ee8:	32323232 	eorscc	r3, r2, #536870915	; 0x20000003
+    1eec:	32323232 	eorscc	r3, r2, #536870915	; 0x20000003
+    1ef0:	32323232 	eorscc	r3, r2, #536870915	; 0x20000003
+    1ef4:	32323232 	eorscc	r3, r2, #536870915	; 0x20000003
+    1ef8:	000a3232 	andeq	r3, sl, r2, lsr r2
+    1efc:	1b485b1b 	blne	1218b70 <_etext+0x1216898>
+    1f00:	20004a5b 	andcs	r4, r0, fp, asr sl
+    1f04:	32313000 	eorscc	r3, r1, #0
+    1f08:	36353433 			; <UNDEFINED> instruction: 0x36353433
+    1f0c:	61393837 	teqvs	r9, r7, lsr r8
+    1f10:	65646362 	strbvs	r6, [r4, #-866]!	; 0xfffffc9e
+    1f14:	52450066 	subpl	r0, r5, #102	; 0x66
+    1f18:	00524f52 	subseq	r4, r2, r2, asr pc
+
+00001f1c <g_ui32UARTBase>:
+    1f1c:	4000c000 	andmi	ip, r0, r0
+    1f20:	4000d000 	andmi	sp, r0, r0
+    1f24:	4000e000 	andmi	lr, r0, r0
+
+00001f28 <g_ui32UARTPeriph>:
+    1f28:	f0001800 			; <UNDEFINED> instruction: 0xf0001800
+    1f2c:	f0001801 			; <UNDEFINED> instruction: 0xf0001801
+    1f30:	f0001802 			; <UNDEFINED> instruction: 0xf0001802
+    1f34:	4375003f 	cmnmi	r5, #63	; 0x3f
+    1f38:	2d534f2f 	ldclcs	15, cr4, [r3, #-188]	; 0xffffff44
+    1f3c:	49204949 	stmdbmi	r0!, {r0, r3, r6, r8, fp, lr}
+    1f40:	00656c64 	rsbeq	r6, r5, r4, ror #24
+    1f44:	4f2f4375 	svcmi	0x002f4375
+    1f48:	49492d53 	stmdbmi	r9, {r0, r1, r4, r6, r8, sl, fp, sp}^
+    1f4c:	61745320 	cmnvs	r4, r0, lsr #6
+    1f50:	 	andeq	r0, r0, r4, ror r0
+
+00001f52 <OSUnMapTbl>:
+    1f52:	00010000 	andeq	r0, r1, r0
+    1f56:	00010002 	andeq	r0, r1, r2
+    1f5a:	00010003 	andeq	r0, r1, r3
+    1f5e:	00010002 	andeq	r0, r1, r2
+    1f62:	00010004 	andeq	r0, r1, r4
+    1f66:	00010002 	andeq	r0, r1, r2
+    1f6a:	00010003 	andeq	r0, r1, r3
+    1f6e:	00010002 	andeq	r0, r1, r2
+    1f72:	00010005 	andeq	r0, r1, r5
+    1f76:	00010002 	andeq	r0, r1, r2
+    1f7a:	00010003 	andeq	r0, r1, r3
+    1f7e:	00010002 	andeq	r0, r1, r2
+    1f82:	00010004 	andeq	r0, r1, r4
+    1f86:	00010002 	andeq	r0, r1, r2
+    1f8a:	00010003 	andeq	r0, r1, r3
+    1f8e:	00010002 	andeq	r0, r1, r2
+    1f92:	00010006 	andeq	r0, r1, r6
+    1f96:	00010002 	andeq	r0, r1, r2
+    1f9a:	00010003 	andeq	r0, r1, r3
+    1f9e:	00010002 	andeq	r0, r1, r2
+    1fa2:	00010004 	andeq	r0, r1, r4
+    1fa6:	00010002 	andeq	r0, r1, r2
+    1faa:	00010003 	andeq	r0, r1, r3
+    1fae:	00010002 	andeq	r0, r1, r2
+    1fb2:	00010005 	andeq	r0, r1, r5
+    1fb6:	00010002 	andeq	r0, r1, r2
+    1fba:	00010003 	andeq	r0, r1, r3
+    1fbe:	00010002 	andeq	r0, r1, r2
+    1fc2:	00010004 	andeq	r0, r1, r4
+    1fc6:	00010002 	andeq	r0, r1, r2
+    1fca:	00010003 	andeq	r0, r1, r3
+    1fce:	00010002 	andeq	r0, r1, r2
+    1fd2:	00010007 	andeq	r0, r1, r7
+    1fd6:	00010002 	andeq	r0, r1, r2
+    1fda:	00010003 	andeq	r0, r1, r3
+    1fde:	00010002 	andeq	r0, r1, r2
+    1fe2:	00010004 	andeq	r0, r1, r4
+    1fe6:	00010002 	andeq	r0, r1, r2
+    1fea:	00010003 	andeq	r0, r1, r3
+    1fee:	00010002 	andeq	r0, r1, r2
+    1ff2:	00010005 	andeq	r0, r1, r5
+    1ff6:	00010002 	andeq	r0, r1, r2
+    1ffa:	00010003 	andeq	r0, r1, r3
+    1ffe:	00010002 	andeq	r0, r1, r2
+    2002:	00010004 	andeq	r0, r1, r4
+    2006:	00010002 	andeq	r0, r1, r2
+    200a:	00010003 	andeq	r0, r1, r3
+    200e:	00010002 	andeq	r0, r1, r2
+    2012:	00010006 	andeq	r0, r1, r6
+    2016:	00010002 	andeq	r0, r1, r2
+    201a:	00010003 	andeq	r0, r1, r3
+    201e:	00010002 	andeq	r0, r1, r2
+    2022:	00010004 	andeq	r0, r1, r4
+    2026:	00010002 	andeq	r0, r1, r2
+    202a:	00010003 	andeq	r0, r1, r3
+    202e:	00010002 	andeq	r0, r1, r2
+    2032:	00010005 	andeq	r0, r1, r5
+    2036:	00010002 	andeq	r0, r1, r2
+    203a:	00010003 	andeq	r0, r1, r3
+    203e:	00010002 	andeq	r0, r1, r2
+    2042:	00010004 	andeq	r0, r1, r4
+    2046:	00010002 	andeq	r0, r1, r2
+    204a:	00010003 	andeq	r0, r1, r3
+    204e:	00010002 	andeq	r0, r1, r2
+    2052:	4f2f4375 	svcmi	0x002f4375
+    2056:	49492d53 	stmdbmi	r9, {r0, r1, r4, r6, r8, sl, fp, sp}^
+    205a:	726d5420 	rsbvc	r5, sp, #32, 8	; 0x20000000
+    205e:	6b636f4c 	blvs	18ddd96 <_etext+0x18dbabe>
+    2062:	2f437500 	svccs	0x00437500
+    2066:	492d534f 	pushmi	{r0, r1, r2, r3, r6, r8, r9, ip, lr}
+    206a:	6d542049 	ldclvs	0, cr2, [r4, #-292]	; 0xfffffedc
+    206e:	67695372 			; <UNDEFINED> instruction: 0x67695372
+    2072:	006c616e 	rsbeq	r6, ip, lr, ror #2
+    2076:	4f2f4375 	svcmi	0x002f4375
+    207a:	49492d53 	stmdbmi	r9, {r0, r1, r4, r6, r8, sl, fp, sp}^
+    207e:	726d5420 	rsbvc	r5, sp, #32, 8	; 0x20000000
+	...
+
+00002084 <g_pppui32XTALtoVCO>:
+    2084:	00000040 	andeq	r0, r0, r0, asr #32
+    2088:	00000000 	andeq	r0, r0, r0
+    208c:	00000100 	andeq	r0, r0, r0, lsl #2
+    2090:	0008003e 	andeq	r0, r8, lr, lsr r0
+    2094:	00000000 	andeq	r0, r0, r0
+    2098:	00000100 	andeq	r0, r0, r0, lsl #2
+    209c:	000000a0 	andeq	r0, r0, r0, lsr #1
+    20a0:	00000002 	andeq	r0, r0, r2
+    20a4:	00000100 	andeq	r0, r0, r0, lsl #2
+    20a8:	00015434 	andeq	r5, r1, r4, lsr r4
+    20ac:	00000000 	andeq	r0, r0, r0
+    20b0:	00000100 	andeq	r0, r0, r0, lsl #2
+    20b4:	0006702b 	andeq	r7, r6, fp, lsr #32
+    20b8:	00000000 	andeq	r0, r0, r0
+    20bc:	00000100 	andeq	r0, r0, r0, lsl #2
+    20c0:	00000028 	andeq	r0, r0, r8, lsr #32
+    20c4:	00000000 	andeq	r0, r0, r0
+    20c8:	00000100 	andeq	r0, r0, r0, lsl #2
+    20cc:	00010027 	andeq	r0, r1, r7, lsr #32
+    20d0:	00000000 	andeq	r0, r0, r0
+    20d4:	00000100 	andeq	r0, r0, r0, lsl #2
+    20d8:	00000020 	andeq	r0, r0, r0, lsr #32
+    20dc:	00000000 	andeq	r0, r0, r0
+    20e0:	00000100 	andeq	r0, r0, r0, lsl #2
+    20e4:	00000050 	andeq	r0, r0, r0, asr r0
+    20e8:	00000002 	andeq	r0, r0, r2
+    20ec:	00000100 	andeq	r0, r0, r0, lsl #2
+    20f0:	0000ac1a 	andeq	sl, r0, sl, lsl ip
+    20f4:	00000000 	andeq	r0, r0, r0
+    20f8:	00000100 	andeq	r0, r0, r0, lsl #2
+    20fc:	00099417 	andeq	r9, r9, r7, lsl r4
+    2100:	00000000 	andeq	r0, r0, r0
+    2104:	00000100 	andeq	r0, r0, r0, lsl #2
+    2108:	00059816 	andeq	r9, r5, r6, lsl r8
+    210c:	00000000 	andeq	r0, r0, r0
+    2110:	00000100 	andeq	r0, r0, r0, lsl #2
+    2114:	00000014 	andeq	r0, r0, r4, lsl r0
+    2118:	00000000 	andeq	r0, r0, r0
+    211c:	00000100 	andeq	r0, r0, r0, lsl #2
+    2120:	00088013 	andeq	r8, r8, r3, lsl r0
+    2124:	00000000 	andeq	r0, r0, r0
+    2128:	00000100 	andeq	r0, r0, r0, lsl #2
+    212c:	000000a0 	andeq	r0, r0, r0, lsr #1
+    2130:	00000008 	andeq	r0, r0, r8
+    2134:	00000100 	andeq	r0, r0, r0, lsl #2
+    2138:	00000010 	andeq	r0, r0, r0, lsl r0
+    213c:	00000000 	andeq	r0, r0, r0
+    2140:	00000100 	andeq	r0, r0, r0, lsl #2
+    2144:	00000028 	andeq	r0, r0, r8, lsr #32
+    2148:	00000002 	andeq	r0, r0, r2
+    214c:	00000100 	andeq	r0, r0, r0, lsl #2
+    2150:	00000040 	andeq	r0, r0, r0, asr #32
+    2154:	00000004 	andeq	r0, r0, r4
+    2158:	00000100 	andeq	r0, r0, r0, lsl #2
+    215c:	00000060 	andeq	r0, r0, r0, rrx
+    2160:	00000000 	andeq	r0, r0, r0
+    2164:	00000100 	andeq	r0, r0, r0, lsl #2
+    2168:	000c005d 	andeq	r0, ip, sp, asr r0
+    216c:	00000000 	andeq	r0, r0, r0
+    2170:	00000100 	andeq	r0, r0, r0, lsl #2
+    2174:	00000050 	andeq	r0, r0, r0, asr r0
+    2178:	00000000 	andeq	r0, r0, r0
+    217c:	00000100 	andeq	r0, r0, r0, lsl #2
+    2180:	0002004e 	andeq	r0, r2, lr, asr #32
+    2184:	00000000 	andeq	r0, r0, r0
+    2188:	00000100 	andeq	r0, r0, r0, lsl #2
+    218c:	0001ac41 	andeq	sl, r1, r1, asr #24
+    2190:	00000000 	andeq	r0, r0, r0
+    2194:	00000100 	andeq	r0, r0, r0, lsl #2
+    2198:	0000003c 	andeq	r0, r0, ip, lsr r0
+    219c:	00000000 	andeq	r0, r0, r0
+    21a0:	00000100 	andeq	r0, r0, r0, lsl #2
+    21a4:	0009803a 	andeq	r8, r9, sl, lsr r0
+    21a8:	00000000 	andeq	r0, r0, r0
+    21ac:	00000100 	andeq	r0, r0, r0, lsl #2
+    21b0:	00000030 	andeq	r0, r0, r0, lsr r0
+    21b4:	00000000 	andeq	r0, r0, r0
+    21b8:	00000100 	andeq	r0, r0, r0, lsl #2
+    21bc:	00000028 	andeq	r0, r0, r8, lsr #32
+    21c0:	00000000 	andeq	r0, r0, r0
+    21c4:	00000100 	andeq	r0, r0, r0, lsl #2
+    21c8:	00010027 	andeq	r0, r1, r7, lsr #32
+    21cc:	00000000 	andeq	r0, r0, r0
+    21d0:	00000100 	andeq	r0, r0, r0, lsl #2
+    21d4:	00066023 	andeq	r6, r6, r3, lsr #32
+    21d8:	00000000 	andeq	r0, r0, r0
+    21dc:	00000100 	andeq	r0, r0, r0, lsl #2
+    21e0:	00086021 	andeq	r6, r8, r1, lsr #32
+    21e4:	00000000 	andeq	r0, r0, r0
+    21e8:	00000100 	andeq	r0, r0, r0, lsl #2
+    21ec:	0000001e 	andeq	r0, r0, lr, lsl r0
+    21f0:	00000000 	andeq	r0, r0, r0
+    21f4:	00000100 	andeq	r0, r0, r0, lsl #2
+    21f8:	0004c01d 	andeq	ip, r4, sp, lsl r0
+    21fc:	00000000 	andeq	r0, r0, r0
+    2200:	00000100 	andeq	r0, r0, r0, lsl #2
+    2204:	00000050 	andeq	r0, r0, r0, asr r0
+    2208:	00000002 	andeq	r0, r0, r2
+    220c:	00000100 	andeq	r0, r0, r0, lsl #2
+    2210:	00000018 	andeq	r0, r0, r8, lsl r0
+    2214:	00000000 	andeq	r0, r0, r0
+    2218:	00000100 	andeq	r0, r0, r0, lsl #2
+    221c:	00000014 	andeq	r0, r0, r4, lsl r0
+    2220:	00000000 	andeq	r0, r0, r0
+    2224:	00000100 	andeq	r0, r0, r0, lsl #2
+    2228:	00000060 	andeq	r0, r0, r0, rrx
+    222c:	00000004 	andeq	r0, r0, r4
+    2230:	00000100 	andeq	r0, r0, r0, lsl #2
+
+00002234 <g_pui32VCOFrequencies>:
+    2234:	09896800 	stmibeq	r9, {fp, sp, lr}
+    2238:	0e4e1c00 	cdpeq	12, 4, cr1, cr14, cr0, {0}
+
+0000223c <g_pui32Xtals>:
+    223c:	000f4240 	andeq	r4, pc, r0, asr #4
+    2240:	001c2000 	andseq	r2, ip, r0
+    2244:	001e8480 	andseq	r8, lr, r0, lsl #9
+    2248:	00258000 	eoreq	r8, r5, r0
+    224c:	00369e99 	mlaseq	r6, r9, lr, r9
+    2250:	00384000 	eorseq	r4, r8, r0
+    2254:	003d0900 	eorseq	r0, sp, r0, lsl #18
+    2258:	003e8000 	eorseq	r8, lr, r0
+    225c:	004b0000 	subeq	r0, fp, r0
+    2260:	004c4b40 	subeq	r4, ip, r0, asr #22
+    2264:	004e2000 	subeq	r2, lr, r0
+    2268:	005b8d80 	subseq	r8, fp, r0, lsl #27
+    226c:	005dc000 	subseq	ip, sp, r0
+    2270:	00708000 	rsbseq	r8, r0, r0
+    2274:	007a1200 	rsbseq	r1, sl, r0, lsl #4
+    2278:	007d0000 	rsbseq	r0, sp, r0
+    227c:	00989680 	addseq	r9, r8, r0, lsl #13
+    2280:	00b71b00 	adcseq	r1, r7, r0, lsl #22
+    2284:	00bb8000 	adcseq	r8, fp, r0
+    2288:	00cee8c0 	sbceq	lr, lr, r0, asr #17
+    228c:	00da7a64 	sbcseq	r7, sl, r4, ror #20
+    2290:	00f42400 	rscseq	r2, r4, r0, lsl #8
+    2294:	00fa0000 	rscseq	r0, sl, r0
+    2298:	0112a880 	tsteq	r2, r0, lsl #17
+    229c:	01312d00 	teqeq	r1, r0, lsl #26
+    22a0:	016e3600 	cmneq	lr, r0, lsl #12
+    22a4:	017d7840 	cmneq	sp, r0, asr #16
+
+000022a8 <g_sXTALtoMEMTIM>:
+    22a8:	00f42400 	rscseq	r2, r4, r0, lsl #8
+    22ac:	00300030 	eorseq	r0, r0, r0, lsr r0
+    22b0:	02625a00 	rsbeq	r5, r2, #0, 20
+    22b4:	00910091 	umullseq	r0, r1, r1, r0
+    22b8:	03938700 	orrseq	r8, r3, #0, 14
+    22bc:	00d200d2 	ldrsbeq	r0, [r2], #2
+    22c0:	04c4b400 	strbeq	fp, [r4], #1024	; 0x400
+    22c4:	01130113 	tsteq	r3, r3, lsl r1
+    22c8:	05f5e100 	ldrbeq	lr, [r5, #256]!	; 0x100
+    22cc:	01540154 	cmpeq	r4, r4, asr r1
+    22d0:	07270e00 	streq	r0, [r7, -r0, lsl #28]!
+    22d4:	01950195 			; <UNDEFINED> instruction: 0x01950195
+
+Disassembly of section .bss:
+
+20000000 <_bss>:
+	...
+
+20001010 <g_ui32Base>:
+20001010:	00000000 	andeq	r0, r0, r0
+
+20001014 <OSTmrCtr>:
+20001014:	00000000 	andeq	r0, r0, r0
+
+20001018 <rand.5336>:
+20001018:	00000000 	andeq	r0, r0, r0
+
+2000101c <Task2Stk>:
+	...
+
+2000181c <Task1Stk>:
+	...
+
+2000201c <TaskStartStk>:
+	...
+
+2000281c <g_ui32SysClock>:
+2000281c:	00000000 	andeq	r0, r0, r0
+
+20002820 <OSTmrFreeList>:
+20002820:	00000000 	andeq	r0, r0, r0
+
+20002824 <OSTmrWheelTbl>:
+	...
+
+20002864 <OSLockNesting>:
+20002864:	00000000 	andeq	r0, r0, r0
+
+20002868 <OSTmrSemSignal>:
+20002868:	00000000 	andeq	r0, r0, r0
+
+2000286c <OSTaskRegNextAvailID>:
+	...
+
+2000286d <OSRunning>:
+2000286d:	 	andeq	r0, r0, r0
+
+20002870 <OSIdleCtr>:
+20002870:	00000000 	andeq	r0, r0, r0
+
+20002874 <OSTmrUsed>:
+	...
+
+20002876 <OSPrioHighRdy>:
+	...
+
+20002878 <OSFlagTbl>:
+	...
+
+200028c8 <OSTmrTbl>:
+	...
+
+20002b48 <OSPrioCur>:
+20002b48:	00000000 	andeq	r0, r0, r0
+
+20002b4c <OSTCBList>:
+20002b4c:	00000000 	andeq	r0, r0, r0
+
+20002b50 <OSMemTbl>:
+	...
+
+20002bc8 <OSTickStepState>:
+20002bc8:	00000000 	andeq	r0, r0, r0
+
+20002bcc <OSTaskStatStk>:
+	...
+
+20002dcc <OSCtxSwCtr>:
+20002dcc:	00000000 	andeq	r0, r0, r0
+
+20002dd0 <OSTmrFree>:
+20002dd0:	00000000 	andeq	r0, r0, r0
+
+20002dd4 <OSIdleCtrMax>:
+20002dd4:	00000000 	andeq	r0, r0, r0
+
+20002dd8 <OSTCBFreeList>:
+20002dd8:	00000000 	andeq	r0, r0, r0
+
+20002ddc <OSCPUUsage>:
+	...
+
+20002ddd <OSTaskCtr>:
+20002ddd:	 	andeq	r0, r0, r0
+
+20002de0 <OSMemFreeList>:
+20002de0:	00000000 	andeq	r0, r0, r0
+
+20002de4 <OSQTbl>:
+	...
+
+20002fc4 <OSTCBHighRdy>:
+20002fc4:	00000000 	andeq	r0, r0, r0
+
+20002fc8 <OSQFreeList>:
+20002fc8:	00000000 	andeq	r0, r0, r0
+
+20002fcc <OSRdyGrp>:
+	...
+
+20002fcd <OSRdyTbl>:
+	...
+
+20002fd8 <OSTmrTaskStk>:
+	...
+
+200031d8 <OSEventFreeList>:
+200031d8:	00000000 	andeq	r0, r0, r0
+
+200031dc <OSIntNesting>:
+200031dc:	00000000 	andeq	r0, r0, r0
+
+200031e0 <OSTCBCur>:
+200031e0:	00000000 	andeq	r0, r0, r0
+
+200031e4 <OSTmrTime>:
+200031e4:	00000000 	andeq	r0, r0, r0
+
+200031e8 <OSTime>:
+200031e8:	00000000 	andeq	r0, r0, r0
+
+200031ec <OSTmrSem>:
+200031ec:	00000000 	andeq	r0, r0, r0
+
+200031f0 <OSTaskIdleStk>:
+	...
+
+200033f0 <OSEventTbl>:
+	...
+
+200034e0 <OSTCBTbl>:
+	...
+
+20003c18 <OSFlagFreeList>:
+20003c18:	00000000 	andeq	r0, r0, r0
+
+20003c1c <OSStatRdy>:
+20003c1c:	00000000 	andeq	r0, r0, r0
+
+20003c20 <OSTCBPrioTbl>:
+	...
+
+20003d20 <OSIdleCtrRun>:
+20003d20:	00000000 	andeq	r0, r0, r0
+
+20003d24 <OS_CPU_ExceptStkBase>:
+20003d24:	00000000 	andeq	r0, r0, r0
+
+20003d28 <OS_CPU_ExceptStk>:
+	...
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	3a434347 	bcc	10d0d24 <_ldata+0x10cea4c>
+   4:	4e472820 	cdpmi	8, 4, cr2, cr7, cr0, {1}
+   8:	6f542055 	svcvs	0x00542055
+   c:	20736c6f 	rsbscs	r6, r3, pc, ror #24
+  10:	20726f66 	rsbscs	r6, r2, r6, ror #30
+  14:	206d7241 	rsbcs	r7, sp, r1, asr #4
+  18:	65626d45 	strbvs	r6, [r2, #-3397]!	; 0xfffff2bb
+  1c:	64656464 	strbtvs	r6, [r5], #-1124	; 0xfffffb9c
+  20:	6f725020 	svcvs	0x00725020
+  24:	73736563 	cmnvc	r3, #415236096	; 0x18c00000
+  28:	2073726f 	rsbscs	r7, r3, pc, ror #4
+  2c:	30322d39 	eorscc	r2, r2, r9, lsr sp
+  30:	712d3931 			; <UNDEFINED> instruction: 0x712d3931
+  34:	616d2d34 	cmnvs	sp, r4, lsr sp
+  38:	29726f6a 	ldmdbcs	r2!, {r1, r3, r5, r6, r8, r9, sl, fp, sp, lr}^
+  3c:	322e3920 	eorcc	r3, lr, #32, 18	; 0x80000
+  40:	3220312e 	eorcc	r3, r0, #-2147483637	; 0x8000000b
+  44:	31393130 	teqcc	r9, r0, lsr r1
+  48:	20353230 	eorscs	r3, r5, r0, lsr r2
+  4c:	6c657228 	sfmvs	f7, 2, [r5], #-160	; 0xffffff60
+  50:	65736165 	ldrbvs	r6, [r3, #-357]!	; 0xfffffe9b
+  54:	415b2029 	cmpmi	fp, r9, lsr #32
+  58:	612f4d52 			; <UNDEFINED> instruction: 0x612f4d52
+  5c:	392d6d72 	pushcc	{r1, r4, r5, r6, r8, sl, fp, sp, lr}
+  60:	6172622d 	cmnvs	r2, sp, lsr #4
+  64:	2068636e 	rsbcs	r6, r8, lr, ror #6
+  68:	69766572 	ldmdbvs	r6!, {r1, r4, r5, r6, r8, sl, sp, lr}^
+  6c:	6e6f6973 			; <UNDEFINED> instruction: 0x6e6f6973
+  70:	37373220 	ldrcc	r3, [r7, -r0, lsr #4]!
+  74:	5d393935 			; <UNDEFINED> instruction: 0x5d393935
+	...
+
+Disassembly of section .ARM.attributes:
+
+00000000 <.ARM.attributes>:
+   0:	00003141 	andeq	r3, r0, r1, asr #2
+   4:	61656100 	cmnvs	r5, r0, lsl #2
+   8:	01006962 	tsteq	r0, r2, ror #18
+   c:	00000027 	andeq	r0, r0, r7, lsr #32
+  10:	2d453705 	stclcs	7, cr3, [r5, #-20]	; 0xffffffec
+  14:	0d06004d 	stceq	0, cr0, [r6, #-308]	; 0xfffffecc
+  18:	02094d07 	andeq	r4, r9, #448	; 0x1c0
+  1c:	0412060a 	ldreq	r0, [r2], #-1546	; 0xfffff9f6
+  20:	01150114 	tsteq	r5, r4, lsl r1
+  24:	01180317 	tsteq	r8, r7, lsl r3
+  28:	011b011a 	tsteq	fp, sl, lsl r1
+  2c:	041e011c 	ldreq	r0, [lr], #-284	; 0xfffffee4
+  30:	Address 0x0000000000000030 is out of bounds.
+
